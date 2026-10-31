@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-31T02:50:23.517Z",
+  "proposalId": "9031e451-d01e-44a3-848b-f2990000360d",
+  "returnedJobId": "70c9543a-0208-49e6-b068-8444af58e8b5",
+  "jobCountBefore": 2,
+  "jobCountAfter": 2,
+  "decision": "blocked duplicate; existing intent returned"
+}

@@ -1,0 +1,28 @@
+{
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "deployer": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+  "transactions": {
+    "collateral": {
+      "hash": "0x48e7e04a91be8c6b4850531e7284769b6c7d2ddc88cba8fd13fd8737511eb627",
+      "blockNumber": "52463962",
+      "gasPaidWei": "2549784009899",
+      "l2GasPaidWei": "2549784000000",
+      "l1FeePaidWei": "9899",
+      "operatorFeePaidWei": "0",
+      "feeAccounting": "complete"
+    },
+    "market": {
+      "hash": "0x9c2f3ecdebef22983836f230ed724e1b0181a3b7339bff4fefa053be6b635404",
+      "blockNumber": "52463980",
+      "gasPaidWei": "17082384068068",
+      "l2GasPaidWei": "17082384000000",
+      "l1FeePaidWei": "68068",
+      "operatorFeePaidWei": "0",
+      "feeAccounting": "complete"
+    }
+  },
+  "collateral": "0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+  "market": "0xfbacf475b8a6729d97db83a06b07ff303a243614",
+  "feeReconciledAt": "2026-10-31T02:52:22.142Z"
+}

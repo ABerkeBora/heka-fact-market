@@ -1,0 +1,326 @@
+{
+  "checkedAt": "2026-10-31T02:42:38.464Z",
+  "signer": "0xd9D29FEDc3737aD5198611457fE04aB08a739C7b",
+  "operations": [
+    {
+      "name": "matchesUpcoming",
+      "price": "0.01 USD per call",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [],
+        "properties": {
+          "filter[videogame]": {
+            "description": "Videogame id or slug, so `3` or `cs-go`. Comma-separated values match any of them.",
+            "type": "string"
+          },
+          "filter[league_id]": {
+            "description": "League id. Comma-separated values match any of them.",
+            "type": "string"
+          },
+          "filter[serie_id]": {
+            "description": "Serie id. Comma-separated values match any of them.",
+            "type": "string"
+          },
+          "filter[tournament_id]": {
+            "description": "Tournament id. Comma-separated values match any of them.",
+            "type": "string"
+          },
+          "filter[opponent_id]": {
+            "description": "Id of a team or player taking part. Comma-separated values match any of them.",
+            "type": "string"
+          },
+          "filter[winner_id]": {
+            "description": "Id of the winning team or player. Comma-separated values match any of them.",
+            "type": "string"
+          },
+          "filter[status]": {
+            "description": "One of canceled, finished, not_started, postponed, running. Comma-separated values match any of them.",
+            "type": "string"
+          },
+          "filter[detailed_stats]": {
+            "description": "Whether PandaScore holds post-game statistics for the match.",
+            "type": "boolean"
+          },
+          "range[begin_at]": {
+            "description": "ISO 8601 timestamps the match started between. Two values separated by a comma, both ends included.",
+            "type": "string"
+          },
+          "range[modified_at]": {
+            "description": "ISO 8601 timestamps the row was last changed between. Two values separated by a comma, both ends included.",
+            "type": "string"
+          },
+          "search[name]": {
+            "description": "Substring of the match name.",
+            "type": "string"
+          },
+          "sort": {
+            "description": "Comma-separated field names, each optionally prefixed with `-` for descending. Rows with no value for the field sort last ascending and first descending, so a descending sort over a sparse field returns those rows first.",
+            "type": "string"
+          },
+          "page": {
+            "description": "Which page to return.",
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+          },
+          "per_page": {
+            "description": "Rows per page. Beyond the maximum the upstream clamps rather than refusing.",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          }
+        }
+      },
+      "returns": {
+        "begin_at": "string | null",
+        "detailed_stats": "boolean",
+        "draw": "boolean",
+        "end_at": "string | null",
+        "forfeit": "boolean",
+        "game_advantage": "integer | null",
+        "games": "array",
+        "id": "integer",
+        "league": "object",
+        "league_id": "integer",
+        "live": "object",
+        "low_latency_feed": "boolean",
+        "map_picks": "array | null",
+        "match_type": "string",
+        "modified_at": "string",
+        "name": "string",
+        "number_of_games": "integer",
+        "opponents": "array",
+        "original_scheduled_at": "string | null",
+        "rescheduled": "boolean | null",
+        "results": "array",
+        "scheduled_at": "string | null",
+        "serie": "object",
+        "serie_id": "integer",
+        "slug": "string | null",
+        "status": "string",
+        "streams_list": "array",
+        "tournament": "object",
+        "tournament_id": "integer",
+        "videogame": "object",
+        "videogame_title": "object | null",
+        "videogame_version": "object | null",
+        "winner": "object | null",
+        "winner_id": "integer | null",
+        "winner_type": "string"
+      }
+    },
+    {
+      "name": "getMatch",
+      "price": "0.01 USD per call",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "match_id_or_slug"
+        ],
+        "properties": {
+          "match_id_or_slug": {
+            "description": "The match to ask about, by numeric id or by slug.",
+            "type": "string"
+          },
+          "page": {
+            "description": "Which page to return.",
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+          },
+          "per_page": {
+            "description": "Rows per page. Beyond the maximum the upstream clamps rather than refusing.",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          }
+        }
+      },
+      "returns": {
+        "begin_at": "string | null",
+        "detailed_stats": "boolean",
+        "draw": "boolean",
+        "end_at": "string | null",
+        "forfeit": "boolean",
+        "game_advantage": "integer | null",
+        "games": "array",
+        "id": "integer",
+        "league": "object",
+        "league_id": "integer",
+        "live": "object",
+        "low_latency_feed": "boolean",
+        "map_picks": "array | null",
+        "match_type": "string",
+        "modified_at": "string",
+        "name": "string",
+        "number_of_games": "integer",
+        "opponents": "array",
+        "original_scheduled_at": "string | null",
+        "rescheduled": "boolean | null",
+        "results": "array",
+        "scheduled_at": "string | null",
+        "serie": "object",
+        "serie_id": "integer",
+        "slug": "string | null",
+        "status": "string",
+        "streams_list": "array",
+        "tournament": "object",
+        "tournament_id": "integer",
+        "videogame": "object",
+        "videogame_title": "object | null",
+        "videogame_version": "object | null",
+        "winner": "object | null",
+        "winner_id": "integer | null",
+        "winner_type": "string"
+      }
+    }
+  ],
+  "mandate": {
+    "id": "pandascore-smoke-v1",
+    "payer": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+    "network": "eip155:84532",
+    "asset": "0xbeA34973e5f67F18F656A2C6070C64326C791808",
+    "recipient": "0x1505FD562AC2Fb4307B85BC6c672FfeafB4d57A7",
+    "maxPerAction": "10000",
+    "maxTotal": "30000",
+    "maxActions": 3,
+    "gasCap": "0",
+    "beneficiary": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+    "result": "signed upcoming match metadata only; no market lifecycle claim",
+    "expiresAt": "2026-10-31T03:11:11.916Z"
+  },
+  "discovery": {
+    "request": {
+      "operation": "matchesUpcoming",
+      "parameters": {
+        "per_page": 1
+      },
+      "responseProjection": {
+        "matchId": "/0/id",
+        "name": "/0/name",
+        "status": "/0/status",
+        "scheduledAt": "/0/scheduled_at"
+      }
+    },
+    "requestHash": "0x3d0e6c8d5bde3059640dc280b20c712aecf88393e4be6172ceca9e4f9dc1fc2e",
+    "settlement": {
+      "success": true,
+      "transaction": "0xe95f2ac7498a1dce74004f66a5997dbcd9c32936721e731d77d0de31e15c4ead",
+      "network": "eip155:84532",
+      "payer": "0x3e9fba4e2c664557bb42a357257f1a086e65b09e"
+    },
+    "receipt": {
+      "transactionHash": "0xe95f2ac7498a1dce74004f66a5997dbcd9c32936721e731d77d0de31e15c4ead",
+      "blockNumber": "52463023",
+      "status": "success",
+      "token": "0xbeA34973e5f67F18F656A2C6070C64326C791808",
+      "from": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+      "to": "0x1505FD562AC2Fb4307B85BC6c672FfeafB4d57A7",
+      "amount": "10000"
+    },
+    "envelope": {
+      "airnode": "0xd9D29FEDc3737aD5198611457fE04aB08a739C7b",
+      "requestHash": "0x3d0e6c8d5bde3059640dc280b20c712aecf88393e4be6172ceca9e4f9dc1fc2e",
+      "timestamp": "1793414472",
+      "data": "{\"matchId\":1643083,\"name\":\"Grand final: ANK Gaming vs DCG\",\"scheduledAt\":\"2026-10-31T02:45:00Z\",\"status\":\"not_started\"}",
+      "signature": "0x6282335a960bcf9fee6ecbeb0532a6911c93acf406dc243da4a369e5b2cba0a902c83add41147c448a56e458a1636437f99d376dc83babfcab598127a0d067121c"
+    },
+    "signer": "0xd9D29FEDc3737aD5198611457fE04aB08a739C7b",
+    "data": {
+      "matchId": 1643083,
+      "name": "Grand final: ANK Gaming vs DCG",
+      "scheduledAt": "2026-10-31T02:45:00Z",
+      "status": "not_started"
+    },
+    "receivedAt": "2026-10-31T02:41:13.498Z"
+  },
+  "match": {
+    "request": {
+      "operation": "getMatch",
+      "parameters": {
+        "match_id_or_slug": "1643083"
+      },
+      "responseProjection": {
+        "matchId": "/id",
+        "name": "/name",
+        "status": "/status",
+        "winnerId": "/winner_id",
+        "modifiedAt": "/modified_at",
+        "scheduledAt": "/scheduled_at",
+        "endedAt": "/end_at",
+        "draw": "/draw",
+        "forfeit": "/forfeit",
+        "opponents": "/opponents"
+      }
+    },
+    "requestHash": "0x159dcbe5c5738d59ee0bd55b83dda20195af7088b44d71f90834a6e548aaf409",
+    "settlement": {
+      "success": true,
+      "transaction": "0xe209b8ef317235d947e84d66f8ee545c5d603ef583eaf2392725a9201cf2e9cb",
+      "network": "eip155:84532",
+      "payer": "0x3e9fba4e2c664557bb42a357257f1a086e65b09e"
+    },
+    "receipt": {
+      "transactionHash": "0xe209b8ef317235d947e84d66f8ee545c5d603ef583eaf2392725a9201cf2e9cb",
+      "blockNumber": "52463027",
+      "status": "success",
+      "token": "0xbeA34973e5f67F18F656A2C6070C64326C791808",
+      "from": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+      "to": "0x1505FD562AC2Fb4307B85BC6c672FfeafB4d57A7",
+      "amount": "10000"
+    },
+    "envelope": {
+      "airnode": "0xd9D29FEDc3737aD5198611457fE04aB08a739C7b",
+      "requestHash": "0x159dcbe5c5738d59ee0bd55b83dda20195af7088b44d71f90834a6e548aaf409",
+      "timestamp": "1793414473",
+      "data": "{\"draw\":false,\"endedAt\":null,\"forfeit\":false,\"matchId\":1643083,\"modifiedAt\":\"2026-10-31T02:33:53Z\",\"name\":\"Grand final: ANK Gaming vs DCG\",\"opponents\":[{\"type\":\"Team\",\"opponent\":{\"id\":135988,\"name\":\"ANK Gaming\",\"location\":\"TW\",\"slug\":\"ank-gaming\",\"modified_at\":\"2026-10-10T19:35:53Z\",\"acronym\":null,\"image_url\":\"https://cdn-api.pandascore.co/images/team/image/135988/600px_ank_gaming_lightmode.png\",\"dark_mode_image_url\":null}},{\"type\":\"Team\",\"opponent\":{\"id\":133856,\"name\":\"Deep Cross Gaming\",\"location\":\"TW\",\"slug\":\"deep-cross-gaming-kog\",\"modified_at\":\"2026-10-11T13:27:03Z\",\"acronym\":\"DCG\",\"image_url\":\"https://cdn-api.pandascore.co/images/team/image/133856/800px_deep_cross_gaming_lightmode.png\",\"dark_mode_image_url\":\"https://cdn-api.pandascore.co/dark_images/team/dark_image/133856/800px_deep_cross_gaming_darkmode.png\"}}],\"scheduledAt\":\"2026-10-31T02:45:00Z\",\"status\":\"not_started\",\"winnerId\":null}",
+      "signature": "0x7ab8aa63a6e65932690ecc977ee851be6128d5cf01ac7a2b0885840da073032835e6eea9b86a93befe56ed38df7d6e6b69e4d2d2be91b2c84cbdc8781225e52a1c"
+    },
+    "signer": "0xd9D29FEDc3737aD5198611457fE04aB08a739C7b",
+    "data": {
+      "draw": false,
+      "endedAt": null,
+      "forfeit": false,
+      "matchId": 1643083,
+      "modifiedAt": "2026-10-31T02:33:53Z",
+      "name": "Grand final: ANK Gaming vs DCG",
+      "opponents": [
+        {
+          "type": "Team",
+          "opponent": {
+            "id": 135988,
+            "name": "ANK Gaming",
+            "location": "TW",
+            "slug": "ank-gaming",
+            "modified_at": "2026-10-10T19:35:53Z",
+            "acronym": null,
+            "image_url": "https://cdn-api.pandascore.co/images/team/image/135988/600px_ank_gaming_lightmode.png",
+            "dark_mode_image_url": null
+          }
+        },
+        {
+          "type": "Team",
+          "opponent": {
+            "id": 133856,
+            "name": "Deep Cross Gaming",
+            "location": "TW",
+            "slug": "deep-cross-gaming-kog",
+            "modified_at": "2026-10-11T13:27:03Z",
+            "acronym": "DCG",
+            "image_url": "https://cdn-api.pandascore.co/images/team/image/133856/800px_deep_cross_gaming_lightmode.png",
+            "dark_mode_image_url": "https://cdn-api.pandascore.co/dark_images/team/dark_image/133856/800px_deep_cross_gaming_darkmode.png"
+          }
+        }
+      ],
+      "scheduledAt": "2026-10-31T02:45:00Z",
+      "status": "not_started",
+      "winnerId": null
+    },
+    "receivedAt": "2026-10-31T02:41:14.365Z"
+  },
+  "paid": true
+}

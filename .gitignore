@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.local/
+.taste-skill/
+out/
+cache/
+broadcast/
+*.log
+.DS_Store

@@ -4,7 +4,7 @@
 
 ## Açma ve taze senaryo
 
-Bu makinede `npm run dev`, ardından http://localhost:3102 . Üç test rolü ve deployment ignored yerel dosyalarda hazır; public repo kendi anahtarlarına bağımlı değil. Temiz kurulum, rol dosyası şeması ve deployment adımları README'de.
+Bu makinede production server şu anda açık: http://localhost:3102 . Yeniden başlatırken klasörde `npm start` veya geliştirme için `npm run dev`; aynı anda iki server başlatma. Üç test rolü ve deployment ignored yerel dosyalarda hazır; public repo kendi anahtarlarına bağımlı değil. Temiz kurulum, rol dosyası şeması ve deployment adımları README'de.
 
 1. Compose ekranında ETH/USD sorusunu yaz, 1 FMCT seç, **Draft market**.
 2. Gerçek qwen3:4b önerisini ve bağımsız türetilmiş resolution card'ı incele.
@@ -44,4 +44,4 @@ Nodary latest, tam T tarihsel fiyat değildir. İşlem kapanışı sonrası immu
 2. **Tek ekip Devfolio girdisini hazırlama/gönderme, 10–15dk.** Hazır description + publicrepo + contract/network + video eklenir. Kullanıcı adına gönderim yapılmadı. Son resmi deadline31 Ekim15:00 Berlin; takım başına tek giriş/up to3 partner tracks kuralını yedi ürün arasında koordine et.
 3. **İnceleme, 5dk.** Çalışan localhost'u ve yeni kısa senaryoyu aç; Nodary first-observation semantiğini değerlendir. Daha güçlü exact-T/history veya PandaScore finality istenirse yeni kapsam gerekir; mevcut ürüne gizli varsayım eklenmez.
 
-Public repository ve son rule-check zamanı TRACK_REQUIREMENTS.md/BUILD_STATUS.md'de son doğrulamayla kaydedilir. Hosted deploy ve yarışma submission yapılmadı.
+Public repository: https://github.com/ABerkeBora/heka-fact-market . `codex/build` push ve GitHub author/committer ABerkeBora eşlemesi doğrulandı. Public repo temiz clone üzerinde npm ci, build,8TS ve29Soliditytest geçti. Production restart aynı iki job/transaction hash kümesini geri yükledi; yeniden ödeme oluşmadı. Son rule-check03:55Berlin; ayrıntı TRACK_REQUIREMENTS.md/BUILD_STATUS.md içinde. Hosted deploy ve yarışma submission yapılmadı.

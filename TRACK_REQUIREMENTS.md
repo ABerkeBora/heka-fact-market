@@ -43,7 +43,7 @@ All four oracle cases occurred on the same matched open market before its valid 
 
 | Item | Deliverable | Status |
 |---|---|---|
-| Public repo and setup/run README | https://github.com/ABerkeBora/heka-fact-market ; pinned npm lockfile and standalone sources | **PENDING** repo created; final source push verification follows |
+| Public repo and setup/run README | https://github.com/ABerkeBora/heka-fact-market ; pinned npm lockfile and standalone sources | **PASS** public push3cf060d verified; author+committer map to ABerkeBora; clean public clone npm ci/build/8TS+29Soliditytests PASS |
 | Detailed Devfolio project description | Complete draft in SUBMISSION.md | **PENDING** team submission |
 | Video at most2.5minutes |150-second outline prepared | **PENDING** actual recording |
 | Current deadline/rules verified |31October2026 15:00Europe/Berlin; one entry per team, up to3partner tracks | **PASS** rule reading only, finish screenshot |

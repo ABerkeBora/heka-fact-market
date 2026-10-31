@@ -22,7 +22,6 @@
     "docs/evidence/v2/chain-smoke.json: yeni V1 döngüsü dahil"
   ],
   "pending": [
-    "Push final commit to public repo.",
     "Video recording (<=150 s) and Devfolio submission before 15:00 Berlin.",
     "Harici müşteri pilotu yapılmadı; test rolleri kullanıldı."
   ],
@@ -59,11 +58,11 @@
       "Base Sepolia RPC: FactMarketNext has code; four V2 tamper txs reverted (blocks 52479836-52479869) before successful settlement 52479898 and payout 52479912",
       "eth_call replay at block 52479897: valid envelope accepted; edited/different-request/wrong-signer -> NotSignedByAirnode; stale -> ResponseTooOld",
       "Clean copy without .local: tsc PASS, 48/48 application tests PASS, vite build PASS; public-tree secret scan PASS (320 files)",
-      "/next renders at desktop 1440 and phone 375; /api/bsv/fast/state keeper active"
+      "/next renders at desktop 1440 and phone 375; /api/bsv/fast/state keeper active",
+      "judge-next.ts run live from the Mac at 13:51 Berlin: valid ACCEPTED; edited/different-request/wrong-signer NotSignedByAirnode; stale ResponseTooOld"
     ],
     "notRunHere": [
-      "forge test (Foundry unavailable in review shell; contracts unchanged)",
-      "judge-next.ts against live RPC from a shell (verified with RPC stub plus the same eth_call in browser)"
+      "forge test (Foundry unavailable in review shell; contracts unchanged)"
     ],
     "changes": [
       "scripts/judge-next.ts + npm run judge:next: read-only V2 judge tamper replay",

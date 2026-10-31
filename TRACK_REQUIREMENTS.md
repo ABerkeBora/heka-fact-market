@@ -107,7 +107,7 @@ Independently verified in this review (public RPC, not inherited from reports): 
 | AirnodeHub essential; signer/request/timing verified by deployed contract; value drives payout; duplicate protection | V2 table above; receipts rechecked on chain in this review | **PASS** |
 | Tamper test: valid action + four rejections on the same open market | Receipts above; `scripts/judge-next.ts` replay | **PASS** (evidence) |
 | Contract address and network | README "Judge tamper test — V2"; SUBMISSION.md | **PASS** |
-| Judge route for own responses | New read-only `scripts/judge-next.ts` (no wallet); `/next` Evidence UI and `POST /api/next/markets/:id/submit` on a fresh market; permissionless ABI | **PASS** (script type-checked and run against an RPC stub; same eth_call verified live in browser; not yet executed from a shell with Base Sepolia access) |
+| Judge route for own responses | New read-only `scripts/judge-next.ts` (no wallet); `/next` Evidence UI and `POST /api/next/markets/:id/submit` on a fresh market; permissionless ABI | **PASS** — all five cases run live from the Mac against Base Sepolia at 13:51 Berlin: valid → ACCEPTED; edited-value, different-request, wrong-signer → NotSignedByAirnode; stale-real-response → ResponseTooOld |
 | Description: users, forged-data harm, data not found | SUBMISSION.md "API3 track items" | **PASS** content · **PENDING** Devfolio entry |
 | Video ≤ 2.5 min with tamper test | Outline only | **PENDING** team recording |
-| Public repo with setup README | Public repo exists; this review's changes need a push | **PENDING** push of the final commit |
+| Public repo with setup README | Pushed to `codex/bsv` (a49ba4f and later) | **PASS** |

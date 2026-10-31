@@ -1,5 +1,13 @@
 # Fact Market — repository instructions
 
+## Authorized BSV migration — 31 October 2026
+
+The user authorized an isolated BSV prediction-collateral/payout workflow on `codex/bsv`, at `/bsv` and `/api/bsv`. Preserve both `/` and `/next`, their deployments, baselines, journals and proofs. Read `TRACK_REQUIREMENTS_BSV.md` and `BSV_HANDOFF.md`. Earlier BSV-excluded language below is historical and is superseded only for this bounded workflow. Use pinned official SDK 3.2.1 and Wallet Toolbox 2.14.9, derived BRC-100 wallet keys, runtime LLM and testnet only. No mainnet spend. An output-bound attestor after original-envelope EVM verification is a trusted relayer, not native API3 verification or automatic dual-track eligibility. No unilateral refund guarantee unless actually enforced independently of the attestor. Do not modify the native spike owned by the feasibility agent under `.local/bsv-native-spike`.
+
+### Current BSV resource gate
+
+`/bsv/native` has real network-visible2000test-sat funding, but the original-signature outcome claim is rejected by public-node operation/time policy. Its separate fixed refund is signed and pending chain median time; skipped-branch opcount may still prevent execution. Read `BSV_HANDOFF.md`. Preserve all three canonical funding/claim/refund journals and the originalV1/V2. Never describe a local VM pass as network acceptance. New native preparation/funding of the known-blocked artifact is disabled. An optimized artifact must use a separate template/state and prove live compatibility before new collateral; never overwrite the immutable old contract or count two server-held keys as independent parties.
+
 ## Authorized V2 successor
 
 The user explicitly authorized the narrow V2 Goal after V1. Read `BASELINE_V1.md`, `NEXT_GOAL_STATUS.md`, `MORNING_HANDOFF_V2.md` and `REVIEW_SUMMARY.json` as applicable. `v1-baseline` freezes working V1 commit `e8fb85c`; never move the tag or reset/delete its source, receipts, state or pending transactions. V2 branch is `codex/next` in the same public repository.

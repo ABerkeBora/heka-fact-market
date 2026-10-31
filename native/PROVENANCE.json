@@ -1,0 +1,11 @@
+{
+  "source": "Coordinator native feasibility spike, 31 October2026",
+  "originalArtifactSha256": "6bed434f3a223a485438b74d6f478dc9909bb7ea9a1a1d83b539e7390f8e23aa",
+  "compressedArtifactSha256": "b62b675cfd00921822ace66807e4ca0ee45b3f5e8da344ebfff8d913aa2a72a8",
+  "compiler": "scryptc1.22.0",
+  "scrypt-ts": "1.4.5",
+  "scrypt-ts-lib": "0.1.28",
+  "scryptlib": "2.2.6",
+  "artifactIsNotLiveEvidence": true,
+  "scope": "Original API3 native crypto + strict Nodary parser + fixed outcome/refund outputs; runtime deployed evidence is recorded separately"
+}

@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-31T10:08:58.430Z",
+  "txid": "bd6f64e8583e49ce22b663520049059c3aa34414ad042c395d6da45b718ac2ff",
+  "rawBytes": 2279,
+  "format": "standard raw transaction, NOT EF",
+  "url": "https://teranode-eks-testnet-eu-1.bsvb.tech/api/v1/tx",
+  "http": 400,
+  "body": "Failed to process transaction: TX_POLICY (39): [ProcessTransaction][bd6f64e8583e49ce22b663520049059c3aa34414ad042c395d6da45b718ac2ff] Operation limit exceeded"
+}

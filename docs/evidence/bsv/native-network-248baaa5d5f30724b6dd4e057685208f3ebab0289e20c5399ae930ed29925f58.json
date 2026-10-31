@@ -1,0 +1,23 @@
+{
+  "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+  "status": "NETWORK_VISIBLE_UNCONFIRMED",
+  "provider": "https://api.whatsonchain.com/v1/bsv/test",
+  "confirmations": null,
+  "blockHash": null,
+  "size": 5012239,
+  "outputs": [
+    {
+      "vout": 0,
+      "satoshis": 2000
+    },
+    {
+      "vout": 1,
+      "satoshis": 900
+    },
+    {
+      "vout": 2,
+      "satoshis": 6000
+    }
+  ],
+  "at": "2026-10-31T10:09:15.359Z"
+}

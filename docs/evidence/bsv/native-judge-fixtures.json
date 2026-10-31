@@ -1,0 +1,57 @@
+[
+  {
+    "name": "valid original window response",
+    "env": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793440747",
+      "data": "{\"price\":2244.995,\"updatedAt\":1793440746935}",
+      "signature": "0x04178d32718cc506c048ded786e81a280d510055c2fb4a9e372e8c37fada7bd6255d11d4a21e4c6a6e210c4bdab637804ec2971a1ceedbcbb2a850d8149010191b"
+    },
+    "expected": true
+  },
+  {
+    "name": "edited data with unchanged signature",
+    "env": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793440747",
+      "data": "{\"price\":2245.995,\"updatedAt\":1793440746935}",
+      "signature": "0x04178d32718cc506c048ded786e81a280d510055c2fb4a9e372e8c37fada7bd6255d11d4a21e4c6a6e210c4bdab637804ec2971a1ceedbcbb2a850d8149010191b"
+    },
+    "expected": false
+  },
+  {
+    "name": "authentic stale outside immutable window",
+    "env": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793440062",
+      "data": "{\"price\":2243.935,\"updatedAt\":1793440062148}",
+      "signature": "0x30f5f671c1911c4d90f8d18da0a7f148abd632929801d4e56d32bf65c3e57a6f1301b1605cf186f3246095402bb0beadaeeb0dc3fef002dcb1dcf7cd872700451c"
+    },
+    "expected": false
+  },
+  {
+    "name": "authentic other-request BTC response",
+    "env": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x78094ba4768ebdadb2012f2de22e779ce0992ecc290ebab208233addaaef106a",
+      "timestamp": "1793440765",
+      "data": "{\"price\":77423.975,\"updatedAt\":1793440764939}",
+      "signature": "0x9a4834bbd75b58e3fddb6bbf78f5d752cd7e232df28394e6c114ab0e880e5d7714843c4cb2d2a75af7a6d9cad8c88fe6ab58c972cc3a1a00bf2a3a1cbd8af7ac1b"
+    },
+    "expected": false
+  },
+  {
+    "name": "wrong signer over exact request and data",
+    "env": {
+      "airnode": "0x1cB500768892EE02090AbE0b0aC5B136A00749DE",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793440747",
+      "data": "{\"price\":2244.995,\"updatedAt\":1793440746935}",
+      "signature": "0x4248e3e830e6495e6d942e3ec0a958b811c7aa750594626c46a332493ef6f418283cdfce4f7aa4c7f0e1596671321b277af37a8bc7a3dece3ea9544712b46c6c1c"
+    },
+    "expected": false
+  }
+]

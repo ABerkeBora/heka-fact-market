@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowUpRight, ArrowRight, Check, ChevronDown, ChevronRight, FileText, RefreshCw, ShieldCheck, X, Copy, AlertCircle } from 'lucide-react';
 import './styles.css';
+import {BsvApp} from './BsvApp.js';
+import {NativeBsvApp} from './NativeBsvApp.js';
 
 type Any = Record<string, any>;
 const MISSING = '—';
@@ -144,4 +146,4 @@ function EvidenceSummary({ evidence }: { evidence: any }) {
   return items.length ? <div className="evidence-summary">{items.map((item: any, i: number) => <div className="evidence-case" key={item.id || item.name || i}><div><span>{item.name || item.label || item.case || item.kind || item.type}</span><p>{item.actualError || item.message || item.reason || item.description}</p></div><Tag status={item.status || item.result || item.decision}>{statusName(item.status || item.result || item.decision)}</Tag>{txHash(item) && <TxLink tx={item}/>}</div>)}</div> : <div className="evidence-notice"><FileText size={17}/><div><h3>Verification evidence stays with the market.</h3><p>Open a funded market to inspect its signed response, exact source binding and recorded transactions. A signature authenticates its origin and bytes; it does not establish upstream truth.</p></div></div>;
 }
 
-createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
+createRoot(document.getElementById('root')!).render(<React.StrictMode>{window.location.pathname==='/bsv/native'?<NativeBsvApp/>:window.location.pathname==='/bsv'?<BsvApp/>:<App/>}</React.StrictMode>);

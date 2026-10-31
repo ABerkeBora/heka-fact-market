@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-31T09:40:13.200Z",
+  "scope": "experimental native original-Airnode outcome guard; not deployed by this helper",
+  "status": "PASS",
+  "sponsorSdkVersion": "3.2.1",
+  "sighash": 65,
+  "preimageBytes": 1867,
+  "unlockingScriptBytes": 2008,
+  "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+  "lockingScriptBytes": 5011707,
+  "postSeparatorScriptBytes": 1708,
+  "lockingScriptSha256": "29a8e36ab31e657de2041db9911f16f067332275d914f9041cc3cea42f04b319",
+  "artifactSha256": "6bed434f3a223a485438b74d6f478dc9909bb7ea9a1a1d83b539e7390f8e23aa"
+}

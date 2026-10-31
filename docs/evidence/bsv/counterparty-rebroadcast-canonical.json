@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-31T09:36:08.548Z",
+  "txid": "88af144b61ef915a6210d460ce8ce5e69aa6c808d811241c08d32cacefc6eb68",
+  "firstAttempt": "2026-10-31T09:33:54.464Z",
+  "noNewSignature": true,
+  "response": {
+    "txid": "88af144b61ef915a6210d460ce8ce5e69aa6c808d811241c08d32cacefc6eb68",
+    "status": "success",
+    "data": "SEEN_MULTIPLE_NODES",
+    "notes": [
+      {
+        "what": "postRawTxSuccess",
+        "name": "arcade",
+        "when": "2026-10-31T09:36:08.546Z",
+        "txid": "88af144b61ef915a6210d460ce8ce5e69aa6c808d811241c08d32cacefc6eb68",
+        "txStatus": "SEEN_MULTIPLE_NODES"
+      }
+    ]
+  }
+}

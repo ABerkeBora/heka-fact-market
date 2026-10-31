@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-31T09:46:49.414Z",
+  "scope": "Local official SDK3.2.1 native Script interpreter; historical authentic oracle fixture, dummy UTXO/recipients; no live transaction",
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "Original exact API3 envelope pays fixed native output",
+      "accepted": true,
+      "expected": true,
+      "pass": true,
+      "durationMs": 10538,
+      "lockingScriptBytes": 5011708,
+      "preimageBytes": 1867,
+      "unlockingScriptBytes": 2008,
+      "error": ""
+    },
+    {
+      "name": "Original signature cannot reduce protected native output",
+      "accepted": false,
+      "expected": false,
+      "pass": true,
+      "durationMs": 8756,
+      "lockingScriptBytes": 5011708,
+      "preimageBytes": 1867,
+      "unlockingScriptBytes": 2008,
+      "error": "Script evaluation error: The top stack element must be truthy after script evaluation.\nTXID: af4b4b5947e852b8cd4a29202178671f81b7c943314bd64e8a90ea5ea"
+    }
+  ]
+}

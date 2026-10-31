@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-31T09:35:02.164Z",
+  "txid": "88af144b61ef915a6210d460ce8ce5e69aa6c808d811241c08d32cacefc6eb68",
+  "firstAttempt": "2026-10-31T09:33:54.464Z",
+  "noNewSignature": true,
+  "response": {
+    "txid": "f500786f772f67d51b0540ea3dbd00a31324005272fcae92150d6d662adea09f",
+    "status": "error",
+    "serviceError": true
+  }
+}

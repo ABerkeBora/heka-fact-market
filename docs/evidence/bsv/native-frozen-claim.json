@@ -1,0 +1,20 @@
+{
+  "txid": "bd6f64e8583e49ce22b663520049059c3aa34414ad042c395d6da45b718ac2ff",
+  "outcome": "yes",
+  "outputs": [
+    {
+      "satoshis": 2000,
+      "lockingScript": "76a9146569d4b4fc5a59a7ec39c22bc230da6aa7fad6f988ac"
+    },
+    {
+      "satoshis": 800,
+      "lockingScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac"
+    }
+  ],
+  "scriptVerified": true,
+  "rawBytes": 2279,
+  "at": "2026-10-31T10:07:26.605Z",
+  "networkAccepted": false,
+  "status": "NODE_POLICY_BLOCKED",
+  "sourceFundingTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58"
+}

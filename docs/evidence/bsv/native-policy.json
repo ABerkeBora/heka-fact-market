@@ -1,0 +1,57 @@
+{
+  "policy": {
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "airnodePublicKey": "0x044e993579608baf1d542741675d347867f3d2c558d2e9bc3b74bac3583b569322eb85068fa43e4c5abd6db7dfa74999362bebf2322554918e1e13dec3cbc1a91a",
+    "expectedAirnodeAddress": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "validFrom": 1793440673,
+    "validTo": 1793440973,
+    "threshold18": "2238330000000000000000",
+    "collateralSatoshis": 2000,
+    "buyerStakeSatoshis": 1000,
+    "yesRecipientScript": "76a9146569d4b4fc5a59a7ec39c22bc230da6aa7fad6f988ac",
+    "noRecipientScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac",
+    "refundAfter": 1793441093,
+    "refundBuyerScript": "76a9146569d4b4fc5a59a7ec39c22bc230da6aa7fad6f988ac",
+    "refundCounterpartyScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac"
+  },
+  "policyHash": "938bb3c882477c6c525b1b83e15d52fb6089cf86098f652473ce134665c94181",
+  "network": "testnet",
+  "funding": {
+    "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+    "vout": 0,
+    "satoshis": 2000,
+    "feeSats": 6000,
+    "proof": {
+      "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+      "status": "NETWORK_VISIBLE_UNCONFIRMED",
+      "provider": "https://api.whatsonchain.com/v1/bsv/test",
+      "confirmations": null,
+      "blockHash": null,
+      "size": 5012239,
+      "outputs": [
+        {
+          "vout": 0,
+          "satoshis": 2000
+        },
+        {
+          "vout": 1,
+          "satoshis": 900
+        },
+        {
+          "vout": 2,
+          "satoshis": 6000
+        }
+      ],
+      "at": "2026-10-31T10:09:15.359Z"
+    },
+    "scriptInfo": {
+      "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "lockingScriptBytes": 5011707,
+      "lockingScriptSha256": "0cb313eb85f3e871a58a4eda10c486b8f32baa7fbfc8270feff485efd120fb65",
+      "postSeparatorScriptBytes": 1708,
+      "artifactSha256": "6bed434f3a223a485438b74d6f478dc9909bb7ea9a1a1d83b539e7390f8e23aa"
+    },
+    "explorer": "https://test.whatsonchain.com/tx/248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58"
+  },
+  "status": "refund_not_final"
+}

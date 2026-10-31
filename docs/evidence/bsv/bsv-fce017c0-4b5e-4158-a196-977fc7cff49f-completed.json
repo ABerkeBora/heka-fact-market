@@ -1,0 +1,178 @@
+{
+  "policy": {
+    "id": "bsv-fce017c0-4b5e-4158-a196-977fc7cff49f",
+    "network": "testnet",
+    "feed": "ETH/USD",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "sourceSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "sourceEndpoint": "https://airnode-nodary.fly.dev/",
+    "operation": "latestFeeds",
+    "thresholdCents": 223885,
+    "unit": "USD",
+    "decimals": 2,
+    "predicate": "gt",
+    "closesAt": 1793439252,
+    "observationStart": 1793439253,
+    "observationEnd": 1793440152,
+    "stakeSats": 1000,
+    "feeSats": 100,
+    "yesPub": "028be9fed59b3e7e5ce990242bcaa13c4e043b53d29f407877f1e22345b1371a7d",
+    "noPub": "03159a8449cb2696437f360edcb3fe6dcfcdd16d5417691ce0cd59d1c74cd0c7c8",
+    "userSide": "no",
+    "attestorPub": "02daae985705cec8c4030bef4cf9db11245e8ca76a17585575c69d141fcfc5097a",
+    "mode": "trusted-attestor-after-EVM-original-envelope",
+    "policyHash": "03bdc0eb2e340194ed785204bc1682f880b54dc7858d27b09b1a92027b50dcaf"
+  },
+  "status": "paid",
+  "llm": {
+    "model": "qwen3:4b",
+    "durationMs": 10388,
+    "suggestion": {
+      "templateId": "nodary-eth-window-v1",
+      "thresholdOffsetBps": -25,
+      "side": "no",
+      "explanation": "User provided price is 2244.47, which is below the current market price of 2245.00. This creates a negative bias for ETH/USD market. The template is set to -25 bps to indicate a downward pressure on the market."
+    },
+    "realCall": true
+  },
+  "initialObservation": {
+    "feedId": 0,
+    "feed": "ETH/USD",
+    "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "price": 2244.47,
+    "priceDisplay": "$2244.47",
+    "sourceAt": 1793439060,
+    "signedAt": 1793439062,
+    "receivedAt": 1793439062,
+    "envelope": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793439062",
+      "data": "{\"price\":2244.47,\"updatedAt\":1793439060742}",
+      "signature": "0xae5ca3c2b2c178eb6a1245420250da85f373967d975dd5794205e1c312a03e3c51c88c18fc3bd8be5d48304ffde98dd7bee4fdc99d8d3b12aa049f0e9cd44c881b"
+    },
+    "request": {
+      "operation": "latestFeeds",
+      "parameters": {
+        "name": "ETH/USD"
+      },
+      "responseProjection": {
+        "price": "/ETH~1USD/value",
+        "updatedAt": "/ETH~1USD/timestamp"
+      }
+    }
+  },
+  "deposits": [
+    {
+      "role": "buyer",
+      "requested": true,
+      "policyHash": "03bdc0eb2e340194ed785204bc1682f880b54dc7858d27b09b1a92027b50dcaf",
+      "network": "testnet",
+      "feeSats": 86,
+      "txid": "8b3ab74ac585aff161c7da53dacccc28cdf71863912bcfc64822f87a1b6dbe27",
+      "vout": 0,
+      "satoshis": 1000,
+      "at": "2026-10-31T09:32:20.597Z"
+    },
+    {
+      "role": "counterparty",
+      "requested": true,
+      "policyHash": "03bdc0eb2e340194ed785204bc1682f880b54dc7858d27b09b1a92027b50dcaf",
+      "network": "testnet",
+      "feeSats": 35,
+      "txid": "88af144b61ef915a6210d460ce8ce5e69aa6c808d811241c08d32cacefc6eb68",
+      "vout": 0,
+      "satoshis": 1000,
+      "at": "2026-10-31T09:33:54.464Z"
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-10-31T09:36:51.969Z",
+      "kind": "approval",
+      "message": "Original API3 envelope approved in deployed EVM guard",
+      "transaction": "0x9c06840d3bc104a579adfe4068c7490c1e5a415a80b0f2732371fc736b666a6b",
+      "outcome": "yes"
+    }
+  ],
+  "mandate": {
+    "id": "bsv-fce017c0-4b5e-4158-a196-977fc7cff49f",
+    "network": "testnet",
+    "stakeCapSats": 1000,
+    "totalCapSats": 1000,
+    "maxDeposits": 1,
+    "maxPayouts": 1,
+    "maxFeeSats": 500,
+    "maxObservationCalls": 6,
+    "observations": 1,
+    "expiry": 1793440752,
+    "allowUnilateralRefund": false,
+    "policyHash": "03bdc0eb2e340194ed785204bc1682f880b54dc7858d27b09b1a92027b50dcaf"
+  },
+  "approval": {
+    "guard": {
+      "address": "0x4398da4c0004af377df99f4c6bae68640adfd27e",
+      "network": 84532,
+      "transaction": "0x09dae11199df87c912446f1ca0e01e610c1e1249ba81635d50a4314fcf03d691"
+    },
+    "transaction": "0x9c06840d3bc104a579adfe4068c7490c1e5a415a80b0f2732371fc736b666a6b",
+    "outcome": "yes",
+    "outputsHash": "0x81794aea3eee4d4348f5bad09e021e5a62d6e7d9101515005b85031ce99a6f55",
+    "proofHash": "0x8079ff1be48b0ae796840b05c50da2c60f016f7d533fbc4ced61ddfd21b2d6b8"
+  },
+  "payout": {
+    "txid": "5b1f659d149fed8da69af6706cbe0b23feea503b6783ec85c3d7da9fc5383511",
+    "outcome": "yes",
+    "outputs": [
+      {
+        "satoshis": 1900,
+        "lockingScript": "76a914c240d34c5b9a20c213aee7e61191b04cc2cbc12788ac"
+      }
+    ],
+    "explorer": "https://test.whatsonchain.com/tx/5b1f659d149fed8da69af6706cbe0b23feea503b6783ec85c3d7da9fc5383511",
+    "confirmedAt": "2026-10-31T09:38:27.570Z",
+    "scriptVerifiedBeforeBroadcast": true
+  },
+  "registration": {
+    "guard": {
+      "address": "0x4398da4c0004af377df99f4c6bae68640adfd27e",
+      "network": 84532,
+      "transaction": "0x09dae11199df87c912446f1ca0e01e610c1e1249ba81635d50a4314fcf03d691"
+    },
+    "transaction": "0x2482c3ef11e45d68bcaa8d6987718a8137f19e7391c1d4b2c5f35b7ef997d53e"
+  },
+  "collateralBinding": {
+    "hash": "be10b4218d10f48d4bb19c7f6ffc458add91be7b16884a0192bc5b221ccca8e8",
+    "transaction": "0x4f809ca7ac2a6348ed01aab41a296bdfaba074b5fa3dade875c553defeda089b"
+  },
+  "finalObservation": {
+    "feedId": 0,
+    "feed": "ETH/USD",
+    "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "price": 2245.09,
+    "priceDisplay": "$2245.09",
+    "sourceAt": 1793439408,
+    "signedAt": 1793439409,
+    "receivedAt": 1793439409,
+    "envelope": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793439409",
+      "data": "{\"price\":2245.09,\"updatedAt\":1793439408425}",
+      "signature": "0x930b360dc17cd9c3116ea9f256a95614f7ec75569a3e98262efadf4953a160b10d94c85e0cb715e83c439212d01580a10939b368785d9fc1f10b10607384839b1b"
+    },
+    "request": {
+      "operation": "latestFeeds",
+      "parameters": {
+        "name": "ETH/USD"
+      },
+      "responseProjection": {
+        "price": "/ETH~1USD/value",
+        "updatedAt": "/ETH~1USD/timestamp"
+      }
+    }
+  },
+  "lastError": "Payout submitted; testnet receipt not yet visible. Resume the same hash."
+}

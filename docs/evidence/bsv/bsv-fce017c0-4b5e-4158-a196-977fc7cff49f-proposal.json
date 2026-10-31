@@ -1,0 +1,71 @@
+{
+  "policy": {
+    "id": "bsv-fce017c0-4b5e-4158-a196-977fc7cff49f",
+    "network": "testnet",
+    "feed": "ETH/USD",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "sourceSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "sourceEndpoint": "https://airnode-nodary.fly.dev/",
+    "operation": "latestFeeds",
+    "thresholdCents": 223885,
+    "unit": "USD",
+    "decimals": 2,
+    "predicate": "gt",
+    "closesAt": 1793439252,
+    "observationStart": 1793439253,
+    "observationEnd": 1793440152,
+    "stakeSats": 1000,
+    "feeSats": 100,
+    "yesPub": "028be9fed59b3e7e5ce990242bcaa13c4e043b53d29f407877f1e22345b1371a7d",
+    "noPub": "03159a8449cb2696437f360edcb3fe6dcfcdd16d5417691ce0cd59d1c74cd0c7c8",
+    "userSide": "no",
+    "attestorPub": "02daae985705cec8c4030bef4cf9db11245e8ca76a17585575c69d141fcfc5097a",
+    "mode": "trusted-attestor-after-EVM-original-envelope",
+    "policyHash": "03bdc0eb2e340194ed785204bc1682f880b54dc7858d27b09b1a92027b50dcaf"
+  },
+  "status": "draft",
+  "llm": {
+    "model": "qwen3:4b",
+    "durationMs": 10388,
+    "suggestion": {
+      "templateId": "nodary-eth-window-v1",
+      "thresholdOffsetBps": -25,
+      "side": "no",
+      "explanation": "User provided price is 2244.47, which is below the current market price of 2245.00. This creates a negative bias for ETH/USD market. The template is set to -25 bps to indicate a downward pressure on the market."
+    },
+    "realCall": true
+  },
+  "initialObservation": {
+    "feedId": 0,
+    "feed": "ETH/USD",
+    "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "price": 2244.47,
+    "priceDisplay": "$2244.47",
+    "sourceAt": 1793439060,
+    "signedAt": 1793439062,
+    "receivedAt": 1793439062,
+    "envelope": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793439062",
+      "data": "{\"price\":2244.47,\"updatedAt\":1793439060742}",
+      "signature": "0xae5ca3c2b2c178eb6a1245420250da85f373967d975dd5794205e1c312a03e3c51c88c18fc3bd8be5d48304ffde98dd7bee4fdc99d8d3b12aa049f0e9cd44c881b"
+    },
+    "request": {
+      "operation": "latestFeeds",
+      "parameters": {
+        "name": "ETH/USD"
+      },
+      "responseProjection": {
+        "price": "/ETH~1USD/value",
+        "updatedAt": "/ETH~1USD/timestamp"
+      }
+    }
+  },
+  "deposits": [],
+  "events": [],
+  "mandate": null,
+  "approval": null,
+  "payout": null
+}

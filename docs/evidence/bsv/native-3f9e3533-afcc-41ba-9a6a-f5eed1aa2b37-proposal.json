@@ -1,0 +1,80 @@
+{
+  "id": "native-3f9e3533-afcc-41ba-9a6a-f5eed1aa2b37",
+  "status": "draft",
+  "network": "testnet",
+  "userSide": "yes",
+  "thresholdUsd": "2238.33",
+  "buyerPub": "02352dd1ecfb2726f8976f6609f0f53211227e8275acda56066db3a8f19f308c25",
+  "cpPub": "022c75284be4413655ea43a05a384989c5e0fa7571079822862da20bff2ed66754",
+  "policy": {
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "airnodePublicKey": "0x044e993579608baf1d542741675d347867f3d2c558d2e9bc3b74bac3583b569322eb85068fa43e4c5abd6db7dfa74999362bebf2322554918e1e13dec3cbc1a91a",
+    "expectedAirnodeAddress": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "validFrom": 1793440673,
+    "validTo": 1793440973,
+    "threshold18": "2238330000000000000000",
+    "collateralSatoshis": 2000,
+    "buyerStakeSatoshis": 1000,
+    "yesRecipientScript": "76a9146569d4b4fc5a59a7ec39c22bc230da6aa7fad6f988ac",
+    "noRecipientScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac",
+    "refundAfter": 1793441093,
+    "refundBuyerScript": "76a9146569d4b4fc5a59a7ec39c22bc230da6aa7fad6f988ac",
+    "refundCounterpartyScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac"
+  },
+  "policyHash": "938bb3c882477c6c525b1b83e15d52fb6089cf86098f652473ce134665c94181",
+  "createdAt": 1793440073,
+  "initialObservation": {
+    "feedId": 0,
+    "feed": "ETH/USD",
+    "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "price": 2243.935,
+    "priceDisplay": "$2243.93",
+    "sourceAt": 1793440062,
+    "signedAt": 1793440062,
+    "receivedAt": 1793440062,
+    "envelope": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793440062",
+      "data": "{\"price\":2243.935,\"updatedAt\":1793440062148}",
+      "signature": "0x30f5f671c1911c4d90f8d18da0a7f148abd632929801d4e56d32bf65c3e57a6f1301b1605cf186f3246095402bb0beadaeeb0dc3fef002dcb1dcf7cd872700451c"
+    },
+    "request": {
+      "operation": "latestFeeds",
+      "parameters": {
+        "name": "ETH/USD"
+      },
+      "responseProjection": {
+        "price": "/ETH~1USD/value",
+        "updatedAt": "/ETH~1USD/timestamp"
+      }
+    }
+  },
+  "llm": {
+    "model": "qwen3:4b",
+    "realCall": true,
+    "durationMs": 10799,
+    "suggestion": {
+      "templateId": "nodary-eth-window-v1",
+      "thresholdOffsetBps": -25,
+      "side": "yes",
+      "explanation": "ETH/USD price window created with threshold offset of -25 bps (2243.935 - 0.25 = 2243.685) to allow for slight price fluctuations while maintaining the target price. The window is set to open for the next reported price."
+    }
+  },
+  "events": [],
+  "mandate": {
+    "id": "native-3f9e3533-afcc-41ba-9a6a-f5eed1aa2b37",
+    "network": "testnet",
+    "buyerStakeSats": 1000,
+    "buyerPrepFeeCapSats": 500,
+    "cpStakeSats": 1000,
+    "deploymentFeeSponsorCapSats": 6000,
+    "claimFeeCapSats": 100,
+    "maxActions": 1,
+    "maxPayouts": 1,
+    "maxObservationCalls": 6,
+    "expiry": 1793441873
+  },
+  "observations": 0
+}

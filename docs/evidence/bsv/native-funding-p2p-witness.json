@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-31T10:06:15.844Z",
+  "network": "BSV testnet",
+  "host": "bsva-ovh-seed-testnet-us-1.bsvb.tech",
+  "port": 18333,
+  "magic": "f4e5f3f4",
+  "peer": {
+    "protocol": 70016,
+    "userAgent": "/Bitcoin SV:1.2.3/",
+    "height": 1766131
+  },
+  "peerMaxReceivePayload": 1000000000,
+  "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+  "bytes": 5012239,
+  "exactCanonical": true,
+  "rawSha256": "33885e7e04bc8024c1ab96941b5bc76b41b846a591b41c9d48be37c25cc353de",
+  "scope": "Read-only standard P2P GETDATA returned exact canonical transaction; mempool INV witness recorded separately"
+}

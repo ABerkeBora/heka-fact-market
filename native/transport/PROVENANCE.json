@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-31T10:11:43.459Z",
+  "scope": "safe outbound-only testnet public canonical transaction transport; no signing, keys, MEMPOOL or automatic retries",
+  "tests": {
+    "realFreshQuery": "RELAY_RETURNED_UNCONFIRMED",
+    "exactOriginalFundingBytes": true,
+    "validation": "PASS"
+  },
+  "sources": [
+    {
+      "url": "https://github.com/bitcoin-sv/bitcoin-sv/blob/master/src/chainparams.cpp#L1374",
+      "purpose": "testnet wire magic and port"
+    },
+    {
+      "url": "https://github.com/bsv-blockchain/go-wire/blob/master/msg_proto_conf.go",
+      "purpose": "negotiated receive capacity"
+    },
+    {
+      "url": "https://github.com/bitcoin-sv/bitcoin-sv/blob/master/src/net/net_processing.cpp#L1392",
+      "purpose": "relaycache GETDATA semantics"
+    }
+  ],
+  "files": [
+    {
+      "file": "testnet-p2p.cjs",
+      "bytes": 11080,
+      "sha256": "1c118b11d895967656a3e03a6b7a0582f289655576e80c4474515674b4f5197f"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4087,
+      "sha256": "2a1ec74efd7849f6c010b239a2e34ab7018918fc54c25eadc91b30eeab64544e"
+    },
+    {
+      "file": "package.json",
+      "bytes": 133,
+      "sha256": "645e68bbdf0e462b08fae1afd0c0ac46030a46b472ca56ea57823fc665593a81"
+    },
+    {
+      "file": "package-lock.json",
+      "bytes": 644,
+      "sha256": "c6f76acdd9497d9b8f535768772838bf2b94d9fcfd8891efbd92ceb116634cc9"
+    },
+    {
+      "file": "validation-results.json",
+      "bytes": 323,
+      "sha256": "18507862054357ffe2eea65f95bde957b8a7f75493470070d0538841d2d46eb9"
+    },
+    {
+      "file": "query-funding-result.json",
+      "bytes": 2996,
+      "sha256": "a39b5e924795e0ea8283f7f2e160fb6c0552de3c0043050beae4cca9f701eeed"
+    }
+  ]
+}

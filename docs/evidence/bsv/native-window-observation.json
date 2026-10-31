@@ -1,0 +1,28 @@
+{
+  "feedId": 0,
+  "feed": "ETH/USD",
+  "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+  "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+  "price": 2244.995,
+  "priceDisplay": "$2244.99",
+  "sourceAt": 1793440746,
+  "signedAt": 1793440747,
+  "receivedAt": 1793440747,
+  "envelope": {
+    "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "timestamp": "1793440747",
+    "data": "{\"price\":2244.995,\"updatedAt\":1793440746935}",
+    "signature": "0x04178d32718cc506c048ded786e81a280d510055c2fb4a9e372e8c37fada7bd6255d11d4a21e4c6a6e210c4bdab637804ec2971a1ceedbcbb2a850d8149010191b"
+  },
+  "request": {
+    "operation": "latestFeeds",
+    "parameters": {
+      "name": "ETH/USD"
+    },
+    "responseProjection": {
+      "price": "/ETH~1USD/value",
+      "updatedAt": "/ETH~1USD/timestamp"
+    }
+  }
+}

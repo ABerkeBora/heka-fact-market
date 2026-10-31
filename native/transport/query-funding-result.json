@@ -1,0 +1,123 @@
+{
+  "checkedAt": "2026-10-31T10:10:16.574Z",
+  "network": "BSV testnet",
+  "peer": {
+    "host": "bsva-ovh-seed-testnet-us-1.bsvb.tech",
+    "port": 18333,
+    "source": "https://arcade-v2-testnet-us-1.bsvblockchain.tech/health"
+  },
+  "magic": "f4e5f3f4",
+  "mode": "query",
+  "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+  "canonicalBytes": 5012239,
+  "canonicalSha256": "33885e7e04bc8024c1ab96941b5bc76b41b846a591b41c9d48be37c25cc353de",
+  "status": "RELAY_RETURNED_UNCONFIRMED",
+  "txSent": false,
+  "peerReturnedExactCanonical": true,
+  "peerAnnouncedCanonical": false,
+  "mined": false,
+  "events": [
+    {
+      "at": "2026-10-31T10:10:16.808Z",
+      "name": "connected"
+    },
+    {
+      "at": "2026-10-31T10:10:16.810Z",
+      "name": "sent",
+      "command": "version",
+      "bytes": 112
+    },
+    {
+      "at": "2026-10-31T10:10:16.949Z",
+      "name": "received",
+      "command": "version",
+      "bytes": 105
+    },
+    {
+      "at": "2026-10-31T10:10:16.950Z",
+      "name": "sent",
+      "command": "verack",
+      "bytes": 0
+    },
+    {
+      "at": "2026-10-31T10:10:16.950Z",
+      "name": "sent",
+      "command": "protoconf",
+      "bytes": 13
+    },
+    {
+      "at": "2026-10-31T10:10:16.950Z",
+      "name": "received",
+      "command": "verack",
+      "bytes": 0
+    },
+    {
+      "at": "2026-10-31T10:10:16.951Z",
+      "name": "received",
+      "command": "protoconf",
+      "bytes": 27
+    },
+    {
+      "at": "2026-10-31T10:10:16.951Z",
+      "name": "sent",
+      "command": "getdata",
+      "bytes": 37
+    },
+    {
+      "at": "2026-10-31T10:10:17.096Z",
+      "name": "received",
+      "command": "authch",
+      "bytes": 40
+    },
+    {
+      "at": "2026-10-31T10:10:17.097Z",
+      "name": "received",
+      "command": "sendheaders",
+      "bytes": 0
+    },
+    {
+      "at": "2026-10-31T10:10:17.097Z",
+      "name": "received",
+      "command": "sendcmpct",
+      "bytes": 9
+    },
+    {
+      "at": "2026-10-31T10:10:17.098Z",
+      "name": "received",
+      "command": "ping",
+      "bytes": 8
+    },
+    {
+      "at": "2026-10-31T10:10:17.098Z",
+      "name": "sent",
+      "command": "pong",
+      "bytes": 8
+    },
+    {
+      "at": "2026-10-31T10:10:17.098Z",
+      "name": "received",
+      "command": "addr",
+      "bytes": 31
+    },
+    {
+      "at": "2026-10-31T10:10:20.648Z",
+      "name": "received",
+      "command": "tx",
+      "bytes": 5012239
+    },
+    {
+      "at": "2026-10-31T10:10:20.653Z",
+      "name": "finished",
+      "status": "RELAY_RETURNED_UNCONFIRMED",
+      "reason": "Fresh standard GETDATA returned exact bytes; no MEMPOOL request or transaction sent on this connection"
+    }
+  ],
+  "peerVersion": {
+    "protocol": 70016,
+    "userAgent": "/Bitcoin SV:1.2.3/",
+    "height": 1766132
+  },
+  "peerReceiveLimit": 1000000000,
+  "reason": "Fresh standard GETDATA returned exact bytes; no MEMPOOL request or transaction sent on this connection",
+  "finishedAt": "2026-10-31T10:10:20.652Z"
+}

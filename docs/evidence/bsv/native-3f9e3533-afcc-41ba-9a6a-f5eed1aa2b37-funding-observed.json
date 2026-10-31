@@ -1,0 +1,10 @@
+{
+  "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+  "provider": "https://testnet.gorillanode.io/api/v1",
+  "http": 200,
+  "decodedTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+  "rawMatchesOriginal": true,
+  "responseBytes": 5012347,
+  "at": "2026-10-31T10:07:04.177Z",
+  "scope": "Exact raw transaction observed at independent node; raw-store presence alone is not validation/mining proof"
+}

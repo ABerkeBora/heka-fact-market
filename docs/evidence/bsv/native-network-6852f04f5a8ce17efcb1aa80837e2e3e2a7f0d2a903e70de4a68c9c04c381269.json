@@ -1,0 +1,8 @@
+{
+  "txid": "6852f04f5a8ce17efcb1aa80837e2e3e2a7f0d2a903e70de4a68c9c04c381269",
+  "status": "MINED",
+  "blockHeight": 1766130,
+  "blockHash": "00000000005c170381daf4cb7c68ae85a6e28290c0febfbbd2a49209cc27a2b3",
+  "at": "2026-10-31T09:52:23.931Z",
+  "provider": "https://arcade-v2-testnet-us-1.bsvblockchain.tech"
+}

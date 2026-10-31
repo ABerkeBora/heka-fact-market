@@ -2,7 +2,17 @@
 
 An agent turns a bounded question about ETH/USD into a fully collateralized test market. A pinned AirnodeHub response determines the winning side on Base Sepolia; the agent funds its position, submits the observation and collects the contract-enforced payout under one initial authorization.
 
-The V1 template is **Nodary ETH/USD, first accepted observation in a fixed window**; V2 adds goal-selected BTC/USD with an immutable recipe per market. This is an observation market, not a historical exact-time price or proof that a price stayed above a threshold throughout a period. PandaScore paid discovery is separately verified; a complete PandaScore prediction lifecycle is not implemented. BSV qualification is not claimed.
+The V1 template is **Nodary ETH/USD, first accepted observation in a fixed window**; V2 adds goal-selected BTC/USD with an immutable recipe per market. This is an observation market, not a historical exact-time price or proof that a price stayed above a threshold throughout a period. PandaScore paid discovery is separately verified; a complete PandaScore prediction lifecycle is not implemented. V1/V2 make no BSV qualification claim. The separate BSV-native branch is described below with its own evidence and pending gates.
+
+## BSV-native extension — isolated from V1/V2
+
+`codex/bsv` adds **http://localhost:3102/bsv/native**. A runtime local agent selects a bounded ETH/USD rule and a standard BSV Desktop testnet wallet signs a1000sat position mandate. A compiled BSV contract checks the **original API3 EIP-191 signature itself**, exact request, signed/source window, price predicate and complete fixed2000sat winner output. A timed branch returns1000/1000. No relayer or platform key can redirect its principal. There is no EVM verification dependency in this native contract.
+
+The contract and five actual-policy oracle checks pass the official SDK Script interpreter. The native contract funding is independently network-visible and unconfirmed. **The native oracle claim is blocked by the public nodes’ execution-operation/time policy; its separate fixed refund is signed but pending chain median time. No native payout or recovery payment is claimed.** Read [BSV_HANDOFF.md](BSV_HANDOFF.md) for the current pilot status, [TRACK_REQUIREMENTS_BSV.md](TRACK_REQUIREMENTS_BSV.md) for qualification, and [docs/BSV_SETUP.md](docs/BSV_SETUP.md) for a fresh clone. The original `/` and `/next` remain available with their own state, tokens and deployments.
+
+A separate relay experiment at `/bsv` completed real1000+1000sat deposits and a1900sat payout through a Base Sepolia original-envelope approval plus BSV attestation. Its server owns the attestor and test counterparty keys, so that topology is **not non-custodial qualification evidence**. It remains visible as explicit relay history; it is not presented as native API3 verification.
+
+BSV dependencies are pinned to SDK3.2.1, Wallet Toolbox2.14.9 and scryptlib2.2.6. Standard wallet actions hard-reject mainnet. Native requests/storage/deployment are isolated under `/api/bsv/native` and ignored `.local/bsv/native`. No keys, raw signing journals or wallet databases are published. The compressed public compiler artifact and readable contract sources are in [native/](native/README.md).
 
 ## V1 and V2 comparison
 

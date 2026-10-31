@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-31T10:04:48.669Z",
+  "url": "https://testnet.gorillanode.io/api/v1/tx/248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+  "http": 200,
+  "responseBytes": 5012347,
+  "responseSha256": "79443473931dd532ded4d44c4e6be6192d5aade2d092a5e80021598219456d28",
+  "decoder": "@bsv/sdk@3.2.1 Transaction.fromEF",
+  "decodedTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+  "canonicalBytes": 5012239,
+  "rawMatchesOriginal": true,
+  "scope": "Independent official discovered Gorilla DataHub returned exact canonical raw transaction, not confirmation or mining proof"
+}

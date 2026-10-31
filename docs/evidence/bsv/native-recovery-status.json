@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-31T10:12:09.518Z",
+  "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346",
+  "rawBytes": 2202,
+  "outcome": "void",
+  "outputs": [
+    {
+      "satoshis": 1000,
+      "lockingScript": "76a9146569d4b4fc5a59a7ec39c22bc230da6aa7fad6f988ac"
+    },
+    {
+      "satoshis": 1000,
+      "lockingScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac"
+    },
+    {
+      "satoshis": 800,
+      "lockingScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac"
+    }
+  ],
+  "scriptVerified": true,
+  "networkAccepted": false,
+  "status": "PENDING_CHAIN_MEDIAN_TIME",
+  "node": {
+    "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346",
+    "provider": "https://testnet.gorillanode.io/api/v1",
+    "http": 400,
+    "body": "Failed to process transaction: TX_LOCK_TIME (35): [ProcessTransaction][fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346] lock time (1793441093) as timestamp is not less than median block time (1793438874)",
+    "rawBytes": 2202,
+    "at": "2026-10-31T10:11:32.855Z"
+  },
+  "refundAfter": 1793441093,
+  "latestObservedMedianTime": 1793438874,
+  "originalClaimPreserved": "bd6f64e8583e49ce22b663520049059c3aa34414ad042c395d6da45b718ac2ff",
+  "scope": "Actual fixed refund Script VM passed; one real node submission rejected as not final, no recovery payment claimed"
+}

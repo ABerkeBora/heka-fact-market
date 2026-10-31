@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-31T09:33:03.331Z",
+  "scope": "strict local compiled JSON parser only; not a combined signed consumer",
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "actual signed Nodary bytes",
+      "accepted": true,
+      "expectedAccepted": true,
+      "scriptInterpreterRun": true,
+      "status": "PASS"
+    },
+    {
+      "name": "unsupported exponent",
+      "accepted": false,
+      "expectedAccepted": false,
+      "scriptInterpreterRun": true,
+      "status": "PASS"
+    },
+    {
+      "name": "negative price",
+      "accepted": false,
+      "expectedAccepted": false,
+      "scriptInterpreterRun": true,
+      "status": "PASS"
+    },
+    {
+      "name": "wrong source key",
+      "accepted": false,
+      "expectedAccepted": false,
+      "scriptInterpreterRun": true,
+      "status": "PASS"
+    },
+    {
+      "name": "extra JSON field",
+      "accepted": false,
+      "expectedAccepted": false,
+      "scriptInterpreterRun": true,
+      "status": "PASS"
+    }
+  ]
+}

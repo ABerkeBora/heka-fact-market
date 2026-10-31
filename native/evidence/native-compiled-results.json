@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-31T09:31:26.995Z",
+  "scope": "local compiled Script verification only; no wallet/deployment/payment",
+  "fixture": {
+    "address": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "timestamp": "1793438605",
+    "packedBytes": 107
+  },
+  "javascriptHashBinding": "PASS",
+  "cases": [
+    {
+      "name": "original pinned Airnode envelope",
+      "accepted": true,
+      "expectedAccepted": true,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 15143
+    },
+    {
+      "name": "edited exact data bytes",
+      "accepted": false,
+      "expectedAccepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 14530
+    },
+    {
+      "name": "wrong request hash",
+      "accepted": false,
+      "expectedAccepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 14795
+    },
+    {
+      "name": "wrong pinned signer",
+      "accepted": false,
+      "expectedAccepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 15248
+    },
+    {
+      "name": "authentic unchanged response outside pinned observation window",
+      "accepted": false,
+      "expectedAccepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 273
+    },
+    {
+      "name": "wrong signature scalar",
+      "accepted": false,
+      "expectedAccepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 16234
+    }
+  ],
+  "status": "PASS",
+  "compiledScriptTest": true
+}

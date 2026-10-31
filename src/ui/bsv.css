@@ -1,0 +1,377 @@
+.bsv-shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #f7f8f5;
+  color: #243327;
+  min-height: 100vh;
+  font-family: inherit;
+}
+.bsv-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid #dfe4dc;
+}
+.bsv-brand {
+  font-size: 23px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+.bsv-brand span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #58645a;
+  margin-top: 4px;
+}
+.bsv-top nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-size: 14px;
+}
+.bsv-top nav a {
+  color: inherit;
+}
+.bsv-top nav span {
+  color: #58645a;
+}
+.bsv-main {
+  padding: 34px 40px;
+}
+.bsv-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  gap: 24px;
+}
+.bsv-kicker {
+  font-size: 13px;
+  color: #58645a;
+  margin: 0 0 7px;
+}
+.bsv-title h1 {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 12px;
+  letter-spacing: -0.6px;
+}
+.bsv-title p:not(.bsv-kicker) {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0;
+  color: #58645a;
+}
+.bsv-shell button {
+  min-height: 44px;
+  border: 1px solid #bec8bc;
+  background: #fff;
+  color: #243327;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.bsv-shell button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.bsv-shell .bsv-primary {
+  background: #243327;
+  color: #fff;
+  border-color: #243327;
+}
+.bsv-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(300px, 1fr);
+  gap: 30px;
+}
+.bsv-work,
+.bsv-aside {
+  background: #fff;
+  border: 1px solid #dfe4dc;
+  padding: 25px;
+  border-radius: 5px;
+  min-width: 0;
+}
+.bsv-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+.bsv-shell h2 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 18px;
+}
+.bsv-section-heading h2 {
+  margin: 0;
+}
+.bsv-state {
+  font-size: 12px;
+  background: #edf1ea;
+  padding: 4px 7px;
+  white-space: nowrap;
+}
+.bsv-label {
+  display: block;
+  font-size: 13px;
+  color: #58645a;
+  margin-bottom: 8px;
+}
+.bsv-shell textarea {
+  display: block;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #bec8bc;
+  border-radius: 5px;
+  padding: 12px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  color: inherit;
+  min-height: 80px;
+  background: #fff;
+}
+.bsv-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 16px 0 20px;
+}
+.bsv-pool {
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr 1fr;
+  gap: 12px;
+  padding: 25px 0;
+  border-top: 1px solid #dfe4dc;
+  border-bottom: 1px solid #dfe4dc;
+  margin: 24px 0;
+}
+.bsv-pool span {
+  display: block;
+  font-size: 13px;
+  color: #58645a;
+  margin-bottom: 8px;
+}
+.bsv-pool strong {
+  font-size: 27px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: #287044;
+}
+.bsv-pool small {
+  font-size: 13px;
+  color: #58645a;
+  font-weight: 400;
+}
+.bsv-pool-rule {
+  padding-top: 28px;
+  color: #849181;
+}
+.bsv-total {
+  padding-left: 18px;
+  border-left: 1px solid #dfe4dc;
+}
+.bsv-total strong {
+  color: #243327;
+}
+.bsv-rules {
+  margin: 0;
+}
+.bsv-rules > div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf0eb;
+  line-height: 1.5;
+  font-size: 14px;
+}
+.bsv-rules dt {
+  color: #58645a;
+}
+.bsv-rules dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.bsv-aside .bsv-rules > div {
+  grid-template-columns: 115px minmax(0, 1fr);
+}
+.bsv-trust {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #dfe4dc;
+}
+.bsv-shell h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.bsv-trust p,
+.bsv-note,
+.bsv-foot {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #58645a;
+}
+.bsv-mono {
+  font-family: monospace;
+}
+.bsv-proof-toggle {
+  margin-top: 12px;
+}
+.bsv-proof {
+  max-height: 280px;
+  overflow: auto;
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #f7f8f5;
+  padding: 12px;
+}
+.bsv-error {
+  padding: 14px 18px;
+  background: #faf0ed;
+  border: 1px solid #e2b9ac;
+  color: #803a27;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.bsv-result {
+  padding: 18px 0;
+  border-top: 1px solid #dfe4dc;
+}
+.bsv-result a,
+.bsv-trail a {
+  font-size: 13px;
+  color: #287044;
+}
+.bsv-trail {
+  margin-top: 30px;
+}
+.bsv-trail ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bsv-trail li {
+  display: flex;
+  gap: 18px;
+  align-items: start;
+  padding: 13px 0;
+  border-top: 1px solid #dfe4dc;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.bsv-trail time {
+  font-variant-numeric: tabular-nums;
+  color: #58645a;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.bsv-trail li span {
+  flex: 1;
+}
+.bsv-trail > p {
+  font-size: 14px;
+  color: #58645a;
+}
+.bsv-foot {
+  padding-top: 24px;
+  border-top: 1px solid #dfe4dc;
+  margin-top: 28px;
+}
+@media (max-width: 1100px) {
+  .bsv-grid {
+    grid-template-columns: 1fr;
+  }
+  .bsv-aside .bsv-rules > div {
+    grid-template-columns: 150px 1fr;
+  }
+  .bsv-main {
+    padding: 26px;
+  }
+  .bsv-top {
+    padding: 20px 26px;
+  }
+}
+@media (max-width: 640px) {
+  .bsv-top {
+    padding: 18px;
+    display: block;
+  }
+  .bsv-top nav {
+    margin-top: 18px;
+    gap: 20px;
+  }
+  .bsv-main {
+    padding: 24px 16px;
+  }
+  .bsv-title {
+    align-items: start;
+  }
+  .bsv-title h1 {
+    font-size: 23px;
+  }
+  .bsv-title > button {
+    padding: 8px;
+  }
+  .bsv-work,
+  .bsv-aside {
+    padding: 18px;
+  }
+  .bsv-section-heading {
+    display: block;
+  }
+  .bsv-state {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .bsv-pool {
+    grid-template-columns: 1fr 18px 1fr;
+    gap: 8px;
+  }
+  .bsv-total {
+    grid-column: 1/-1;
+    border-left: 0;
+    padding: 15px 0 0;
+    border-top: 1px solid #dfe4dc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bsv-total span {
+    margin: 0;
+  }
+  .bsv-rules > div,
+  .bsv-aside .bsv-rules > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .bsv-trail li {
+    flex-wrap: wrap;
+    gap: 6px 14px;
+  }
+  .bsv-trail li span {
+    flex-basis: 65%;
+  }
+  .bsv-trail li a {
+    margin-left: 70px;
+  }
+  .bsv-shell button {
+    min-height: 44px;
+  }
+  .bsv-actions > * {
+    flex: 1 1 auto;
+  }
+}

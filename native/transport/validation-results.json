@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-31T10:10:47.906Z",
+  "status": "PASS",
+  "cases": [
+    "mainnet rejected",
+    "wrong frozen canonical hash rejected",
+    "nonstandard raw formatting rejected",
+    "public BEEF root and ancestor extraction matched",
+    "canonical and dependency order preserved"
+  ],
+  "networkCalls": false
+}

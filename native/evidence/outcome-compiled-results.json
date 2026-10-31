@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-10-31T09:38:27.930Z",
+  "scope": "local native consumer Script tests with dummy UTXO; no wallet or broadcast",
+  "cases": [
+    {
+      "name": "genuine signature selects YES and fixed 1000sat payout",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 15660,
+      "lockingBytes": 5011707,
+      "unlockingBytes": 2008,
+      "postSeparatorScriptBytes": 1708,
+      "preimageBytes": 1867
+    },
+    {
+      "name": "same genuine signature selects NO under higher immutable threshold",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 15922,
+      "lockingBytes": 5011707,
+      "unlockingBytes": 2008,
+      "postSeparatorScriptBytes": 1708,
+      "preimageBytes": 1867
+    },
+    {
+      "name": "valid signature cannot redirect payout",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 15732,
+      "lockingBytes": 5011707,
+      "unlockingBytes": 2008,
+      "postSeparatorScriptBytes": 1708,
+      "preimageBytes": 1867
+    },
+    {
+      "name": "valid signature cannot reduce protected payout",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 15774,
+      "lockingBytes": 5011707,
+      "unlockingBytes": 2008,
+      "postSeparatorScriptBytes": 1708,
+      "preimageBytes": 1867
+    },
+    {
+      "name": "refund before immutable timeout rejected",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 1744,
+      "lockingBytes": 5011707,
+      "unlockingBytes": 2008,
+      "postSeparatorScriptBytes": 1708,
+      "preimageBytes": 1867
+    },
+    {
+      "name": "mature refund restores fixed 500/500 outputs",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 1813,
+      "lockingBytes": 5011707,
+      "unlockingBytes": 2008,
+      "postSeparatorScriptBytes": 1708,
+      "preimageBytes": 1867
+    }
+  ],
+  "status": "PASS"
+}

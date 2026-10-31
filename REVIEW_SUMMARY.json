@@ -1,0 +1,33 @@
+{
+  "project": "fact-market",
+  "checkedAtUtc": "2026-10-31T03:51:13.591Z",
+  "v1": {
+    "url": "http://localhost:3102/",
+    "status": "READY",
+    "baselineCommit": "e8fb85c79eb8104f6530c77ecc50b6509672f59c"
+  },
+  "v2": {
+    "url": "http://localhost:3102/next",
+    "status": "READY",
+    "commit": "8c14e8f34bb13c323c0daaab04ba6e66cf083ba7"
+  },
+  "changes": [
+    "Gerçek LLM hedefe göre ETH/BTC seçiyor; bağımsız validator denetliyor.",
+    "Piyasa başına immutable request, recipe ve policy hash.",
+    "Ayrı V2 roller/deployment/journal; V1 ve eski kanıtlar korundu."
+  ],
+  "verified": [
+    "docs/evidence/v2/verification-public.json: iki payout, beş ret",
+    "docs/evidence/v2/ui-no-payment.json",
+    "docs/evidence/v2/chain-smoke.json: yeni V1 döngüsü dahil"
+  ],
+  "pending": [
+    "Video kaydı ve Devfolio gönderimi.",
+    "Harici müşteri pilotu yapılmadı; test rolleri kullanıldı."
+  ],
+  "recommendation": {
+    "version": "V2",
+    "reason": "İki varlığa uygun reçete seçimi somut değer katıyor; iki feed payout ve yanlış-feed reddi gerçek işlemlerle doğrulandı. V1 doğrulanmış yedektir.",
+    "demoRisk": "medium"
+  }
+}

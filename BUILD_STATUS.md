@@ -21,3 +21,5 @@ See MORNING_HANDOFF.md for commands, evidence, trust limits and prioritized next
 Last get_goal verification: 2026-10-31 03:57:18 CET — actual returned status ACTIVE.
 
 Publication/clean-install verification: public push3cf060d succeeded; GitHub author and committer both ABerkeBora. Actual public clean clone npm ci/build/8TS/29Soliditytests PASS. Production npm start serves3102; both completed jobs restored with unchanged transaction sets. Final delivery details in docs/evidence/BUILD_VERIFICATION.md. Only final documentation publication and Goal completion bookkeeping remain.
+
+V2 successor: implemented on codex/next while v1-baseline remains frozen. See NEXT_GOAL_STATUS.md, REVIEW_SUMMARY.json and MORNING_HANDOFF_V2.md for the current two-feed outcome and V1/V2 comparison. Both local routes remain accessible.

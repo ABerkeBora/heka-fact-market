@@ -91,7 +91,7 @@ Finish recheck: **2026-10-31 04:47 Europe/Berlin**, actual page reload, correct 
 | Preserve V1 and recheck core lifecycle | v1-baseline tag;17source files/3public evidence hashes/26old receipts/original market states preserved; one fresh V1 lifecycle complete | PASS |
 | Judge submission route | V2 Evidence UI passes exact envelope bytes to deployed verifier; public ABI docs/FactMarketNext.abi.json; public historical replay script | PASS |
 | Reviewable UI and reproducible build | Desktop1440/tablet768/phone390, actual UI valid draft and unsupported-asset rejection;15TS+64Solidity tests; productionbuild | PASS |
-| Public V2 source/setup | Same repo codex/next; publication/clean-clone verification recorded at delivery | PENDING final push verification |
+| Public V2 source/setup | Same repo codex/next; publication/clean-clone verification recorded at delivery | PASS public code8c14e8f; GitHub author/committer ABerkeBora; clean public clone npm ci/build/15TS+64Soliditytests passed |
 | Video/Devfolio | Updated150s outline; no video recording/upload or competition submission performed | PENDING team action |
 
 Public audit explicitly omits private-journal checks rather than counting them as passes; the separate preserved-workspace audit verified those checks. Original V1 evidence files were not overwritten by new V2 or regression evidence. V1 journal intentionally contains one additional V1 regression job, not a V2 job. Nodary calls were free; no V2 x402 fee is claimed. No external customer pilot was performed.

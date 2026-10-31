@@ -11,6 +11,8 @@ The V1 template is **Nodary ETH/USD, first accepted observation in a fixed windo
 | V1 baseline | http://localhost:3102/ | Fixed ETH/USD request | `.local/state.json`, original factory and roles |
 | V2 | http://localhost:3102/next | Model selects ETH/USD or BTC/USD; each market pins its complete recipe | `.local/next/state.json`, new factory/token and disjoint roles |
 
+Sources: [V1 tag](https://github.com/ABerkeBora/heka-fact-market/tree/v1-baseline) · [V2 branch](https://github.com/ABerkeBora/heka-fact-market/tree/codex/next).
+
 The published `v1-baseline` tag preserves working commit `e8fb85c`. V2 lives on `codex/next`; the same UI and executor primitives are shared, while API/storage/deployment/payment namespaces are separate. See [BASELINE_V1.md](BASELINE_V1.md) and [MORNING_HANDOFF_V2.md](MORNING_HANDOFF_V2.md).
 
 V2 recognizes one explicit supported asset in the goal, receives real signed observations for both feeds, and lets the local model select an allowlisted feed/side/offset. An independent lexical validator rejects unsupported, ambiguous or model-mismatched assets. It is deliberately not a general asset classifier. The deployed contract derives the canonical request hash itself from feed0(ETH) or feed1(BTC), then fixes source, exact operation/parameters/projection, signer, unit, predicate and observation/refund semantics in `recipeHash`; threshold/stake/chain/factory/token/windows are bound in `policyHash`. The same proposal supplies the UI and transaction arguments. A different registered feed's authentic response cannot settle the market.

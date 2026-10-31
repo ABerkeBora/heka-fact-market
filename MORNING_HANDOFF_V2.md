@@ -5,8 +5,9 @@
 ## Kısa karşılaştırma ve öneri
 
 - **V1:** http://localhost:3102/ — sabit ETH/USD. `v1-baseline` tag'i, commit `e8fb85c79eb8104f6530c77ecc50b6509672f59c`, doğrulanmış yedek sürüm.
-- **V2:** http://localhost:3102/next — model hedefe göre ETH/USD veya BTC/USD seçer; her piyasa kendi immutable veri reçetesini zincirde sabitler. Aynı repo, `codex/next` branch.
+- **V2:** http://localhost:3102/next — model hedefe göre ETH/USD veya BTC/USD seçer; her piyasa kendi immutable veri reçetesini zincirde sabitler. Aynı repo, `codex/next` branch; doğrulanmış kod commit `8c14e8f34bb13c323c0daaab04ba6e66cf083ba7`.
 - **Öneri: V2.** İki varlıkta gerçek payout ve iki yönde yanlış feed reddi var; müşteri değerini kaynak seçimi ve değiştirilemez çözüm kuralı birlikte açıklıyor. V1'in yeni regresyonu da geçti. Demo riski **orta**: yeni canlı senaryo için model/veri erişimi ve gözlem penceresi gerekir; tamamlanmış kayıtlarla başlanabilir.
+- Değişenler: hedefe göre iki feed, zincirde sabit recipe/policy, ayrı V2 ödeme/state.
 - Harici müşteri pilotu yapılmadı; kanıtlar yerel test rolleriyle gerçekleşti. Video kaydı ve Devfolio gönderimi bekliyor.
 
 ## Açma ve sunma
@@ -21,7 +22,7 @@ V2'de BTC sorusu yaz → Draft market → kaynak, request/recipe/policy hash'ler
 - `docs/evidence/v2/chain-smoke.json`: iki gerçek LLM/fund/settle/claim, dört zorunlu tamper ve karşı yönde wrong-feed, yeni V1 lifecycle. Her iki V2 rezerv0; her payout2FMCT.
 - `verification.json`: özel workspace retention audit PASS. `verification-public.json`: private dosya gerektirmeyen zincir/kaynak audit PASS; özel journal kontrolleri açıkça not-run-public.
 - `ui-no-payment.json`: gerçek UI SOL reddinde job/model-call stamp/üç rol nonce ve bakiyesi değişmedi. Fixture başarı diye sunulmadı.
--15TypeScript ve64Solidity testi PASS; her core reserve fuzz256. Productionbuild PASS; gerçek browser1440/768/390, exact recipe drawer ve V1/V2 linkleri kontrol edildi. V1 eski17source/3public evidence hash/26receipt korunur; yalnız ayrı yeni V1 regresyon job'u eklendi.
+-15TypeScript ve64Solidity testi PASS; her core reserve fuzz256. Productionbuild PASS; public branch temiz clone üzerinde npm ci/build/15TS+64Soliditytests de PASS; gerçek browser1440/768/390, exact recipe drawer ve V1/V2 linkleri kontrol edildi. V1 eski17source/3public evidence hash/26receipt korunur; yalnız ayrı yeni V1 regresyon job'u eklendi.
 - Tekrar: `npx tsx scripts/next-verify.ts --public`. Özel journal denetimi yalnız bu korunmuş workspace'te `npx tsx scripts/next-verify.ts`.
 
 ## İzolasyon ve sınırlar

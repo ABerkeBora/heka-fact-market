@@ -39,7 +39,7 @@ VeriFi Market is a pay-on-verified-data rail for agents: money moves only when a
 
 ## Demo limits (live judging)
 
-- The API3 tamper test runs live with `npx tsx scripts/judge-next.ts` — no wallet, no gas.
+- The API3 tamper test runs live at http://localhost:3102/judge.html (one button, in the browser) or with `npx tsx scripts/judge-next.ts` — no wallet, no gas.
 - This installation's V2 test roles have used their one-time FMCT faucet, so no new live V2 market can be funded here; a fresh install creates its own roles with `npm run next:setup`. Recorded lifecycles are shown instead.
 - New BSV pools need the operator's explicit go-ahead and a funded fee sponsor ([runbook](docs/BSV_FAST_RUNBOOK.md)); the recorded pools are shown.
 - New model proposals need local Ollama with `qwen3:4b`; recorded model calls are in `docs/evidence/v2/agent-runs.json`.

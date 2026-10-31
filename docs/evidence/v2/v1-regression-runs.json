@@ -1,0 +1,1162 @@
+{
+  "generatedAt": "2026-10-31T03:40:02.855Z",
+  "jobs": [
+    {
+      "id": "6ac47a6a-27fb-44bb-b1b0-33e361ee741f",
+      "proposalId": "939f28dc-4c04-45bf-b240-729e41ae3b6c",
+      "proposal": {
+        "id": "939f28dc-4c04-45bf-b240-729e41ae3b6c",
+        "title": "Will ETH/USD be above $2240.38?",
+        "templateId": "nodary-eth-window-v1",
+        "feed": "ETH/USD",
+        "thresholdDisplay": "$2240.38",
+        "thresholdUsd": "2240.38",
+        "threshold18": "2240380000000000000000",
+        "side": "yes",
+        "stakeUnits": "1000000",
+        "stakeDisplay": "1 FMCT",
+        "closesAt": 1793414885,
+        "observationStart": 1793414886,
+        "observationEnd": 1793415186,
+        "expiresAt": 1793414825,
+        "signer": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "explanation": "Bounded ETH/USD market with fixed window: 25 bps below current price (2245.995 - 0.25 = 2245.745) as the trigger. Source rule ensures fresh observation after trading closes. No profit guarantee.",
+        "observation": {
+          "envelope": {
+            "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+            "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+            "timestamp": "1793414746",
+            "data": "{\"price\":2245.995,\"updatedAt\":1793414746313}",
+            "signature": "0x17a80f46f68c814fd6d10738b3a963db426edbe4a0ccce3b7659d0b724ff63ce021eef9d3576fd12f9a8452735e1ae43937d9a11b847a063db01211f403150e41b"
+          },
+          "price": 2245.995,
+          "priceDisplay": "$2245.99",
+          "sourceAt": 1793414746,
+          "signedAt": 1793414746,
+          "request": {
+            "operation": "latestFeeds",
+            "parameters": {
+              "name": "ETH/USD"
+            },
+            "responseProjection": {
+              "price": "/ETH~1USD/value",
+              "updatedAt": "/ETH~1USD/timestamp"
+            }
+          },
+          "receivedAt": 1793414746
+        },
+        "createdAt": 1793414765,
+        "llm": {
+          "model": "qwen3:4b",
+          "calledAt": 1793414765,
+          "durationMs": 18627,
+          "structured": true,
+          "validated": true,
+          "suggestion": {
+            "templateId": "nodary-eth-window-v1",
+            "thresholdOffsetBps": -25,
+            "side": "yes",
+            "explanation": "Bounded ETH/USD market with fixed window: 25 bps below current price (2245.995 - 0.25 = 2245.745) as the trigger. Source rule ensures fresh observation after trading closes. No profit guarantee."
+          }
+        },
+        "mandatePreview": {
+          "network": "Base Sepolia · 84532",
+          "collateralAsset": "FMCT · 0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+          "collateralAddress": "0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+          "counterparty": "0xf5AA2861C8ef890d965795b1Cb4a3CD5DDf7c3E6",
+          "executor": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+          "chainId": 84532,
+          "perActionStakeUnits": "1000000",
+          "totalStakeUnits": "1000000",
+          "maxActions": 1,
+          "gasCapWei": "200000000000000",
+          "perTransactionGasCapWei": "50000000000000",
+          "apiFeeCapUnits": "0",
+          "expiry": 1793415786,
+          "beneficiary": "0xd5C01122FFE6F667b9dfCfd4Dbe941489aF09F0F",
+          "recipient": "0xfbacf475b8a6729d97db83a06b07ff303a243614",
+          "enforcement": "Stake, total spend, action count, expiry and duplicate intent are enforced on chain. Gas caps and allowed tools are enforced by the local executor."
+        }
+      },
+      "status": "complete",
+      "stage": "Resolved and collected",
+      "mandateId": "0x8b5a66299a11ea7f106b9df0565de5199db9570e66c0974e51fefe687a36a40f",
+      "intentId": "0xb1c66a9a1371ea561b0203947adbc14037de9daab5023e876699e79db757376f",
+      "transactions": [
+        {
+          "label": "buyer:faucet",
+          "role": "buyer",
+          "hash": "0x193589de2290eff542fc93709d66bb98799f9dfecd57d74b46befc520a1d100a",
+          "status": "confirmed",
+          "maxGasWei": "773833001500",
+          "estimatedL1FeeWei": "750",
+          "url": "https://sepolia.basescan.org/tx/0x193589de2290eff542fc93709d66bb98799f9dfecd57d74b46befc520a1d100a",
+          "l2GasPaidWei": "539958000000",
+          "l1FeePaidWei": "750",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "539958000750",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "buyer:mandate",
+          "role": "buyer",
+          "hash": "0x17c575a7f69dd2197f099725d5e1cf44c32e7b3933a04301f3c70c979e6cbf86",
+          "status": "confirmed",
+          "maxGasWei": "823162001658",
+          "estimatedL1FeeWei": "829",
+          "url": "https://sepolia.basescan.org/tx/0x17c575a7f69dd2197f099725d5e1cf44c32e7b3933a04301f3c70c979e6cbf86",
+          "l2GasPaidWei": "575052000000",
+          "l1FeePaidWei": "810",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "575052000810",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "buyer:approve",
+          "role": "buyer",
+          "hash": "0x374cf30eb385d9859dd4e1f20d04e5ddb9dc6e1280631dc2342ec6102b7566a9",
+          "status": "confirmed",
+          "maxGasWei": "400572001500",
+          "estimatedL1FeeWei": "750",
+          "url": "https://sepolia.basescan.org/tx/0x374cf30eb385d9859dd4e1f20d04e5ddb9dc6e1280631dc2342ec6102b7566a9",
+          "l2GasPaidWei": "276690000000",
+          "l1FeePaidWei": "750",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "276690000750",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:faucet",
+          "role": "counterparty",
+          "hash": "0x533f7c864c1fa4ac5aa0fb1e341f1593a22dc560a17c858d3eb01d32ebc990be",
+          "status": "confirmed",
+          "maxGasWei": "629626001500",
+          "estimatedL1FeeWei": "750",
+          "url": "https://sepolia.basescan.org/tx/0x533f7c864c1fa4ac5aa0fb1e341f1593a22dc560a17c858d3eb01d32ebc990be",
+          "l2GasPaidWei": "437358000000",
+          "l1FeePaidWei": "750",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "437358000750",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:mandate",
+          "role": "counterparty",
+          "hash": "0x17f426dc114a69aad1f7c9a1e428357a94d8d9b0dd0b4c20569e61239ba07988",
+          "status": "confirmed",
+          "maxGasWei": "823162001658",
+          "estimatedL1FeeWei": "829",
+          "url": "https://sepolia.basescan.org/tx/0x17f426dc114a69aad1f7c9a1e428357a94d8d9b0dd0b4c20569e61239ba07988",
+          "l2GasPaidWei": "575052000000",
+          "l1FeePaidWei": "810",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "575052000810",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:approve",
+          "role": "counterparty",
+          "hash": "0x0dd7129a4ab04ef203e10f51e8694ff48dc3805970b06ba77edc7c97c8aaf2c3",
+          "status": "confirmed",
+          "maxGasWei": "400572001500",
+          "estimatedL1FeeWei": "750",
+          "url": "https://sepolia.basescan.org/tx/0x0dd7129a4ab04ef203e10f51e8694ff48dc3805970b06ba77edc7c97c8aaf2c3",
+          "l2GasPaidWei": "276690000000",
+          "l1FeePaidWei": "750",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "276690000750",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "create-market",
+          "role": "deployer",
+          "hash": "0xaa82240cf7c888ffbdad5a9f9d6e64ab190fa6e22e178ac700a1d1356538540f",
+          "status": "confirmed",
+          "maxGasWei": "1174331001570",
+          "estimatedL1FeeWei": "785",
+          "url": "https://sepolia.basescan.org/tx/0xaa82240cf7c888ffbdad5a9f9d6e64ab190fa6e22e178ac700a1d1356538540f",
+          "l2GasPaidWei": "824898000000",
+          "l1FeePaidWei": "766",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "824898000766",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "agent:fund",
+          "role": "buyer",
+          "hash": "0x149cf9ecb7fd9a7abf70bd6bb3fe15c9e5db637a1f3059f06470857e0d70278a",
+          "status": "confirmed",
+          "maxGasWei": "1735297001870",
+          "estimatedL1FeeWei": "935",
+          "url": "https://sepolia.basescan.org/tx/0x149cf9ecb7fd9a7abf70bd6bb3fe15c9e5db637a1f3059f06470857e0d70278a",
+          "l2GasPaidWei": "1173144000000",
+          "l1FeePaidWei": "923",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "1173144000923",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:fund",
+          "role": "counterparty",
+          "hash": "0xbac157ce7d71032d311d8ef1f97f0e200a0962072e24e560a5b2e20133add1ac",
+          "status": "confirmed",
+          "maxGasWei": "1312028001870",
+          "estimatedL1FeeWei": "935",
+          "url": "https://sepolia.basescan.org/tx/0xbac157ce7d71032d311d8ef1f97f0e200a0962072e24e560a5b2e20133add1ac",
+          "l2GasPaidWei": "865212000000",
+          "l1FeePaidWei": "923",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "865212000923",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "tamper:edited-value",
+          "role": "deployer",
+          "hash": "0x2baffeffef08ff45528a75ae5af43120c1968423624c1e5367af1cef2c5e009e",
+          "status": "reverted",
+          "url": "https://sepolia.basescan.org/tx/0x2baffeffef08ff45528a75ae5af43120c1968423624c1e5367af1cef2c5e009e",
+          "gasPaidWei": "231228001564",
+          "l2GasPaidWei": "231228000000",
+          "l1FeePaidWei": "1564",
+          "operatorFeePaidWei": "0",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "tamper:stale-real-response",
+          "role": "deployer",
+          "hash": "0x859afce5089b59abc90698839c480b56f2245a14dd614be7480d2c1a6e158827",
+          "status": "reverted",
+          "url": "https://sepolia.basescan.org/tx/0x859afce5089b59abc90698839c480b56f2245a14dd614be7480d2c1a6e158827",
+          "gasPaidWei": "234630001564",
+          "l2GasPaidWei": "234630000000",
+          "l1FeePaidWei": "1564",
+          "operatorFeePaidWei": "0",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "tamper:different-request",
+          "role": "deployer",
+          "hash": "0xf51d518767d914f80cd4f8f3c9f1fd49bb1e65c9832d41e710cf47030183e052",
+          "status": "reverted",
+          "url": "https://sepolia.basescan.org/tx/0xf51d518767d914f80cd4f8f3c9f1fd49bb1e65c9832d41e710cf47030183e052",
+          "gasPaidWei": "231300001571",
+          "l2GasPaidWei": "231300000000",
+          "l1FeePaidWei": "1571",
+          "operatorFeePaidWei": "0",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "tamper:wrong-signer",
+          "role": "deployer",
+          "hash": "0x39ec44ddac564def8437155c470135301f42d5e104cf0cf15c9a5d10f39dca15",
+          "status": "reverted",
+          "url": "https://sepolia.basescan.org/tx/0x39ec44ddac564def8437155c470135301f42d5e104cf0cf15c9a5d10f39dca15",
+          "gasPaidWei": "231228001564",
+          "l2GasPaidWei": "231228000000",
+          "l1FeePaidWei": "1564",
+          "operatorFeePaidWei": "0",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "tamper:duplicate-intent",
+          "role": "deployer",
+          "hash": "0x81406d90f6aed6d5da6ff751596756a16c09631472c9638b244a41fae1353a5a",
+          "status": "reverted",
+          "url": "https://sepolia.basescan.org/tx/0x81406d90f6aed6d5da6ff751596756a16c09631472c9638b244a41fae1353a5a",
+          "gasPaidWei": "220110001004",
+          "l2GasPaidWei": "220110000000",
+          "l1FeePaidWei": "1004",
+          "operatorFeePaidWei": "0",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "settle-market",
+          "role": "deployer",
+          "hash": "0x24dd82d6f81410ed9f6a93e0d25fce968756434ebe940b70e23199672ec3d04f",
+          "status": "confirmed",
+          "maxGasWei": "1257008002950",
+          "estimatedL1FeeWei": "1475",
+          "url": "https://sepolia.basescan.org/tx/0x24dd82d6f81410ed9f6a93e0d25fce968756434ebe940b70e23199672ec3d04f",
+          "l2GasPaidWei": "883722000000",
+          "l1FeePaidWei": "1438",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "883722001438",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "buyer:claim",
+          "role": "deployer",
+          "hash": "0x8b67fa836569bcb0f3ddd50e5679b9b8090b036485e8bb3b77fae09afd1793c5",
+          "status": "confirmed",
+          "maxGasWei": "762640001500",
+          "estimatedL1FeeWei": "750",
+          "url": "https://sepolia.basescan.org/tx/0x8b67fa836569bcb0f3ddd50e5679b9b8090b036485e8bb3b77fae09afd1793c5",
+          "l2GasPaidWei": "419928000000",
+          "l1FeePaidWei": "750",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "419928000750",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "tamper:duplicate-buyer",
+          "role": "buyer",
+          "hash": "0xf0889237cb829c51ff1a61db00b2c188a174482c11fd8c4066219369a9e39017",
+          "status": "reverted",
+          "url": "https://sepolia.basescan.org/tx/0xf0889237cb829c51ff1a61db00b2c188a174482c11fd8c4066219369a9e39017",
+          "gasPaidWei": "193758001006",
+          "l2GasPaidWei": "193758000000",
+          "l1FeePaidWei": "1006",
+          "operatorFeePaidWei": "0",
+          "feeAccounting": "complete"
+        }
+      ],
+      "events": [
+        {
+          "at": 1793414765,
+          "type": "authorized",
+          "message": "Initial bounded mandate accepted. Agent may fund one fixed test position and settle/claim under its pinned policy."
+        },
+        {
+          "at": 1793414767,
+          "type": "submitted",
+          "message": "buyer:faucet: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414768,
+          "type": "confirmed",
+          "message": "buyer:faucet: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414770,
+          "type": "submitted",
+          "message": "buyer:mandate: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414770,
+          "type": "confirmed",
+          "message": "buyer:mandate: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414772,
+          "type": "submitted",
+          "message": "buyer:approve: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414773,
+          "type": "confirmed",
+          "message": "buyer:approve: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414774,
+          "type": "submitted",
+          "message": "counterparty:faucet: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414775,
+          "type": "confirmed",
+          "message": "counterparty:faucet: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414777,
+          "type": "submitted",
+          "message": "counterparty:mandate: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414778,
+          "type": "confirmed",
+          "message": "counterparty:mandate: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414779,
+          "type": "submitted",
+          "message": "counterparty:approve: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414780,
+          "type": "confirmed",
+          "message": "counterparty:approve: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414782,
+          "type": "submitted",
+          "message": "create-market: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414783,
+          "type": "confirmed",
+          "message": "create-market: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414785,
+          "type": "submitted",
+          "message": "agent:fund: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414785,
+          "type": "confirmed",
+          "message": "agent:fund: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414787,
+          "type": "submitted",
+          "message": "counterparty:fund: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414788,
+          "type": "confirmed",
+          "message": "counterparty:fund: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414908,
+          "type": "submitted",
+          "message": "settle-market: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414909,
+          "type": "confirmed",
+          "message": "settle-market: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414910,
+          "type": "submitted",
+          "message": "buyer:claim: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793414911,
+          "type": "confirmed",
+          "message": "buyer:claim: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793414911,
+          "type": "delivered",
+          "message": "Resolved and collected"
+        }
+      ],
+      "createdAt": 1793414765,
+      "smokeRun": true,
+      "marketId": "1",
+      "tamperValidated": true,
+      "settlementObservation": {
+        "envelope": {
+          "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+          "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+          "timestamp": "1793414906",
+          "data": "{\"price\":2245.685,\"updatedAt\":1793414906399}",
+          "signature": "0xd915f7685b10f6538048e6b5d69fb7865b31b81d1a0ed3b66745f646dc5b77772f3ce12fc9b6c3c701e02349aa9d86181f82b3d9298badf3867a57b0a99fb6641b"
+        },
+        "price": 2245.685,
+        "priceDisplay": "$2245.68",
+        "sourceAt": 1793414906,
+        "signedAt": 1793414906,
+        "request": {
+          "operation": "latestFeeds",
+          "parameters": {
+            "name": "ETH/USD"
+          },
+          "responseProjection": {
+            "price": "/ETH~1USD/value",
+            "updatedAt": "/ETH~1USD/timestamp"
+          }
+        },
+        "receivedAt": 1793414906
+      }
+    },
+    {
+      "id": "70c9543a-0208-49e6-b068-8444af58e8b5",
+      "proposalId": "9031e451-d01e-44a3-848b-f2990000360d",
+      "proposal": {
+        "id": "9031e451-d01e-44a3-848b-f2990000360d",
+        "title": "Will ETH/USD be above $2239.63?",
+        "templateId": "nodary-eth-window-v1",
+        "feed": "ETH/USD",
+        "thresholdDisplay": "$2239.63",
+        "thresholdUsd": "2239.63",
+        "threshold18": "2239630000000000000000",
+        "side": "yes",
+        "stakeUnits": "1000000",
+        "stakeDisplay": "1 FMCT",
+        "closesAt": 1793415115,
+        "observationStart": 1793415116,
+        "observationEnd": 1793415416,
+        "expiresAt": 1793415055,
+        "signer": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "explanation": "ETH/USD price at 2245.245 (Nodary) with 25 bps offset below current price for yes side. Fixed window policy ensures fresh data after trading closes.",
+        "observation": {
+          "envelope": {
+            "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+            "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+            "timestamp": "1793414963",
+            "data": "{\"price\":2245.245,\"updatedAt\":1793414962911}",
+            "signature": "0xd0d53963ae6a38e222567c7ab824617f06db9500357e91ca3096b09420642af42f654c29ae7521646f47ab342a109fbdc1398f6c6e35ed3c203f740ef48b9c401b"
+          },
+          "price": 2245.245,
+          "priceDisplay": "$2245.24",
+          "sourceAt": 1793414962,
+          "signedAt": 1793414963,
+          "request": {
+            "operation": "latestFeeds",
+            "parameters": {
+              "name": "ETH/USD"
+            },
+            "responseProjection": {
+              "price": "/ETH~1USD/value",
+              "updatedAt": "/ETH~1USD/timestamp"
+            }
+          },
+          "receivedAt": 1793414964
+        },
+        "createdAt": 1793414995,
+        "llm": {
+          "model": "qwen3:4b",
+          "calledAt": 1793414995,
+          "durationMs": 30837,
+          "structured": true,
+          "validated": true,
+          "suggestion": {
+            "templateId": "nodary-eth-window-v1",
+            "thresholdOffsetBps": -25,
+            "side": "yes",
+            "explanation": "ETH/USD price at 2245.245 (Nodary) with 25 bps offset below current price for yes side. Fixed window policy ensures fresh data after trading closes."
+          }
+        },
+        "mandatePreview": {
+          "network": "Base Sepolia · 84532",
+          "collateralAsset": "FMCT · 0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+          "collateralAddress": "0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+          "counterparty": "0xf5AA2861C8ef890d965795b1Cb4a3CD5DDf7c3E6",
+          "executor": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+          "chainId": 84532,
+          "perActionStakeUnits": "1000000",
+          "totalStakeUnits": "1000000",
+          "maxActions": 1,
+          "gasCapWei": "200000000000000",
+          "perTransactionGasCapWei": "50000000000000",
+          "apiFeeCapUnits": "0",
+          "expiry": 1793416016,
+          "beneficiary": "0xd5C01122FFE6F667b9dfCfd4Dbe941489aF09F0F",
+          "recipient": "0xfbacf475b8a6729d97db83a06b07ff303a243614",
+          "enforcement": "Stake, total spend, action count, expiry and duplicate intent are enforced on chain. Gas caps and allowed tools are enforced by the local executor."
+        }
+      },
+      "status": "complete",
+      "stage": "Resolved and collected",
+      "mandateId": "0xdcba7222920101e678fd0659c208e493e247c8e08eebd6f9a94bde126bf87571",
+      "intentId": "0x4ea8a2ef5311ab6119f06f46b30f8fbb50d7947824021a91015043b83b506636",
+      "transactions": [
+        {
+          "label": "buyer:mandate",
+          "role": "buyer",
+          "hash": "0xf615a0164c39a92361a4378caf2abdcf5c5304d9da329c6481b5cd173ed3335d",
+          "status": "confirmed",
+          "maxGasWei": "823162001950",
+          "estimatedL1FeeWei": "975",
+          "url": "https://sepolia.basescan.org/tx/0xf615a0164c39a92361a4378caf2abdcf5c5304d9da329c6481b5cd173ed3335d",
+          "l2GasPaidWei": "575052000000",
+          "l1FeePaidWei": "952",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "575052000952",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "buyer:approve",
+          "role": "buyer",
+          "hash": "0x1d71e47ccf1e838f6791f28208af367881c0a7e2f482bef6be3ebc5700c857ec",
+          "status": "confirmed",
+          "maxGasWei": "400572001764",
+          "estimatedL1FeeWei": "882",
+          "url": "https://sepolia.basescan.org/tx/0x1d71e47ccf1e838f6791f28208af367881c0a7e2f482bef6be3ebc5700c857ec",
+          "l2GasPaidWei": "276690000000",
+          "l1FeePaidWei": "882",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "276690000882",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:mandate",
+          "role": "counterparty",
+          "hash": "0xa5af5cbc4f0ee3387d7a8c78b185ff0dc75e81844c9a3ebb6fc00e12cf8d0064",
+          "status": "confirmed",
+          "maxGasWei": "823162001950",
+          "estimatedL1FeeWei": "975",
+          "url": "https://sepolia.basescan.org/tx/0xa5af5cbc4f0ee3387d7a8c78b185ff0dc75e81844c9a3ebb6fc00e12cf8d0064",
+          "l2GasPaidWei": "575052000000",
+          "l1FeePaidWei": "952",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "575052000952",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:approve",
+          "role": "counterparty",
+          "hash": "0x2e8cc1b6404e4c30ee11b8f40beec3002decfa57cc866a72beca13eb499c7d79",
+          "status": "confirmed",
+          "maxGasWei": "400572001900",
+          "estimatedL1FeeWei": "950",
+          "url": "https://sepolia.basescan.org/tx/0x2e8cc1b6404e4c30ee11b8f40beec3002decfa57cc866a72beca13eb499c7d79",
+          "l2GasPaidWei": "276690000000",
+          "l1FeePaidWei": "950",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "276690000950",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "create-market",
+          "role": "deployer",
+          "hash": "0x7f95023ce5f2d5e9648b1b6030505af76bba8e18385e3fe089ba3b5f475a5c87",
+          "status": "confirmed",
+          "maxGasWei": "1030124001988",
+          "estimatedL1FeeWei": "994",
+          "url": "https://sepolia.basescan.org/tx/0x7f95023ce5f2d5e9648b1b6030505af76bba8e18385e3fe089ba3b5f475a5c87",
+          "l2GasPaidWei": "722298000000",
+          "l1FeePaidWei": "970",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "722298000970",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "agent:fund",
+          "role": "buyer",
+          "hash": "0x8c9ffa7f78acf008293947117bd9e92c4f7d9014d28b088712b2496179cb95c1",
+          "status": "confirmed",
+          "maxGasWei": "1735297002370",
+          "estimatedL1FeeWei": "1185",
+          "url": "https://sepolia.basescan.org/tx/0x8c9ffa7f78acf008293947117bd9e92c4f7d9014d28b088712b2496179cb95c1",
+          "l2GasPaidWei": "1173151625436",
+          "l1FeePaidWei": "1169",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "1173151626605",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:fund",
+          "role": "counterparty",
+          "hash": "0x2ede30752931dcc0edce71a8fd9a94e317589d54a7b1a52ffd32cb4b17e49cbb",
+          "status": "confirmed",
+          "maxGasWei": "1312028002370",
+          "estimatedL1FeeWei": "1185",
+          "url": "https://sepolia.basescan.org/tx/0x2ede30752931dcc0edce71a8fd9a94e317589d54a7b1a52ffd32cb4b17e49cbb",
+          "l2GasPaidWei": "865212000000",
+          "l1FeePaidWei": "1169",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "865212001169",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "settle-market",
+          "role": "deployer",
+          "hash": "0x842747a27a7e02974b3702172b5e60c65eae74907673c176bd17409fd92cf8f9",
+          "status": "confirmed",
+          "maxGasWei": "1253767003720",
+          "estimatedL1FeeWei": "1860",
+          "url": "https://sepolia.basescan.org/tx/0x842747a27a7e02974b3702172b5e60c65eae74907673c176bd17409fd92cf8f9",
+          "l2GasPaidWei": "881412000000",
+          "l1FeePaidWei": "1812",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "881412001812",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "buyer:claim",
+          "role": "deployer",
+          "hash": "0x2af040b68c3b30634a64c28d05eb6e859b4be1b9fa3a7310a4546fbcf531b291",
+          "status": "confirmed",
+          "maxGasWei": "762640001900",
+          "estimatedL1FeeWei": "950",
+          "url": "https://sepolia.basescan.org/tx/0x2af040b68c3b30634a64c28d05eb6e859b4be1b9fa3a7310a4546fbcf531b291",
+          "l2GasPaidWei": "419928000000",
+          "l1FeePaidWei": "950",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "419928000950",
+          "feeAccounting": "complete"
+        }
+      ],
+      "events": [
+        {
+          "at": 1793415014,
+          "type": "authorized",
+          "message": "Initial bounded mandate accepted. Agent may fund one fixed test position and settle/claim under its pinned policy."
+        },
+        {
+          "at": 1793415017,
+          "type": "submitted",
+          "message": "buyer:mandate: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415017,
+          "type": "confirmed",
+          "message": "buyer:mandate: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415020,
+          "type": "submitted",
+          "message": "buyer:approve: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415021,
+          "type": "confirmed",
+          "message": "buyer:approve: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415023,
+          "type": "submitted",
+          "message": "counterparty:mandate: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415024,
+          "type": "confirmed",
+          "message": "counterparty:mandate: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415026,
+          "type": "submitted",
+          "message": "counterparty:approve: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415027,
+          "type": "confirmed",
+          "message": "counterparty:approve: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415031,
+          "type": "submitted",
+          "message": "create-market: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415033,
+          "type": "confirmed",
+          "message": "create-market: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415036,
+          "type": "submitted",
+          "message": "agent:fund: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415037,
+          "type": "confirmed",
+          "message": "agent:fund: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415041,
+          "type": "submitted",
+          "message": "counterparty:fund: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415041,
+          "type": "confirmed",
+          "message": "counterparty:fund: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415119,
+          "type": "submitted",
+          "message": "settle-market: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415120,
+          "type": "confirmed",
+          "message": "settle-market: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415122,
+          "type": "submitted",
+          "message": "buyer:claim: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793415123,
+          "type": "confirmed",
+          "message": "buyer:claim: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793415123,
+          "type": "delivered",
+          "message": "Resolved and collected"
+        }
+      ],
+      "createdAt": 1793415014,
+      "marketId": "2",
+      "settlementObservation": {
+        "envelope": {
+          "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+          "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+          "timestamp": "1793415117",
+          "data": "{\"price\":2245.86,\"updatedAt\":1793415117437}",
+          "signature": "0x191817b3a1216e18f074c86df5759b2a639be2e4cfe9d27e0991916e7ff3189f65887721274c11dc7cefe2dad74994cec72db208f5de799281b2d788463946f71b"
+        },
+        "price": 2245.86,
+        "priceDisplay": "$2245.86",
+        "sourceAt": 1793415117,
+        "signedAt": 1793415117,
+        "request": {
+          "operation": "latestFeeds",
+          "parameters": {
+            "name": "ETH/USD"
+          },
+          "responseProjection": {
+            "price": "/ETH~1USD/value",
+            "updatedAt": "/ETH~1USD/timestamp"
+          }
+        },
+        "receivedAt": 1793415117
+      }
+    },
+    {
+      "id": "477f0624-4a47-4161-b384-8667671a2ef7",
+      "proposalId": "2ca46dc8-0b3c-4d97-8378-dbe6f6d5350b",
+      "proposal": {
+        "id": "2ca46dc8-0b3c-4d97-8378-dbe6f6d5350b",
+        "title": "Will ETH/USD be above $2235.57?",
+        "templateId": "nodary-eth-window-v1",
+        "feed": "ETH/USD",
+        "thresholdDisplay": "$2235.57",
+        "thresholdUsd": "2235.57",
+        "threshold18": "2235570000000000000000",
+        "side": "yes",
+        "stakeUnits": "1000000",
+        "stakeDisplay": "1 FMCT",
+        "closesAt": 1793417990,
+        "observationStart": 1793417991,
+        "observationEnd": 1793418291,
+        "expiresAt": 1793417930,
+        "signer": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "explanation": "Agent selected YES with validated threshold $2235.57. The threshold is fixed before funding; the first qualifying source observation determines the outcome.",
+        "observation": {
+          "envelope": {
+            "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+            "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+            "timestamp": "1793417858",
+            "data": "{\"price\":2241.175,\"updatedAt\":1793417857446}",
+            "signature": "0x6d9f400c9100c5b8a58ec15e8f690236ebbffdb4ee70b2679e18ca8d775461f13daa66a363f31191f39a7fbe998c5b08925f0cfaa126d7b2b579a3845a4141651c"
+          },
+          "price": 2241.175,
+          "priceDisplay": "$2241.18",
+          "sourceAt": 1793417857,
+          "signedAt": 1793417858,
+          "request": {
+            "operation": "latestFeeds",
+            "parameters": {
+              "name": "ETH/USD"
+            },
+            "responseProjection": {
+              "price": "/ETH~1USD/value",
+              "updatedAt": "/ETH~1USD/timestamp"
+            }
+          },
+          "receivedAt": 1793417858
+        },
+        "createdAt": 1793417870,
+        "llm": {
+          "model": "qwen3:4b",
+          "calledAt": 1793417870,
+          "durationMs": 11790,
+          "structured": true,
+          "validated": true,
+          "suggestion": {
+            "templateId": "nodary-eth-window-v1",
+            "thresholdOffsetBps": -25,
+            "side": "yes",
+            "explanation": "Observation market set to trigger when ETH/USD price drops 25 bps below current (2241.175) to 2241.175 - 0.025 = 2241.150. This is a public product rule for price observation without profit guarantees."
+          }
+        },
+        "mandatePreview": {
+          "network": "Base Sepolia · 84532",
+          "collateralAsset": "FMCT · 0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+          "collateralAddress": "0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+          "counterparty": "0xf5AA2861C8ef890d965795b1Cb4a3CD5DDf7c3E6",
+          "executor": "0x3e9fba4E2C664557BB42A357257f1a086E65B09e",
+          "chainId": 84532,
+          "perActionStakeUnits": "1000000",
+          "totalStakeUnits": "1000000",
+          "maxActions": 1,
+          "maxObservationCalls": 32,
+          "gasCapWei": "200000000000000",
+          "perTransactionGasCapWei": "50000000000000",
+          "apiFeeCapUnits": "0",
+          "expiry": 1793418891,
+          "beneficiary": "0xd5C01122FFE6F667b9dfCfd4Dbe941489aF09F0F",
+          "recipient": "0xfbacf475b8a6729d97db83a06b07ff303a243614",
+          "enforcement": "Stake, total spend, action count, expiry and duplicate intent are enforced on chain. Gas caps and allowed tools are enforced by the local executor."
+        }
+      },
+      "status": "complete",
+      "stage": "Resolved and collected",
+      "mandateId": "0x681e0c3e7591c7bd40ef699464973079f742b15fe918c0ff0576b151039b3baa",
+      "intentId": "0x24ce73b07ff8991365f2ffdb23b430beaf1ea4f962c38e3da21468a0c053d1d1",
+      "transactions": [
+        {
+          "label": "buyer:mandate",
+          "role": "buyer",
+          "hash": "0x8e2c408422aeed064ca6f212c458035939d4d265bbab2842091b4ea31f990ee7",
+          "status": "confirmed",
+          "maxGasWei": "823162000928",
+          "estimatedL1FeeWei": "464",
+          "url": "https://sepolia.basescan.org/tx/0x8e2c408422aeed064ca6f212c458035939d4d265bbab2842091b4ea31f990ee7",
+          "l2GasPaidWei": "575052000000",
+          "l1FeePaidWei": "454",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "575052000454",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "buyer:approve",
+          "role": "buyer",
+          "hash": "0xda6e3adceb5221fea84b0d25d9559b33e2ad63894227bee7700666215e8a392d",
+          "status": "confirmed",
+          "maxGasWei": "400572000840",
+          "estimatedL1FeeWei": "420",
+          "url": "https://sepolia.basescan.org/tx/0xda6e3adceb5221fea84b0d25d9559b33e2ad63894227bee7700666215e8a392d",
+          "l2GasPaidWei": "276690000000",
+          "l1FeePaidWei": "420",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "276690000420",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:mandate",
+          "role": "counterparty",
+          "hash": "0x9c2da5224e48f7befef18d4bcaca955c7f34b66611824a946270ae43eb206da1",
+          "status": "confirmed",
+          "maxGasWei": "823162000928",
+          "estimatedL1FeeWei": "464",
+          "url": "https://sepolia.basescan.org/tx/0x9c2da5224e48f7befef18d4bcaca955c7f34b66611824a946270ae43eb206da1",
+          "l2GasPaidWei": "575052000000",
+          "l1FeePaidWei": "454",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "575052000454",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:approve",
+          "role": "counterparty",
+          "hash": "0xe1349228ff0ba722f16973659884ebcf88306a6a071ba448553bd309efc4fcf9",
+          "status": "confirmed",
+          "maxGasWei": "400572000840",
+          "estimatedL1FeeWei": "420",
+          "url": "https://sepolia.basescan.org/tx/0xe1349228ff0ba722f16973659884ebcf88306a6a071ba448553bd309efc4fcf9",
+          "l2GasPaidWei": "276690000000",
+          "l1FeePaidWei": "420",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "276690000420",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "create-market",
+          "role": "deployer",
+          "hash": "0x8988bc33131e6c96feb5b30baaa356a542e1365a79f3faba8ca2a1e8b0a2f434",
+          "status": "confirmed",
+          "maxGasWei": "1030124000880",
+          "estimatedL1FeeWei": "440",
+          "url": "https://sepolia.basescan.org/tx/0x8988bc33131e6c96feb5b30baaa356a542e1365a79f3faba8ca2a1e8b0a2f434",
+          "l2GasPaidWei": "722298000000",
+          "l1FeePaidWei": "429",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "722298000429",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "agent:fund",
+          "role": "buyer",
+          "hash": "0xd84ff8c5e18bfdc5d56e660def352ace2babc59da28d32a13b30888276d0229d",
+          "status": "confirmed",
+          "maxGasWei": "1735297001048",
+          "estimatedL1FeeWei": "524",
+          "url": "https://sepolia.basescan.org/tx/0xd84ff8c5e18bfdc5d56e660def352ace2babc59da28d32a13b30888276d0229d",
+          "l2GasPaidWei": "1173144000000",
+          "l1FeePaidWei": "517",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "1173144000517",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "counterparty:fund",
+          "role": "counterparty",
+          "hash": "0x0517aa49807ff27b86291f3d0c6fd8ab99858fbbc7c999c97ba9e61e72d2b412",
+          "status": "confirmed",
+          "maxGasWei": "1312028001048",
+          "estimatedL1FeeWei": "524",
+          "url": "https://sepolia.basescan.org/tx/0x0517aa49807ff27b86291f3d0c6fd8ab99858fbbc7c999c97ba9e61e72d2b412",
+          "l2GasPaidWei": "865212000000",
+          "l1FeePaidWei": "517",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "865212000517",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "settle-market",
+          "role": "deployer",
+          "hash": "0xa28020ba9b708c402631074070c340e7fae0ffba920cbb91b9368dd061c90a0e",
+          "status": "confirmed",
+          "maxGasWei": "1257008001654",
+          "estimatedL1FeeWei": "827",
+          "url": "https://sepolia.basescan.org/tx/0xa28020ba9b708c402631074070c340e7fae0ffba920cbb91b9368dd061c90a0e",
+          "l2GasPaidWei": "883722000000",
+          "l1FeePaidWei": "805",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "883722000805",
+          "feeAccounting": "complete"
+        },
+        {
+          "label": "buyer:claim",
+          "role": "deployer",
+          "hash": "0xc98c0b4081516f9e1e3118f4e30014ea773cb9c2485f7b43360c84a906ea24fd",
+          "status": "confirmed",
+          "maxGasWei": "762640000840",
+          "estimatedL1FeeWei": "420",
+          "url": "https://sepolia.basescan.org/tx/0xc98c0b4081516f9e1e3118f4e30014ea773cb9c2485f7b43360c84a906ea24fd",
+          "l2GasPaidWei": "419928000000",
+          "l1FeePaidWei": "420",
+          "operatorFeePaidWei": "0",
+          "gasPaidWei": "419928000420",
+          "feeAccounting": "complete"
+        }
+      ],
+      "events": [
+        {
+          "at": 1793417870,
+          "type": "authorized",
+          "message": "Initial bounded mandate accepted. Agent may fund one fixed test position and settle/claim under its pinned policy."
+        },
+        {
+          "at": 1793417872,
+          "type": "submitted",
+          "message": "buyer:mandate: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417873,
+          "type": "confirmed",
+          "message": "buyer:mandate: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793417874,
+          "type": "submitted",
+          "message": "buyer:approve: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417875,
+          "type": "confirmed",
+          "message": "buyer:approve: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793417877,
+          "type": "submitted",
+          "message": "counterparty:mandate: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417878,
+          "type": "confirmed",
+          "message": "counterparty:mandate: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793417880,
+          "type": "submitted",
+          "message": "counterparty:approve: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417880,
+          "type": "confirmed",
+          "message": "counterparty:approve: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793417882,
+          "type": "submitted",
+          "message": "create-market: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417883,
+          "type": "confirmed",
+          "message": "create-market: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793417885,
+          "type": "submitted",
+          "message": "agent:fund: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417886,
+          "type": "confirmed",
+          "message": "agent:fund: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793417888,
+          "type": "submitted",
+          "message": "counterparty:fund: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417889,
+          "type": "confirmed",
+          "message": "counterparty:fund: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793417998,
+          "type": "submitted",
+          "message": "settle-market: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793417999,
+          "type": "confirmed",
+          "message": "settle-market: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793418001,
+          "type": "submitted",
+          "message": "buyer:claim: exact signed transaction and gas reservation journaled before broadcast"
+        },
+        {
+          "at": 1793418002,
+          "type": "confirmed",
+          "message": "buyer:claim: confirmed on Base Sepolia"
+        },
+        {
+          "at": 1793418002,
+          "type": "delivered",
+          "message": "Resolved and collected"
+        }
+      ],
+      "createdAt": 1793417870,
+      "v2RegressionRun": true,
+      "marketId": "3",
+      "observationCalls": 1,
+      "settlementObservation": {
+        "envelope": {
+          "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+          "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+          "timestamp": "1793417997",
+          "data": "{\"price\":2241.335,\"updatedAt\":1793417996018}",
+          "signature": "0x94ac3c14ef3f479b808a953e39598e2bd74e81902d57aeb1dc5fe14022b28a9d27517773e3c664866370a204e555267b973473762fdf91339c763d44a7c620661c"
+        },
+        "price": 2241.335,
+        "priceDisplay": "$2241.34",
+        "sourceAt": 1793417996,
+        "signedAt": 1793417997,
+        "request": {
+          "operation": "latestFeeds",
+          "parameters": {
+            "name": "ETH/USD"
+          },
+          "responseProjection": {
+            "price": "/ETH~1USD/value",
+            "updatedAt": "/ETH~1USD/timestamp"
+          }
+        },
+        "receivedAt": 1793417997
+      }
+    }
+  ],
+  "rejections": [
+    {
+      "at": 1793415023256,
+      "kind": "duplicate-intent",
+      "decision": "blocked",
+      "jobId": "70c9543a-0208-49e6-b068-8444af58e8b5",
+      "reason": "Proposal already authorized; existing intent returned without a new payment"
+    },
+    {
+      "kind": "judge-submission",
+      "decision": "rejected",
+      "at": 1793415259704,
+      "reason": "Envelope requires timestamp, exact signed data string and signature"
+    }
+  ]
+}

@@ -10,8 +10,11 @@ fs.mkdirSync(local,{recursive:true});
 export const rpcUrl=process.env.RPC_URL || 'https://sepolia.base.org';
 export const publicClient=createPublicClient({chain:baseSepolia,transport:http(rpcUrl,{timeout:20000,retryCount:1})});
 export type Role='deployer'|'buyer'|'counterparty';
-export function wallet(role:Role) {
- const walletFile=process.env.WALLET_FILE || path.join(local,'test-wallets.json');
+export function assertPrivateWalletLocation(file:string){const resolved=path.resolve(file);if(resolved.startsWith(root+path.sep)&&!resolved.startsWith(local+path.sep))throw Error('Wallet files inside this checkout must be stored under ignored .local/');}
+for(const file of [process.env.WALLET_FILE||path.join(local,'test-wallets.json'),process.env.NEXT_WALLET_FILE||path.join(local,'next','test-wallets.json')])assertPrivateWalletLocation(file);
+export function wallet(role:Role) {return walletFromFile(process.env.WALLET_FILE || path.join(local,'test-wallets.json'),role);}
+export function walletFromFile(walletFile:string,role:Role) {
+ assertPrivateWalletLocation(walletFile);
  const st=fs.statSync(walletFile); if((st.mode & 0o077)!==0) throw Error('Wallet file must have mode 0600');
  const w=JSON.parse(fs.readFileSync(walletFile,'utf8'));
  if(w.testOnly!==true || Number(w.chainId)!==84532) throw Error('Test-only Base Sepolia wallet required');

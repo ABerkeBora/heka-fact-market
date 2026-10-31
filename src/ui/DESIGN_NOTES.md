@@ -30,3 +30,7 @@ No sample dataset requires replacement. The default prompt is editable product i
 Browser QA follow-up: parent inspected desktop, 768px tablet and 390px phone. No horizontal overflow observed. Tablet panels were too narrow, so composition and detail grids now stack at 900px. The source block explicitly identifies the observation as a proposal-time snapshot. Execution gas budget copy discloses conservative L1 reservation and possible protocol price variation. Phone evidence captured by parent at `docs/evidence/ui-phone.jpg`.
 
 Main-card explanation is deterministic from validated side, threshold and observation policy. Raw model arithmetic is never used as an authoritative UI fact; any original model suggestion remains a separate trace owned by the backend.
+
+## V2 route extension
+
+The existing app identity and dealt style remain unchanged. `/` continues to call `/api`; `/next` calls only `/api/next`, with separate response data and the BTC-oriented default question. One small route link connects the two. V2 has no manual feed selector: the model chooses from the server's verified feed allowlist. The resolution card, snapshot unit, market titles and source details follow the actual returned feed. Immutable recipe/policy/request hashes and operation parameters/projection are inspectable before funding and in market details. No fixtures were added.

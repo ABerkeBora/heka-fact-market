@@ -1,0 +1,1092 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "collateral_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "AIRNODE",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "FUTURE_TOLERANCE",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "MAX_ENVELOPE_AGE",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "MAX_SOURCE_AGE",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "MAX_STAKE",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "OBSERVATION_POLICY",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "RECIPE_DOMAIN",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SOURCE_URL",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "accountedReserve",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "authorizeMandate",
+    "inputs": [
+      {
+        "name": "mandateId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "perActionCap",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "totalCap",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "maxActions",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "expiry",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "claim",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "beneficiary",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "collateral",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "createMarket",
+    "inputs": [
+      {
+        "name": "feedId",
+        "type": "uint8",
+        "internalType": "uint8"
+      },
+      {
+        "name": "threshold",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "stake",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "closesAt",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "observationStart",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "observationEnd",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "fund",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "yes",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "mandateId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "intentId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getMarket",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct FactMarketNext.Market",
+        "components": [
+          {
+            "name": "threshold",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "stake",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "closesAt",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "observationStart",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "observationEnd",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "yesOwner",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "noOwner",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "state",
+            "type": "uint8",
+            "internalType": "enum FactMarketNext.State"
+          },
+          {
+            "name": "reserve",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "observedPrice",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "sourceTimestamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "signedTimestamp",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "evidenceHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "policyHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "yesClaimed",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "noClaimed",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "feedId",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "requestHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "recipeHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getRecipe",
+    "inputs": [
+      {
+        "name": "feedId",
+        "type": "uint8",
+        "internalType": "uint8"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "recipe",
+        "type": "tuple",
+        "internalType": "struct FactMarketNext.Recipe",
+        "components": [
+          {
+            "name": "feedId",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "endpoint",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "operation",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "feed",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "parameters",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "projection",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "unit",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "decimals",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "comparator",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "observationPolicy",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "signer",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "requestHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "recipeHash",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "mandates",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "perActionCap",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "totalCap",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "spent",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "maxActions",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "actions",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "expiry",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "marketCount",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "recipeHashForFeed",
+    "inputs": [
+      {
+        "name": "feedId",
+        "type": "uint8",
+        "internalType": "uint8"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "requestHashForFeed",
+    "inputs": [
+      {
+        "name": "feedId",
+        "type": "uint8",
+        "internalType": "uint8"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "settle",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "data",
+        "type": "bytes",
+        "internalType": "bytes"
+      },
+      {
+        "name": "signature",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "usedIntents",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "voidMarket",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "Claimed",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "beneficiary",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "MandateAuthorized",
+    "inputs": [
+      {
+        "name": "payer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "mandateId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "perActionCap",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "totalCap",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "maxActions",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
+      },
+      {
+        "name": "expiry",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "MarketCreated",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "policyHash",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "threshold",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "stake",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "closesAt",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "observationStart",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "observationEnd",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "MarketSettled",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "yesWins",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      },
+      {
+        "name": "price",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "sourceTimestamp",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "signedTimestamp",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "evidenceHash",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "MarketVoided",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PositionFunded",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "beneficiary",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "yes",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "intentId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "mandateId",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RecipePinned",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feedId",
+        "type": "uint8",
+        "indexed": true,
+        "internalType": "uint8"
+      },
+      {
+        "name": "requestHash",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "recipeHash",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "ActionCapExceeded",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "CannotVoidYet",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "DuplicateIntent",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ECDSAInvalidSignature",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ECDSAInvalidSignatureLength",
+    "inputs": [
+      {
+        "name": "length",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ECDSAInvalidSignatureS",
+    "inputs": [
+      {
+        "name": "s",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "FieldNotFound",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "string",
+        "internalType": "string"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "FutureTimestamp",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidMandate",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidPolicy",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidPrice",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "MandateExists",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "MandateExpired",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "MarketClosed",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotClaimable",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotMatched",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotOpen",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotSignedByAirnode",
+    "inputs": [
+      {
+        "name": "signer",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ObservationEnded",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ObservationNotStarted",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "OutsideObservationWindow",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "PerActionCapExceeded",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ReentrantCall",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ResponseTooOld",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SameCounterparty",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SideOccupied",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SourceTooOld",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "TotalCapExceeded",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "TransferFailed",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "UnexpectedValue",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "string",
+        "internalType": "string"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "UnknownMarket",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "UnsupportedFeed",
+    "inputs": [
+      {
+        "name": "feedId",
+        "type": "uint8",
+        "internalType": "uint8"
+      }
+    ]
+  }
+]

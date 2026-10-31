@@ -1,0 +1,704 @@
+{
+  "verifiedAt": "2026-10-31T03:40:57.530Z",
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "readOnly": true,
+  "contract": "0x9319e85d84beb94307e91c350209e5e429b8be34",
+  "checks": [
+    {
+      "name": "Tamper provenance",
+      "status": "PASS",
+      "details": {
+        "editedValueFromAuthenticResponse": true,
+        "staleSignatureAuthentic": true,
+        "bothWrongFeedDirectionsAuthentic": true,
+        "errorsDecodedAtReceiptBlocks": true
+      }
+    },
+    {
+      "name": "Role/deployment separation",
+      "status": "PASS",
+      "details": {
+        "v1RoleAddresses": [
+          "0x3e9fba4e2c664557bb42a357257f1a086e65b09e",
+          "0xd5c01122ffe6f667b9dfcfd4dbe941489af09f0f",
+          "0xf5aa2861c8ef890d965795b1cb4a3cd5ddf7c3e6"
+        ],
+        "v2RoleAddresses": [
+          "0x1d479f5a2d3f95f5b72c4875c51ab5899f79c758",
+          "0xff0074aac3c17ebf7449eac5880c4430047feb56",
+          "0x1b3a8a15957321175e1fcff39f681f9733c0c1c9"
+        ],
+        "v1Market": "0xfbacf475b8a6729d97db83a06b07ff303a243614",
+        "v2Market": "0x9319e85d84beb94307e91c350209e5e429b8be34",
+        "v1Collateral": "0x4d317922ad3a235718ef1c5c4c71c85094df880a",
+        "v2Collateral": "0xd6e4968b75422dfb13759138808a4310cec061b3"
+      }
+    },
+    {
+      "name": "No-payment unsupported goal",
+      "status": "PASS",
+      "details": {
+        "status": "PASS",
+        "goal": "SOL/USD",
+        "decision": "rejected",
+        "code": "UNSUPPORTED_ASSET",
+        "reason": "Only ETH/USD and BTC/USD are supported. Remove the unsupported asset or quote currency.",
+        "httpCalls": 0,
+        "jobsBefore": 0,
+        "jobsAfter": 0,
+        "paymentSubmitted": false
+      }
+    },
+    {
+      "name": "Recorded rejected proposal entry points",
+      "status": "PASS",
+      "details": {
+        "cases": 4,
+        "httpCalls": 0,
+        "jobAndProposalCountsUnchanged": true,
+        "paymentSubmitted": false
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "edited-value",
+      "status": "PASS",
+      "transaction": "0xc1a665252860449ee958a19df48f766bcc1fe5a7b200f8836ef5707c38ec3d53",
+      "blockNumber": "52479836",
+      "historicalError": "NotSignedByAirnode",
+      "decodedError": {
+        "abiItem": {
+          "type": "error",
+          "name": "NotSignedByAirnode",
+          "inputs": [
+            {
+              "name": "signer",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        "args": [
+          "0x18A8Ab7bA31255beeDcE7f2B0b569ef42b690039"
+        ],
+        "errorName": "NotSignedByAirnode"
+      },
+      "marketId": "1",
+      "feedId": 0,
+      "marketOpen": true,
+      "matched": true,
+      "inObservationWindow": true,
+      "protectedStateUnchanged": true,
+      "inputDecodedFromChain": true
+    },
+    {
+      "name": "stale-real-response",
+      "status": "PASS",
+      "transaction": "0x47b6e1f8107306d3ed992b4f7d754c4d74aa36f105d352076bf077152134d62a",
+      "blockNumber": "52479847",
+      "historicalError": "ResponseTooOld",
+      "decodedError": {
+        "abiItem": {
+          "type": "error",
+          "name": "ResponseTooOld",
+          "inputs": []
+        },
+        "errorName": "ResponseTooOld"
+      },
+      "marketId": "1",
+      "feedId": 0,
+      "marketOpen": true,
+      "matched": true,
+      "inObservationWindow": true,
+      "protectedStateUnchanged": true,
+      "inputDecodedFromChain": true
+    },
+    {
+      "name": "different-request",
+      "status": "PASS",
+      "transaction": "0xaaa02958973f4cf9a19b19dc28247ab63d236d0e66f5b6f606d68ce4390b185e",
+      "blockNumber": "52479857",
+      "historicalError": "NotSignedByAirnode",
+      "decodedError": {
+        "abiItem": {
+          "type": "error",
+          "name": "NotSignedByAirnode",
+          "inputs": [
+            {
+              "name": "signer",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        "args": [
+          "0xd7C01a185b7Bc49aD257d3CC152d106D9f0Bc863"
+        ],
+        "errorName": "NotSignedByAirnode"
+      },
+      "marketId": "1",
+      "feedId": 0,
+      "marketOpen": true,
+      "matched": true,
+      "inObservationWindow": true,
+      "protectedStateUnchanged": true,
+      "inputDecodedFromChain": true
+    },
+    {
+      "name": "wrong-signer",
+      "status": "PASS",
+      "transaction": "0x471ef300ee8d7ac629e77d34f68f19519b28f2bf84ed18b0a79f3dd5d8542c05",
+      "blockNumber": "52479869",
+      "historicalError": "NotSignedByAirnode",
+      "decodedError": {
+        "abiItem": {
+          "type": "error",
+          "name": "NotSignedByAirnode",
+          "inputs": [
+            {
+              "name": "signer",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        "args": [
+          "0xFf0074AAc3C17EBF7449EaC5880c4430047Feb56"
+        ],
+        "errorName": "NotSignedByAirnode"
+      },
+      "marketId": "1",
+      "feedId": 0,
+      "marketOpen": true,
+      "matched": true,
+      "inObservationWindow": true,
+      "protectedStateUnchanged": true,
+      "inputDecodedFromChain": true
+    },
+    {
+      "name": "wrong-feed-ETH-into-BTC",
+      "status": "PASS",
+      "transaction": "0x8284dc80b67a99352d1dd99c87a497c8d9b45d86549903209357518bf391fcb3",
+      "blockNumber": "52479880",
+      "historicalError": "NotSignedByAirnode",
+      "decodedError": {
+        "abiItem": {
+          "type": "error",
+          "name": "NotSignedByAirnode",
+          "inputs": [
+            {
+              "name": "signer",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        "args": [
+          "0xC7aFe39C396Bf94E5F147D2194773aac66634B14"
+        ],
+        "errorName": "NotSignedByAirnode"
+      },
+      "marketId": "2",
+      "feedId": 1,
+      "marketOpen": true,
+      "matched": true,
+      "inObservationWindow": true,
+      "protectedStateUnchanged": true,
+      "inputDecodedFromChain": true
+    }
+  ],
+  "feeds": [
+    {
+      "feedId": 0,
+      "feed": "ETH/USD",
+      "status": "PASS",
+      "marketId": "1",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+      "policyHash": "0x585264c2e054dfa8ca19ce698f7499f6483c14ddc120e3b3abf8bbcf3961625a",
+      "model": "qwen3:4b",
+      "modelDurationMs": 11491,
+      "modelSourcesVerified": 2,
+      "agentFunding": "0xf20a13dd83fa805dcc25fe8f70c7ad1f7b94e86efcdfbc917ebe67b9f8efac94",
+      "counterpartyFunding": "0xbb073d67a5e114b6da50f170c6c6bcc3c6c99c62dcc85d4f8bdd504e1eed5b5f",
+      "settlement": "0x701bb3d8904b7f603473cc5849e75b88a50858e078f7f2e03c80d590a426ea54",
+      "payout": "0xfe5fd704bbea10f24ee542f296e376827244c3e07d6d5600a9dd9e25c13e1986",
+      "payoutUnits": "2000000",
+      "remainingReserve": "0"
+    },
+    {
+      "feedId": 1,
+      "feed": "BTC/USD",
+      "status": "PASS",
+      "marketId": "2",
+      "requestHash": "0x78094ba4768ebdadb2012f2de22e779ce0992ecc290ebab208233addaaef106a",
+      "recipeHash": "0x5329d4927aaa5c9bff0c9e6859e2b313f5cfbc8f9087a85d288e5ca5904d2fd2",
+      "policyHash": "0xb6dd81187f90dc0f752cfc92bec3a7a40a24c65b1c2054df399cbc7c3c509993",
+      "model": "qwen3:4b",
+      "modelDurationMs": 5590,
+      "modelSourcesVerified": 2,
+      "agentFunding": "0x55d2a83853ede4f6dc16044debb92716c4f17061ad25d2f488e447ef455113e6",
+      "counterpartyFunding": "0x3be26117929854b385e544fe6e5615b5c746aa8b0d4d2b8c211275cdcc0dcd02",
+      "settlement": "0xceb91a16c9d09fbe9a1843058490cdd7187fe011f92907b7e5279c3d3587a75e",
+      "payout": "0x65ee96e4bf86ce3b243d4968de571d391ea7d76df2c8346f27a1ea7ba3c60357",
+      "payoutUnits": "2000000",
+      "remainingReserve": "0"
+    }
+  ],
+  "v1": {
+    "status": "PASS",
+    "baselineCommit": "e8fb85c79eb8104f6530c77ecc50b6509672f59c",
+    "frozenSource": [
+      {
+        "file": "contracts/FactMarket.sol",
+        "sha256": "bcbd9a2cf6a23e3ae52b9446ed0c3483cf9f3db7f8856aa80c51231dab99da3a",
+        "status": "PASS"
+      },
+      {
+        "file": "contracts/TestCollateral.sol",
+        "sha256": "71e08a157dab8b2b0a99e7df35074cd41a1d0eb7e525acd7403e00e5d81d0ceb",
+        "status": "PASS"
+      },
+      {
+        "file": "contracts/vendor/AirnodeV2Attestation.sol",
+        "sha256": "76a6f2cff1060ff1f45c1a09a5a400f31e095054aa071e8c4fd1bb630fa9ecbc",
+        "status": "PASS"
+      },
+      {
+        "file": "contracts/vendor/IsoTimestamp.sol",
+        "sha256": "d470121962ed07441f7e0ce0825c81026edca1b25122964a975484fb65f4cc2b",
+        "status": "PASS"
+      },
+      {
+        "file": "contracts/vendor/LICENSE",
+        "sha256": "e6bf4f274d851673ecc81d8809b7d40fe2fd693bbe9faffcfc4d16f55da9f1f8",
+        "status": "PASS"
+      },
+      {
+        "file": "contracts/vendor/PROVENANCE.md",
+        "sha256": "1b2c0099174d58f8e7272504c3afcbd3791989f7c5f375eaeff4b2a8f4964e28",
+        "status": "PASS"
+      },
+      {
+        "file": "contracts/vendor/ProjectedJson.sol",
+        "sha256": "28cec87ee36e4f61a2a6dfcc0d1cb0b8a2287b12802875054d7d891c548f29c2",
+        "status": "PASS"
+      },
+      {
+        "file": "foundry.lock",
+        "sha256": "fd5976f58a02ed8e69c0d85fafb43d9b6d1fdfb2dc44cd5c2064b2d74cf65fb5",
+        "status": "PASS"
+      },
+      {
+        "file": "foundry.toml",
+        "sha256": "e62816d039c23800d72ec7805d63752c24be21012a067d77762eacc05dc7b666",
+        "status": "PASS"
+      },
+      {
+        "file": "server/airnode.ts",
+        "sha256": "acd6267874ba13f6441646444511c1214e6ad4809955939b989b113f5ec360c5",
+        "status": "PASS"
+      },
+      {
+        "file": "server/proposal.test.ts",
+        "sha256": "ac39d2e572d8b6e177fe19804ed8087fd5d91bdf9f27a9bc30ff8caaedb0e1df",
+        "status": "PASS"
+      },
+      {
+        "file": "server/provider.ts",
+        "sha256": "eba4be6b1d82cbb2075915801d2eee06388a04f60e08d92b1aca61b2bcbd3c19",
+        "status": "PASS"
+      },
+      {
+        "file": "test/FactMarket.t.sol",
+        "sha256": "c990d3b989cc24ae836d27f552b36af2f22fcc8e1df45544cd3a1d730047f253",
+        "status": "PASS"
+      },
+      {
+        "file": "test/TransferSafety.t.sol",
+        "sha256": "44dbadeaa8156061f16145285298c4607354052b57f9136c5ccbd7ceee095613",
+        "status": "PASS"
+      },
+      {
+        "file": "test/fixtures/nodary-ankreth-eth-exchange-rate.json",
+        "sha256": "754065fb2a4ef555ac8e931c24352690abf5399fc75628d31a8a8bec9e8f9fe6",
+        "status": "PASS"
+      },
+      {
+        "file": "test/fixtures/nodary-btc-usd.json",
+        "sha256": "d71cca81a3a0a731ac6e93c45a58f77f23e4bb6c2a4a72794e5d3012dc84c0f6",
+        "status": "PASS"
+      },
+      {
+        "file": "test/fixtures/nodary-eth-usd.json",
+        "sha256": "3784855f8a519af58d36bb1a56bb478d0c192162830a508c2774c34ef1c7d65c",
+        "status": "PASS"
+      }
+    ],
+    "frozenFiles": [
+      {
+        "file": ".local/deployment.json",
+        "sha256": "495f13e2b6960bb66bf21db70146dfdd16ce169a53d5bbaa9e0560ca2aa81e99",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/evidence/agent-runs.json",
+        "sha256": "6e8d551e1a29b796c749acacc00f1c1a81c8350077d4e69dc23a81414308ee21",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/evidence/chain-smoke.json",
+        "sha256": "9be4ac2af4834468c4c1c6ba939356bb44c8c30339774587703c9ac584326e75",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/evidence/deployment.json",
+        "sha256": "e5788f124dec42a91bdcb9646497744a85cb83418c425742e3bd0d21a884af90",
+        "status": "PASS"
+      }
+    ],
+    "stateHashBefore": "56ba2fe87f4e81919c1fbfbfdcfd6d8e9210ddaa22774bb6749f87db9dfd963c",
+    "stateHashAfter": "1d7e1b478fbf18a48712b6373f42dad970b9323cb03f44efd5947ecd5b410767",
+    "stateChange": "Exactly one new V1 regression job appended; original transaction hashes retained. Proposal/health metadata may advance for that new runtime call.",
+    "originalTransactionCount": 26,
+    "originalMarkets": [
+      {
+        "id": "1",
+        "state": 1,
+        "reserve": "0",
+        "policyHash": "0x81c2ac5092b8534808eb4982aa3ad2f9e37586e2bbbec6cc31cbd7de90721811",
+        "evidenceHash": "0x17bae7302931c5f2343eb3aeba4c24d0995e98817355f6e9c70a435b613ae3dd",
+        "status": "PASS"
+      },
+      {
+        "id": "2",
+        "state": 1,
+        "reserve": "0",
+        "policyHash": "0x0d066c408726ad3f9e1fc20527845aa2f83a94077dece8f64cf6ea01f8c71eca",
+        "evidenceHash": "0x49b7c7771d587b7284e376e1cf1074e98c358bcf0436c14a5cf2e394efdc0856",
+        "status": "PASS"
+      }
+    ],
+    "regressionJobId": "477f0624-4a47-4161-b384-8667671a2ef7",
+    "regressionMarketId": "3",
+    "settlement": "0xa28020ba9b708c402631074070c340e7fae0ffba920cbb91b9368dd061c90a0e",
+    "payout": "0xc98c0b4081516f9e1e3118f4e30014ea773cb9c2485f7b43360c84a906ea24fd"
+  },
+  "fees": {
+    "status": "PASS",
+    "count": 34,
+    "totalWei": "20144022020365",
+    "receipts": [
+      {
+        "hash": "0x70e9355716b9b56b1fe4b1a78aff3e40a4f34c7058dc27eb034c44c6670ba101",
+        "label": "buyer:faucet",
+        "status": "success",
+        "l2GasPaidWei": "539958000000",
+        "l1FeePaidWei": "488",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "539958000488"
+      },
+      {
+        "hash": "0x7b3b3eb8ff7f5eb4a33ab728ce016c6acb69a41037550ca2a155bdccc1d3b399",
+        "label": "buyer:mandate",
+        "status": "success",
+        "l2GasPaidWei": "575052000000",
+        "l1FeePaidWei": "527",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "575052000527"
+      },
+      {
+        "hash": "0x8c8c7f40c1de345a9431306209ad04c8a369b305b010b54a45d65584d7aae565",
+        "label": "buyer:approve",
+        "status": "success",
+        "l2GasPaidWei": "276690000000",
+        "l1FeePaidWei": "488",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "276690000488"
+      },
+      {
+        "hash": "0xe05977c45b141bc074a653a3dd94dbdb0b44c612e6af5afbbacfeb385694a8be",
+        "label": "counterparty:faucet",
+        "status": "success",
+        "l2GasPaidWei": "437358000000",
+        "l1FeePaidWei": "488",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "437358000488"
+      },
+      {
+        "hash": "0xe53dced22e7747fcd997333cae8ed9e00206ba5752f2b5fdb933c0c01473a4be",
+        "label": "counterparty:mandate",
+        "status": "success",
+        "l2GasPaidWei": "575052000000",
+        "l1FeePaidWei": "527",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "575052000527"
+      },
+      {
+        "hash": "0xaf56bab3d11acdc690e5d89a3d3d7226bbc320b2cb607b4d43d0511d55962f0b",
+        "label": "counterparty:approve",
+        "status": "success",
+        "l2GasPaidWei": "276690000000",
+        "l1FeePaidWei": "488",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "276690000488"
+      },
+      {
+        "hash": "0x8d11d72f73e528b2a1b6cc8df64cb828baeb8140e0e44ef23400e548c1ba9744",
+        "label": "create-market",
+        "status": "success",
+        "l2GasPaidWei": "1137150000000",
+        "l1FeePaidWei": "488",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "1137150000488"
+      },
+      {
+        "hash": "0xf20a13dd83fa805dcc25fe8f70c7ad1f7b94e86efcdfbc917ebe67b9f8efac94",
+        "label": "agent:fund",
+        "status": "success",
+        "l2GasPaidWei": "1173012000000",
+        "l1FeePaidWei": "600",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "1173012000600"
+      },
+      {
+        "hash": "0xbb073d67a5e114b6da50f170c6c6bcc3c6c99c62dcc85d4f8bdd504e1eed5b5f",
+        "label": "counterparty:fund",
+        "status": "success",
+        "l2GasPaidWei": "865080000000",
+        "l1FeePaidWei": "600",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "865080000600"
+      },
+      {
+        "hash": "0xc1a665252860449ee958a19df48f766bcc1fe5a7b200f8836ef5707c38ec3d53",
+        "label": "v2-proof:edited-value",
+        "status": "reverted",
+        "l2GasPaidWei": "244164000000",
+        "l1FeePaidWei": "932",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "244164000932"
+      },
+      {
+        "hash": "0x47b6e1f8107306d3ed992b4f7d754c4d74aa36f105d352076bf077152134d62a",
+        "label": "v2-proof:stale-real-response",
+        "status": "reverted",
+        "l2GasPaidWei": "247428000000",
+        "l1FeePaidWei": "928",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "247428000928"
+      },
+      {
+        "hash": "0xaaa02958973f4cf9a19b19dc28247ab63d236d0e66f5b6f606d68ce4390b185e",
+        "label": "v2-proof:different-request",
+        "status": "reverted",
+        "l2GasPaidWei": "244164000000",
+        "l1FeePaidWei": "936",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "244164000936"
+      },
+      {
+        "hash": "0x471ef300ee8d7ac629e77d34f68f19519b28f2bf84ed18b0a79f3dd5d8542c05",
+        "label": "v2-proof:wrong-signer",
+        "status": "reverted",
+        "l2GasPaidWei": "244164000000",
+        "l1FeePaidWei": "932",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "244164000932"
+      },
+      {
+        "hash": "0x701bb3d8904b7f603473cc5849e75b88a50858e078f7f2e03c80d590a426ea54",
+        "label": "settle-market",
+        "status": "success",
+        "l2GasPaidWei": "894210000000",
+        "l1FeePaidWei": "928",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "894210000928"
+      },
+      {
+        "hash": "0xfe5fd704bbea10f24ee542f296e376827244c3e07d6d5600a9dd9e25c13e1986",
+        "label": "buyer:claim",
+        "status": "success",
+        "l2GasPaidWei": "477456000000",
+        "l1FeePaidWei": "486",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "477456000486"
+      },
+      {
+        "hash": "0x25e4ff37588fbda77fde8d3aaa2bdc1ed455651a39d5f5111d42039ba49ebefc",
+        "label": "buyer:mandate",
+        "status": "success",
+        "l2GasPaidWei": "575052000000",
+        "l1FeePaidWei": "527",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "575052000527"
+      },
+      {
+        "hash": "0x958339733e869c875301c0652bc93a4b71510f020e5e7e5145e5b9f5e6acacc1",
+        "label": "buyer:approve",
+        "status": "success",
+        "l2GasPaidWei": "276690000000",
+        "l1FeePaidWei": "488",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "276690000488"
+      },
+      {
+        "hash": "0x3887a24895aa8b8cfa07f5c40dfe47fc3ab3bc4cb89e275888b5c9a2561be339",
+        "label": "counterparty:mandate",
+        "status": "success",
+        "l2GasPaidWei": "575052000000",
+        "l1FeePaidWei": "525",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "575052000525"
+      },
+      {
+        "hash": "0x65a78c7840cac88f5a0f8b440b56c61cbe71fcd1a59a3335a59fff130b6109eb",
+        "label": "counterparty:approve",
+        "status": "success",
+        "l2GasPaidWei": "276690000000",
+        "l1FeePaidWei": "486",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "276690000486"
+      },
+      {
+        "hash": "0xbbb630d3353bef7b3c4447ae40794ca2d5646bff89bf3e13a08bb95aa7e0d13c",
+        "label": "create-market",
+        "status": "success",
+        "l2GasPaidWei": "1154562000000",
+        "l1FeePaidWei": "521",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "1154562000521"
+      },
+      {
+        "hash": "0x55d2a83853ede4f6dc16044debb92716c4f17061ad25d2f488e447ef455113e6",
+        "label": "agent:fund",
+        "status": "success",
+        "l2GasPaidWei": "967812000000",
+        "l1FeePaidWei": "598",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "967812000598"
+      },
+      {
+        "hash": "0x3be26117929854b385e544fe6e5615b5c746aa8b0d4d2b8c211275cdcc0dcd02",
+        "label": "counterparty:fund",
+        "status": "success",
+        "l2GasPaidWei": "865008000000",
+        "l1FeePaidWei": "598",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "865008000598"
+      },
+      {
+        "hash": "0x8284dc80b67a99352d1dd99c87a497c8d9b45d86549903209357518bf391fcb3",
+        "label": "v2-proof:wrong-feed-ETH-into-BTC",
+        "status": "reverted",
+        "l2GasPaidWei": "244164000000",
+        "l1FeePaidWei": "932",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "244164000932"
+      },
+      {
+        "hash": "0xceb91a16c9d09fbe9a1843058490cdd7187fe011f92907b7e5279c3d3587a75e",
+        "label": "settle-market",
+        "status": "success",
+        "l2GasPaidWei": "896994000000",
+        "l1FeePaidWei": "932",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "896994000932"
+      },
+      {
+        "hash": "0x65ee96e4bf86ce3b243d4968de571d391ea7d76df2c8346f27a1ea7ba3c60357",
+        "label": "counterparty:claim",
+        "status": "success",
+        "l2GasPaidWei": "336582000000",
+        "l1FeePaidWei": "486",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "336582000486"
+      },
+      {
+        "hash": "0x8e2c408422aeed064ca6f212c458035939d4d265bbab2842091b4ea31f990ee7",
+        "label": "buyer:mandate",
+        "status": "success",
+        "l2GasPaidWei": "575052000000",
+        "l1FeePaidWei": "454",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "575052000454"
+      },
+      {
+        "hash": "0xda6e3adceb5221fea84b0d25d9559b33e2ad63894227bee7700666215e8a392d",
+        "label": "buyer:approve",
+        "status": "success",
+        "l2GasPaidWei": "276690000000",
+        "l1FeePaidWei": "420",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "276690000420"
+      },
+      {
+        "hash": "0x9c2da5224e48f7befef18d4bcaca955c7f34b66611824a946270ae43eb206da1",
+        "label": "counterparty:mandate",
+        "status": "success",
+        "l2GasPaidWei": "575052000000",
+        "l1FeePaidWei": "454",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "575052000454"
+      },
+      {
+        "hash": "0xe1349228ff0ba722f16973659884ebcf88306a6a071ba448553bd309efc4fcf9",
+        "label": "counterparty:approve",
+        "status": "success",
+        "l2GasPaidWei": "276690000000",
+        "l1FeePaidWei": "420",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "276690000420"
+      },
+      {
+        "hash": "0x8988bc33131e6c96feb5b30baaa356a542e1365a79f3faba8ca2a1e8b0a2f434",
+        "label": "create-market",
+        "status": "success",
+        "l2GasPaidWei": "722298000000",
+        "l1FeePaidWei": "429",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "722298000429"
+      },
+      {
+        "hash": "0xd84ff8c5e18bfdc5d56e660def352ace2babc59da28d32a13b30888276d0229d",
+        "label": "agent:fund",
+        "status": "success",
+        "l2GasPaidWei": "1173144000000",
+        "l1FeePaidWei": "517",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "1173144000517"
+      },
+      {
+        "hash": "0x0517aa49807ff27b86291f3d0c6fd8ab99858fbbc7c999c97ba9e61e72d2b412",
+        "label": "counterparty:fund",
+        "status": "success",
+        "l2GasPaidWei": "865212000000",
+        "l1FeePaidWei": "517",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "865212000517"
+      },
+      {
+        "hash": "0xa28020ba9b708c402631074070c340e7fae0ffba920cbb91b9368dd061c90a0e",
+        "label": "settle-market",
+        "status": "success",
+        "l2GasPaidWei": "883722000000",
+        "l1FeePaidWei": "805",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "883722000805"
+      },
+      {
+        "hash": "0xc98c0b4081516f9e1e3118f4e30014ea773cb9c2485f7b43360c84a906ea24fd",
+        "label": "buyer:claim",
+        "status": "success",
+        "l2GasPaidWei": "419928000000",
+        "l1FeePaidWei": "420",
+        "operatorFeePaidWei": "0",
+        "gasPaidWei": "419928000420"
+      }
+    ],
+    "note": "Includes L2 execution gas plus actual L1 data fee; rejected transactions also cost gas. Free Nodary calls have no x402 fee."
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,60 @@
+{
+  "version": "next",
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "deployer": "0x1d479F5A2d3F95f5B72C4875C51Ab5899f79C758",
+  "transactions": {
+    "collateral": {
+      "hash": "0x70c4ee955e692d84b24f53223bb4ee1b18e520ff14b788f4af2f9a46e58bde07",
+      "blockNumber": "52478386",
+      "status": "confirmed",
+      "url": "https://sepolia.basescan.org/tx/0x70c4ee955e692d84b24f53223bb4ee1b18e520ff14b788f4af2f9a46e58bde07"
+    },
+    "market": {
+      "hash": "0x216cb4a8da6b359f744729b82ee877b560b0a5ba8af7b9d5606a852dccb59cce",
+      "blockNumber": "52478398",
+      "status": "confirmed",
+      "url": "https://sepolia.basescan.org/tx/0x216cb4a8da6b359f744729b82ee877b560b0a5ba8af7b9d5606a852dccb59cce"
+    }
+  },
+  "collateral": "0xd6e4968b75422dfb13759138808a4310cec061b3",
+  "market": "0x9319e85d84beb94307e91c350209e5e429b8be34",
+  "roleAddresses": {
+    "deployer": "0x1d479F5A2d3F95f5B72C4875C51Ab5899f79C758",
+    "buyer": "0xFf0074AAc3C17EBF7449EaC5880c4430047Feb56",
+    "counterparty": "0x1b3A8A15957321175E1FcfF39F681F9733C0C1C9"
+  },
+  "initialFunding": {
+    "initial-test-gas:deployer": {
+      "hash": "0xf49ee2d420421959d8fc705badcd9b349cb8d12b52c58c5463ac8e8aba0cfb21",
+      "blockNumber": "52478353",
+      "status": "confirmed",
+      "url": "https://sepolia.basescan.org/tx/0xf49ee2d420421959d8fc705badcd9b349cb8d12b52c58c5463ac8e8aba0cfb21"
+    },
+    "initial-test-gas:buyer": {
+      "hash": "0x279ce2d7fae00d0389d98e303a5c2ac126b48eee45ea640a18e7a36be2029726",
+      "blockNumber": "52478365",
+      "status": "confirmed",
+      "url": "https://sepolia.basescan.org/tx/0x279ce2d7fae00d0389d98e303a5c2ac126b48eee45ea640a18e7a36be2029726"
+    },
+    "initial-test-gas:counterparty": {
+      "hash": "0xf1c3e9f3f17959b8132b8f62965df1f5dc3b5db97a6996ee8283b2e7eb247131",
+      "blockNumber": "52478376",
+      "status": "confirmed",
+      "url": "https://sepolia.basescan.org/tx/0xf1c3e9f3f17959b8132b8f62965df1f5dc3b5db97a6996ee8283b2e7eb247131"
+    }
+  },
+  "fundingScope": {
+    "chainId": 84532,
+    "asset": "testETH",
+    "maxFundingPerRoleWei": "500000000000000",
+    "maxFundingTotalWei": "1500000000000000",
+    "allowedRecipients": [
+      "0x1d479F5A2d3F95f5B72C4875C51Ab5899f79C758",
+      "0xFf0074AAc3C17EBF7449EaC5880c4430047Feb56",
+      "0x1b3A8A15957321175E1FcfF39F681F9733C0C1C9"
+    ],
+    "automaticTopUp": false
+  },
+  "setupIsNotCustomerPayment": true
+}

@@ -1,15 +1,15 @@
 import {encodeFunctionData,isAddressEqual,keccak256,type Abi,type Address} from 'viem';
 import {estimateL1Fee} from 'viem/op-stack';
 import {deployment,publicClient,wallet,type Role} from './config.js';
-import {state,save,event,type Job,type TxRecord} from './store.js';
+import {state,save,event,type Job,type State,type TxRecord} from './store.js';
 
 export const PER_TRANSACTION_GAS_CAP=50000000000000n;
 export const TOTAL_GAS_CAP=200000000000000n;
 const jsonReceipt=(r:any)=>JSON.parse(JSON.stringify(r,(_,v)=>typeof v==='bigint'?v.toString():v));
-const roleQueues=new Map<Role,Promise<void>>();
+const roleQueues=new Map<string,Promise<void>>();
 
 /** Worker and judge routes share one queue per signing role. A failed task still releases its slot. */
-export async function serializeRole<T>(role:Role,operation:()=>Promise<T>):Promise<T>{
+export async function serializeRole<T>(role:string,operation:()=>Promise<T>):Promise<T>{
  const previous=roleQueues.get(role)||Promise.resolve();
  let release!:()=>void;
  const current=new Promise<void>(resolve=>{release=resolve;});
@@ -62,7 +62,8 @@ export function assertPinnedTool(job:Job,role:Role,address:Address,functionName:
   if(args[1]!==expectedSide||args[2]!==job.mandateId||args[3]!==expectedIntent)throw Error('Funding side or intent differs from initial authorization');
  }
  if(functionName==='createMarket'){
-  const expected=[p.threshold18,p.stakeUnits,p.closesAt,p.observationStart,p.observationEnd];
+  const fields=[p.threshold18,p.stakeUnits,p.closesAt,p.observationStart,p.observationEnd];
+  const expected=p.version==='next'?[p.feedId,...fields]:fields;
   if(args.length!==expected.length||args.some((a,i)=>BigInt(a)!==BigInt(expected[i])))throw Error('Resolution policy differs from initial authorization');
  }
  if(functionName==='claim'&&!same(args[1],m.beneficiary)&&!same(args[1],m.counterparty))throw Error('Claim beneficiary is outside the mandate');
@@ -75,6 +76,22 @@ async function getReceipt(hash:`0x${string}`){
   throw Error('Receipt lookup failed; no new transaction will be signed until reconciliation is available');
  }
 }
+export type ExecutorContext={
+ namespace:string;
+ state:State;
+ save:()=>void;
+ event:(job:Job,type:string,message:string)=>void;
+ wallet:typeof wallet;
+ deployment:typeof deployment;
+};
+
+/** V1 and V2 share transaction mechanics, while every journal, key role and deployment comes from its own context. */
+export function createExecutor(ctx:ExecutorContext){
+ if(!ctx.namespace||ctx.namespace.includes(':'))throw Error('Executor namespace must be a nonempty simple identifier');
+ const {state,save,event,wallet,deployment}=ctx;
+ const queueKey=(role:string)=>`${ctx.namespace}:${role}`;
+ const requireOwnJob=(job:Job)=>{if(!state.jobs.includes(job))throw Error(`Job is outside executor namespace ${ctx.namespace}; no transaction or journal mutation`);};
+
 async function recordReceipt(job:Job,tx:TxRecord,receipt:any){
  // OP receipts include L1 data fees in addition to gasUsed * effectiveGasPrice.
  // If the formatter omits L1 fees, ask the same RPC for the raw receipt instead of silently reporting zero.
@@ -117,14 +134,15 @@ async function reconcileSignedTransaction(job:Job,tx:TxRecord,timeout:number){
  * Reverted receipts are terminal, paid outcomes and do not stop reconciliation of later entries.
  * Only the persisted raw bytes may be broadcast; this path cannot create another signature.
  */
-export async function reconcileJobTransactions(job:Job){
+async function reconcileJobTransactions(job:Job){
+ requireOwnJob(job);
  const unresolved=job.transactions.filter(tx=>!['confirmed','reverted'].includes(tx.status));
  if(unresolved.length===0)return [];
  if(await publicClient.getChainId()!==84532)throw Error('RPC must be Base Sepolia');
  const reconciled:{label:string,role:string,hash:`0x${string}`,status:string}[]=[];
  for(const tx of unresolved){
   if(!['buyer','counterparty','deployer'].includes(tx.role))throw Error('Unrecognized journal role; no transaction broadcast');
-  await serializeRole(tx.role as Role,async()=>{
+  await serializeRole(queueKey(tx.role),async()=>{
    // A concurrent worker/judge may have reconciled this entry while it waited for the role lock.
    if(!['confirmed','reverted'].includes(tx.status))await reconcileSignedTransaction(job,tx,30000);
    reconciled.push({label:tx.label,role:tx.role,hash:tx.hash,status:tx.status});
@@ -133,8 +151,9 @@ export async function reconcileJobTransactions(job:Job){
  return reconciled;
 }
 
-export async function transact(job:Job,label:string,role:Role,address:Address,abi:Abi,functionName:string,args:any[]=[]){
- return serializeRole(role,async()=>{
+async function transact(job:Job,label:string,role:Role,address:Address,abi:Abi,functionName:string,args:any[]=[]){
+ requireOwnJob(job);
+ return serializeRole(queueKey(role),async()=>{
   let tx=job.transactions.find(t=>t.label===label);
   if(tx?.status==='confirmed'){if(tx.feeAccounting!=='complete'){const receipt=await getReceipt(tx.hash);if(receipt)await recordReceipt(job,tx,receipt);}return tx.receipt;}
   if(tx?.status==='reverted'){if(tx.feeAccounting!=='complete'){const receipt=await getReceipt(tx.hash);if(receipt)await recordReceipt(job,tx,receipt);}throw Error(`${label} reverted; gas was spent and this intent will not be signed again`);}
@@ -174,3 +193,10 @@ export async function transact(job:Job,label:string,role:Role,address:Address,ab
   return tx.receipt;
  });
 }
+
+ return {transact,reconcileJobTransactions};
+}
+
+const v1Executor=createExecutor({namespace:'v1',state,save,event,wallet,deployment});
+export const transact=v1Executor.transact;
+export const reconcileJobTransactions=v1Executor.reconcileJobTransactions;

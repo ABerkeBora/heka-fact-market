@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {setImmediate} from 'node:timers/promises';
-import {assertPinnedTool,gasCommitment,receiptFeeBreakdown,serializeRole,PER_TRANSACTION_GAS_CAP} from './transactions.js';
-import type {TxRecord} from './store.js';
+import {assertPinnedTool,createExecutor,gasCommitment,receiptFeeBreakdown,serializeRole,PER_TRANSACTION_GAS_CAP} from './transactions.js';
+import type {Job,State,TxRecord} from './store.js';
 const tx=(overrides:Partial<TxRecord>):TxRecord=>({label:'test',role:'buyer',hash:'0x01',status:'pending',url:'',...overrides});
 test('gas budget counts actual confirmed and reverted spend plus full pending reservations',()=>{
  assert.equal(gasCommitment([tx({status:'confirmed',gasPaidWei:'11',feeAccounting:'complete'}),tx({status:'reverted',gasPaidWei:'7',feeAccounting:'complete'}),tx({maxGasWei:'100',raw:'0x01'}),tx({role:'counterparty',maxGasWei:'500'})],'buyer'),118n);
@@ -45,4 +45,18 @@ test('new-sign validator rejects cross-market and changed funding side/intent',(
  assert.throws(()=>assertPinnedTool(job,'buyer',market,'fund',[2n,true,'0x01','0x02'],buyer,deployment),/Market/);
  assert.throws(()=>assertPinnedTool(job,'buyer',market,'fund',[1n,false,'0x01','0x02'],buyer,deployment),/Funding/);
  assert.throws(()=>assertPinnedTool(job,'buyer',market,'fund',[1n,true,'0x01','0x03'],buyer,deployment),/Funding/);
+});
+
+test('executor contexts cannot consume or mutate another namespace job',async()=>{
+ const a={id:'a',transactions:[]} as unknown as Job,b={id:'b',transactions:[]} as unknown as Job;
+ const makeState=(job:Job):State=>({jobs:[job],proposals:[],evidence:[],health:{}});
+ let savesA=0,savesB=0;
+ const context=(namespace:string,state:State,save:()=>void)=>({namespace,state,save,event:()=>{},wallet:(()=>{throw Error('No key access expected');}) as any,deployment:()=>null});
+ const v1=createExecutor(context('v1-test',makeState(a),()=>{savesA++;}));
+ const v2=createExecutor(context('v2-test',makeState(b),()=>{savesB++;}));
+ assert.deepEqual(await v1.reconcileJobTransactions(a),[]);
+ assert.deepEqual(await v2.reconcileJobTransactions(b),[]);
+ await assert.rejects(v1.reconcileJobTransactions(b),/outside executor namespace/);
+ await assert.rejects(v2.transact(a,'test','buyer','0x1111111111111111111111111111111111111111',[],'fund'),/outside executor namespace/);
+ assert.equal(savesA,0);assert.equal(savesB,0);
 });

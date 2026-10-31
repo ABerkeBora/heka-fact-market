@@ -1,0 +1,315 @@
+{
+  "checkedAt": "2026-10-31T03:41:40.398Z",
+  "checkedAtBerlin": "2026-10-31 04:41:40 CET",
+  "version": "next",
+  "source": "https://airnode-nodary.fly.dev/",
+  "metadata": {
+    "title": "Nodary over Airnode",
+    "version": "1.0.0",
+    "signer": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "operation": "latestFeeds",
+    "nameParameter": {
+      "description": "Feed name(s) to query. Can be omitted to return all supported feeds or can be a comma-separated list of feeds. Quote currency is always USD for feeds other than liquid staking exchange rates. Other quotes can be composed by requesting both assets' USD feeds in one call and dividing the first by the second. Never assume a currency has a USD feed. Omitting the 'name' parameter is the best practice to see all supported BASE/QUOTE or exchange rate pairs. Liquid staking exchange-rate feeds are named 'BASE/QUOTE Exchange Rate'. A name Nodary does not serve is absent from the answer rather than an error.",
+      "type": "string",
+      "examples": [
+        "BTC/USD",
+        "ETH/USD",
+        "wstETH/stETH Exchange Rate"
+      ]
+    },
+    "attestation": {
+      "scheme": "eip191-secp256k1",
+      "digest": "keccak256(abi.encodePacked(bytes32 requestHash, uint256 timestamp, bytes dataBytes))",
+      "dataBytes": "UTF-8 of data",
+      "requestHash": "keccak256(utf8(JSON.stringify([operation, parameterEntriesSortedByName]))), where an object value is itself entries sorted by name, at any depth, and an array keeps its order. Names are compared by Unicode code point. A request that carries a projection appends its entries, sorted the same way, as a third element",
+      "verify": "Recover the signer of the signature over the digest and check it equals the address above."
+    }
+  },
+  "fee": {
+    "priced": false,
+    "amountUnits": "0",
+    "paymentTransactions": [],
+    "note": "Nodary latestFeeds is free. This proof contains no x402 purchase or collateral payment."
+  },
+  "observations": [
+    {
+      "feedId": 0,
+      "feed": "ETH/USD",
+      "symbol": "ETH",
+      "assetName": "Ether",
+      "endpoint": "https://airnode-nodary.fly.dev/",
+      "signer": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "request": {
+        "operation": "latestFeeds",
+        "parameters": {
+          "name": "ETH/USD"
+        },
+        "responseProjection": {
+          "price": "/ETH~1USD/value",
+          "updatedAt": "/ETH~1USD/timestamp"
+        }
+      },
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "unit": "USD per ETH",
+      "unitCode": "USD",
+      "decimals": 18,
+      "predicate": "gt",
+      "observationPolicy": "FIRST_ACCEPTED_FRESH_SOURCE_IN_WINDOW_ELSE_VOID",
+      "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+      "observation": {
+        "feedId": 0,
+        "feed": "ETH/USD",
+        "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "price": 2241.335,
+        "priceDisplay": "$2241.34",
+        "sourceAt": 1793418094,
+        "signedAt": 1793418094,
+        "receivedAt": 1793418094,
+        "envelope": {
+          "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+          "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+          "timestamp": "1793418094",
+          "data": "{\"price\":2241.335,\"updatedAt\":1793418094550}",
+          "signature": "0x1898e80b9b9c558161e9ba6a28cebb81647eddf1e2785d939ce9255a1886991131df21e5eb9d356ed9f405466c06e9bfa4bd440f25f929d8a0afbe26934e2e881b"
+        },
+        "request": {
+          "operation": "latestFeeds",
+          "parameters": {
+            "name": "ETH/USD"
+          },
+          "responseProjection": {
+            "price": "/ETH~1USD/value",
+            "updatedAt": "/ETH~1USD/timestamp"
+          }
+        }
+      },
+      "recoveredSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "checks": {
+        "metadataSigner": true,
+        "officialOperation": true,
+        "officialNameParameter": true,
+        "explicitFeedExample": true,
+        "exactRequestHash": true,
+        "signature": true,
+        "envelopeFreshness": true,
+        "sourceFreshness": true,
+        "freeOperation": true
+      }
+    },
+    {
+      "feedId": 1,
+      "feed": "BTC/USD",
+      "symbol": "BTC",
+      "assetName": "Bitcoin",
+      "endpoint": "https://airnode-nodary.fly.dev/",
+      "signer": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "request": {
+        "operation": "latestFeeds",
+        "parameters": {
+          "name": "BTC/USD"
+        },
+        "responseProjection": {
+          "price": "/BTC~1USD/value",
+          "updatedAt": "/BTC~1USD/timestamp"
+        }
+      },
+      "requestHash": "0x78094ba4768ebdadb2012f2de22e779ce0992ecc290ebab208233addaaef106a",
+      "unit": "USD per BTC",
+      "unitCode": "USD",
+      "decimals": 18,
+      "predicate": "gt",
+      "observationPolicy": "FIRST_ACCEPTED_FRESH_SOURCE_IN_WINDOW_ELSE_VOID",
+      "recipeHash": "0x5329d4927aaa5c9bff0c9e6859e2b313f5cfbc8f9087a85d288e5ca5904d2fd2",
+      "observation": {
+        "feedId": 1,
+        "feed": "BTC/USD",
+        "recipeHash": "0x5329d4927aaa5c9bff0c9e6859e2b313f5cfbc8f9087a85d288e5ca5904d2fd2",
+        "requestHash": "0x78094ba4768ebdadb2012f2de22e779ce0992ecc290ebab208233addaaef106a",
+        "price": 77185.545,
+        "priceDisplay": "$77185.54",
+        "sourceAt": 1793418093,
+        "signedAt": 1793418094,
+        "receivedAt": 1793418094,
+        "envelope": {
+          "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+          "requestHash": "0x78094ba4768ebdadb2012f2de22e779ce0992ecc290ebab208233addaaef106a",
+          "timestamp": "1793418094",
+          "data": "{\"price\":77185.545,\"updatedAt\":1793418093551}",
+          "signature": "0x66889a9a9d9c55c12e6f1540a5473e4d5c37c6fd5dd9ccab81f703ee07917618554063279523841fc12ec8f9dab1c50f16580a7a28e441930a98e7ddc97e2e721c"
+        },
+        "request": {
+          "operation": "latestFeeds",
+          "parameters": {
+            "name": "BTC/USD"
+          },
+          "responseProjection": {
+            "price": "/BTC~1USD/value",
+            "updatedAt": "/BTC~1USD/timestamp"
+          }
+        }
+      },
+      "recoveredSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "checks": {
+        "metadataSigner": true,
+        "officialOperation": true,
+        "officialNameParameter": true,
+        "explicitFeedExample": true,
+        "exactRequestHash": true,
+        "signature": true,
+        "envelopeFreshness": true,
+        "sourceFreshness": true,
+        "freeOperation": true
+      }
+    }
+  ],
+  "goalCases": [
+    {
+      "goal": "Will Ethereum be above its current USD price?",
+      "feedId": 0,
+      "status": "PASS",
+      "decision": "accepted",
+      "recognizedFeedId": 0
+    },
+    {
+      "goal": "Create a short Bitcoin observation market",
+      "feedId": 1,
+      "status": "PASS",
+      "decision": "accepted",
+      "recognizedFeedId": 1
+    },
+    {
+      "goal": "BITCOIN price in USD",
+      "feedId": 1,
+      "status": "PASS",
+      "decision": "accepted",
+      "recognizedFeedId": 1
+    },
+    {
+      "goal": "Create an ETHER market",
+      "feedId": 0,
+      "status": "PASS",
+      "decision": "accepted",
+      "recognizedFeedId": 0
+    },
+    {
+      "goal": "SOL/USD above current price",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "UNSUPPORTED_ASSET",
+      "message": "An uppercase ticker is outside the ETH/USD and BTC/USD registry. Name one supported asset only.",
+      "status": "PASS"
+    },
+    {
+      "goal": "ETH and SOL market",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "UNSUPPORTED_ASSET",
+      "message": "An uppercase ticker is outside the ETH/USD and BTC/USD registry. Name one supported asset only.",
+      "status": "PASS"
+    },
+    {
+      "goal": "Create a UNI market using Bitcoin",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "UNSUPPORTED_ASSET",
+      "message": "An uppercase ticker is outside the ETH/USD and BTC/USD registry. Name one supported asset only.",
+      "status": "PASS"
+    },
+    {
+      "goal": "Create a FOO market with BTC",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "UNSUPPORTED_ASSET",
+      "message": "An uppercase ticker is outside the ETH/USD and BTC/USD registry. Name one supported asset only.",
+      "status": "PASS"
+    },
+    {
+      "goal": "ETH or BTC next minute",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "AMBIGUOUS_ASSET",
+      "message": "Choose one asset: ETH/USD or BTC/USD. A single market cannot select both.",
+      "status": "PASS"
+    },
+    {
+      "goal": "DOGE/USD",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "UNSUPPORTED_ASSET",
+      "message": "An uppercase ticker is outside the ETH/USD and BTC/USD registry. Name one supported asset only.",
+      "status": "PASS"
+    },
+    {
+      "goal": "Pick the best token",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "ASSET_REQUIRED",
+      "message": "Name ETH, Ether or Ethereum; or BTC or Bitcoin. No market is selected automatically.",
+      "status": "PASS"
+    },
+    {
+      "goal": "ETH/EUR",
+      "rejected": true,
+      "decision": "rejected",
+      "code": "UNSUPPORTED_ASSET",
+      "message": "An uppercase ticker is outside the ETH/USD and BTC/USD registry. Name one supported asset only.",
+      "status": "PASS"
+    },
+    {
+      "goal": "Create a BTC market",
+      "modelFeedId": 0,
+      "rejected": true,
+      "decision": "rejected",
+      "code": "MODEL_FEED_MISMATCH",
+      "message": "The model selected a different asset from the goal; no market or payment was created.",
+      "status": "PASS"
+    }
+  ],
+  "entrypointCases": [
+    {
+      "goal": "Create a SOL/USD market",
+      "status": "PASS",
+      "code": "UNSUPPORTED_ASSET",
+      "httpCalls": 0,
+      "jobsBefore": 2,
+      "jobsAfter": 2,
+      "proposalsBefore": 2,
+      "proposalsAfter": 2,
+      "paymentSubmitted": false
+    },
+    {
+      "goal": "Create a UNI market using Bitcoin",
+      "status": "PASS",
+      "code": "UNSUPPORTED_ASSET",
+      "httpCalls": 0,
+      "jobsBefore": 2,
+      "jobsAfter": 2,
+      "proposalsBefore": 2,
+      "proposalsAfter": 2,
+      "paymentSubmitted": false
+    },
+    {
+      "goal": "Create a FOO market with BTC",
+      "status": "PASS",
+      "code": "UNSUPPORTED_ASSET",
+      "httpCalls": 0,
+      "jobsBefore": 2,
+      "jobsAfter": 2,
+      "proposalsBefore": 2,
+      "proposalsAfter": 2,
+      "paymentSubmitted": false
+    },
+    {
+      "goal": "Create an ETH and BTC market",
+      "status": "PASS",
+      "code": "AMBIGUOUS_ASSET",
+      "httpCalls": 0,
+      "jobsBefore": 2,
+      "jobsAfter": 2,
+      "proposalsBefore": 2,
+      "proposalsAfter": 2,
+      "paymentSubmitted": false
+    }
+  ]
+}

@@ -1,5 +1,18 @@
 # Fact Market — repository instructions
 
+## Authorized V2 successor
+
+The user explicitly authorized the narrow V2 Goal after V1. Read `BASELINE_V1.md`, `NEXT_GOAL_STATUS.md`, `MORNING_HANDOFF_V2.md` and `REVIEW_SUMMARY.json` as applicable. `v1-baseline` freezes working V1 commit `e8fb85c`; never move the tag or reset/delete its source, receipts, state or pending transactions. V2 branch is `codex/next` in the same public repository.
+
+- Preserve V1 `/` and `/api/*` fixed ETH/USD behavior. V2 `/next` and `/api/next/*` use only verified Nodary ETH/USD(feed0) or BTC/USD(feed1), selected by the real model and checked against the goal independently.
+- FactMarketNext derives the exact canonical request hash on chain and pins recipeHash/policyHash before funding. Source/endpoint/method/operation/parameters/projection/signer/unit/decimals/predicate/window/refund semantics cannot be changed after exposure. An authentic other-feed response must fail.
+- V2 state, intent, deployment and mode0600 wallets are under ignored `.local/next/`, with namespace `fact-market-next` and all signing addresses disjoint from V1. Factories and collateral tokens are separate. Do not consume V1 jobs in V2; shared executor contexts reject foreign job objects. Never race same-key nonces or bypass the exclusive server/CLI lock.
+- A one-time small test gas grant is setup, not customer payment. Nodary is free; the real economic action is capped FMCT position funding and contract-enforced payout. Keep per-mandate/key trust and L1 fee limits accurate.
+- V2 requires real model/funding for both feeds, at least one complete live settlement/claim, all four oracle rejection guards and V1 core regression. Current evidence has both V2 lifecycles plus one new V1 regression; original V1 public evidence is preserved. Public historical audit: `npx tsx scripts/next-verify.ts --public`; the full private-journal audit requires the preserved workspace.
+- Apply the same official API3 start/finish gates below. No new sponsor, arbitrary API platform, full PandaScore lifecycle, exact-T guarantee, hosting, competition submission or real-value spend is authorized.
+- For delivery, keep both direct links, evidence and a short V1/V2 recommendation in `REVIEW_SUMMARY.json` (about180words, actual checkedAtUtc and code commits). Recommend the version with the clearest verified value; do not call a test-role scenario an external customer pilot.
+
+
 ## Authorized scope and ownership
 
 Fact Market is an implementation project, not a handoff-only proposal. The user authorized a locally runnable application, a separate public repository, real test-network integration evidence, routine autonomous implementation decisions and a reviewable delivery. Earlier preparation-only language is superseded.
@@ -33,7 +46,7 @@ The required API3 demonstration is a valid signed response producing a meaningfu
 
 ## Product and oracle boundaries
 
-The working template is **Nodary ETH/USD, first accepted source observation in a fixed window**. Runtime Ollama `qwen3:4b` at `http://127.0.0.1:11434` must receive real provider data and return a structured bounded proposal. Do not replace it with deterministic fixtures and call the result an LLM agent. Keep shared runtime requests short/bounded; do not stop or reconfigure an existing shared Ollama service.
+The V1 working template is **Nodary ETH/USD, first accepted source observation in a fixed window**. The separately authorized V2 recipe scope is defined above. Runtime Ollama `qwen3:4b` at `http://127.0.0.1:11434` must receive real provider data and return a structured bounded proposal. Do not replace it with deterministic fixtures and call the result an LLM agent. Keep shared runtime requests short/bounded; do not stop or reconfigure an existing shared Ollama service.
 
 - The model selects only the allowed template, YES/NO side and -25/0/+25 bps threshold offset. A strict independent validator derives the price threshold, timings and executable rule. Model prose cannot alter policy, signer, recipient, calldata or payout.
 - The fixed upstream is Nodary `latestFeeds`, `name: ETH/USD`, projection `price: /ETH~1USD/value`, `updatedAt: /ETH~1USD/timestamp`.

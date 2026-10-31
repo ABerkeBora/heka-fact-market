@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-31T03:41:31.244Z",
+  "goal": "Create a SOL/USD market around the next reported price.",
+  "status": "PASS",
+  "decision": "UI rejection before model/funding",
+  "before": {
+    "at": "2026-10-31T03:41:16.904Z",
+    "jobs": 2,
+    "proposals": 2,
+    "lastModelCall": 1793417708,
+    "roles": {
+      "deployer": {
+        "address": "0x1d479F5A2d3F95f5B72C4875C51Ab5899f79C758",
+        "nonce": 13,
+        "balanceWei": "470657131934777"
+      },
+      "buyer": {
+        "address": "0xFf0074AAc3C17EBF7449EaC5880c4430047Feb56",
+        "nonce": 7,
+        "balanceWei": "495615733996284"
+      },
+      "counterparty": {
+        "address": "0x1b3A8A15957321175E1FcfF39F681F9733C0C1C9",
+        "nonce": 7,
+        "balanceWei": "496129069996288"
+      }
+    }
+  },
+  "after": {
+    "jobs": 2,
+    "proposals": 2,
+    "lastModelCall": 1793417708,
+    "roles": {
+      "deployer": {
+        "address": "0x1d479F5A2d3F95f5B72C4875C51Ab5899f79C758",
+        "nonce": 13,
+        "balanceWei": "470657131934777"
+      },
+      "buyer": {
+        "address": "0xFf0074AAc3C17EBF7449EaC5880c4430047Feb56",
+        "nonce": 7,
+        "balanceWei": "495615733996284"
+      },
+      "counterparty": {
+        "address": "0x1b3A8A15957321175E1FcfF39F681F9733C0C1C9",
+        "nonce": 7,
+        "balanceWei": "496129069996288"
+      }
+    }
+  },
+  "paymentSubmitted": false
+}

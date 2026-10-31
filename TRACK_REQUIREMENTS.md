@@ -70,3 +70,28 @@ Limits: caps are per mandate ID, not an account-wide session-key system. Gas/too
 Nodary's implemented policy is the first accepted source observation within a fixed short window after trading closes, not historical exact-T or a continuous-threshold claim. Both source and signing timestamps are checked. Missing acceptable evidence means void/refund. First-observation/keeper ordering and upstream provider truth remain disclosed risks.
 
 PandaScore initial and final observations are separate; only discovery/getMatch paid evidence is implemented. BSV is not claimed. Autonomous cycles, usefulness and originality are judging preferences; sponsor examples do not add mandatory scope. Signature authenticity alone does not establish upstream truth.
+
+## V2 start gate — two-feed immutable recipes
+
+2026-10-31 approximately 04:29 Europe/Berlin: correct API3 sponsor tab, full About/submission/judging/examples and general rules reread in real browser. Official From API to contract and Projections guides fetched/read again; they explicitly describe per-item stored hashes or on-chain derivation. No material changes from V1 requirements observed. V2 retains all four mandatory tamper guards and needs new live evidence; V1 evidence is baseline regression only. V2 acceptance/evidence statuses are PENDING until implemented. V2 `/next`, API `/api/next/*`, independent roles/deployment/state; V1 `/` preserved. Submission video/Devfolio still PENDING team actions.
+
+## V2 finish gate and evidence
+
+Finish recheck: **2026-10-31 04:47 Europe/Berlin**, actual page reload, correct API3 tab with all relevant expanded sections, then general submission tab. No material rule changes. Same official URLs above; general deadline remains31October15:00Berlin. Submission recording/Devfolio remain PENDING team actions.
+
+| V2 requirement | Implementation and actual evidence | Status |
+|---|---|---|
+| Two supported real feed recipes | Official metadata plus signed ETH/USD/BTC/USD; independent hash/signature/timing checks in provider-registry.json | PASS |
+| Model chooses source, independent target check | Real qwen3:4b calls for both feeds; strict schema/goal checks; 13 lexical and4actual no-HTTP rejected entrypoints | PASS |
+| Source/request/predicate/window immutable before exposure | FactMarketNext derives canonical request hash; per-market recipeHash and policyHash; TS/Solidity agreement; public deployed recipe checks | PASS |
+| Essential authenticated data → meaningful state/payout | Two new separate V2 markets funded, settled and2FMCT each paid; chain-smoke.json and verification-public.json | PASS |
+| New signer/request/freshness/duplicate guards | Live edited, authentic-old, different-feed request and wrong-key receipts; historical expected error and unchanged reserve/policy checked; mandate/replay/void invariant tests | PASS |
+| Other valid feed cannot settle market | BTC into ETH and ETH into BTC actual rejected receipts; both contract directions also unit tested | PASS |
+| Isolated V2 API/state/deployment/nonces | /api/next; disjoint role addresses; separate token/factory/store; cross-context job rejection; private URL404; audits | PASS |
+| Preserve V1 and recheck core lifecycle | v1-baseline tag;17source files/3public evidence hashes/26old receipts/original market states preserved; one fresh V1 lifecycle complete | PASS |
+| Judge submission route | V2 Evidence UI passes exact envelope bytes to deployed verifier; public ABI docs/FactMarketNext.abi.json; public historical replay script | PASS |
+| Reviewable UI and reproducible build | Desktop1440/tablet768/phone390, actual UI valid draft and unsupported-asset rejection;15TS+64Solidity tests; productionbuild | PASS |
+| Public V2 source/setup | Same repo codex/next; publication/clean-clone verification recorded at delivery | PENDING final push verification |
+| Video/Devfolio | Updated150s outline; no video recording/upload or competition submission performed | PENDING team action |
+
+Public audit explicitly omits private-journal checks rather than counting them as passes; the separate preserved-workspace audit verified those checks. Original V1 evidence files were not overwritten by new V2 or regression evidence. V1 journal intentionally contains one additional V1 regression job, not a V2 job. Nodary calls were free; no V2 x402 fee is claimed. No external customer pilot was performed.

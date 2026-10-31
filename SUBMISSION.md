@@ -36,3 +36,7 @@ All funds are valueless test assets on Base Sepolia. No mainnet funds, hosted de
 - Video <=2.5 minutes: PENDING recording/upload.
 - Devfolio description/submission: draft ready; PENDING team action. One entry per team, up to three partner tracks.
 - Published deadline checked in browser: 31 October 2026, 15:00 Europe/Berlin. Recheck recorded in TRACK_REQUIREMENTS.md.
+
+## V2 recommended presentation variant
+
+Keep the150-second budget. Use `/next` for goal-selected ETH/BTC and show its exact recipeHash/policyHash before funding. Show the two completed live markets and the BTC counterparty payout (the model's YES position lost; verified settlement correctly paid NO). Show5actual rejection receipts, including both wrong-feed directions, then the SOL no-payment UI proof and preserved V1 route/tag. Prefer this concrete source-choice value over adding another sponsor. All source/ordering/isolated-wallet limits remain. External customer pilot, actual video recording and Devfolio submission are still not performed.

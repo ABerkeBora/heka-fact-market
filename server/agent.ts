@@ -1,26 +1,31 @@
 import {randomUUID} from 'node:crypto';
 import {decodeEventLog,keccak256,toHex,formatUnits,type Address,type Abi} from 'viem';
 import fs from 'node:fs';
-import {artifact,deployment,publicClient,wallet} from './config.js';
-import {observe} from './provider.js';
-import {state,save,event,publicJob,type Job} from './store.js';
-import {transact,reconcileJobTransactions} from './transactions.js';
+import {artifact,deployment as v1Deployment,publicClient,wallet as v1Wallet} from './config.js';
+import {observe as v1Observe} from './provider.js';
+import {state as v1State,save as v1Save,event as v1Event,publicJob,type Job,type State} from './store.js';
+import {createExecutor} from './transactions.js';
+export type AgentContext={namespace:string,state:State,save:()=>void,event:typeof v1Event,wallet:typeof v1Wallet,deployment:typeof v1Deployment,contractName:string,observe:(feed?:string)=>Promise<any>,evidencePath:string,createMarketArgs:(p:any)=>any[]};
+export function createAgentEngine(ctx:AgentContext){
+const {state,save,event,wallet,deployment}=ctx;
+const {transact,reconcileJobTransactions}=createExecutor(ctx);
 let active=false;
+
 function assertPinned(p:any){const d=deployment(),m=p.mandatePreview;if(!d||!m||Number(m.chainId)!==84532||d.market.toLowerCase()!==m.recipient.toLowerCase()||d.collateral.toLowerCase()!==m.collateralAddress.toLowerCase()||wallet('buyer').account.address.toLowerCase()!==m.beneficiary.toLowerCase()||wallet('counterparty').account.address.toLowerCase()!==m.counterparty.toLowerCase()||wallet('deployer').account.address.toLowerCase()!==m.executor.toLowerCase())throw Error('Authorized contract, token or role changed; restore the pinned deployment and role configuration before resuming');}
 
-export function authorize(proposalId:string){
+function authorize(proposalId:string){
  const proposal=state.proposals.find(p=>p.id===proposalId);if(!proposal)throw Error('Proposal not found');
  assertPinned(proposal);
  const existing=state.jobs.find(j=>j.proposalId===proposalId);if(existing){state.evidence.push({at:Date.now(),kind:'duplicate-intent',decision:'blocked',jobId:existing.id,reason:'Proposal already authorized; existing intent returned without a new payment'});save();return publicJob(existing);}
  if(proposal.expiresAt<Math.floor(Date.now()/1000))throw Error('Proposal expired; draft again with a fresh observation');
- const id=randomUUID(),job:Job={id,proposalId,proposal,status:'queued',stage:'Authorization',mandateId:keccak256(toHex('mandate:'+id)),intentId:keccak256(toHex('position:'+id)),transactions:[],events:[],createdAt:Math.floor(Date.now()/1000)};
+ const id=(ctx.namespace==='v1'?'':ctx.namespace+':')+randomUUID(),job:Job={id,proposalId,proposal,status:'queued',stage:'Authorization',mandateId:keccak256(toHex('mandate:'+id)),intentId:keccak256(toHex('position:'+id)),transactions:[],events:[],createdAt:Math.floor(Date.now()/1000)};
  state.jobs.push(job);event(job,'authorized','Initial bounded mandate accepted. Agent may fund one fixed test position and settle/claim under its pinned policy.');save();return publicJob(job);
 }
-async function readMarket(id:string){const d=deployment();return await publicClient.readContract({address:d.market,abi:artifact('FactMarket').abi,functionName:'getMarket',args:[BigInt(id)]}) as any;}
-export async function runJob(job:Job){
+async function readMarket(id:string){const d=deployment();return await publicClient.readContract({address:d.market,abi:artifact(ctx.contractName).abi,functionName:'getMarket',args:[BigInt(id)]}) as any;}
+async function runJob(job:Job){
  await reconcileJobTransactions(job);
  assertPinned(job.proposal);
- const d=deployment(),market=d.market as Address,collateral=d.collateral as Address,mAbi=artifact('FactMarket').abi as Abi,cAbi=artifact('TestCollateral').abi as Abi,p=job.proposal;
+ const d=deployment(),market=d.market as Address,collateral=d.collateral as Address,mAbi=artifact(ctx.contractName).abi as Abi,cAbi=artifact('TestCollateral').abi as Abi,p=job.proposal;
  if(job.status==='complete'||job.status==='refunded')return;
  job.status='running';job.error=undefined;save();
  if(!job.marketId){
@@ -34,11 +39,11 @@ export async function runJob(job:Job){
    await transact(job,`${role}:approve`,role,collateral,cAbi,'approve',[market,BigInt(p.stakeUnits)]);
   }
   job.stage='Creating fixed resolution policy';save();
-  const receipt=await transact(job,'create-market','deployer',market,mAbi,'createMarket',[BigInt(p.threshold18),BigInt(p.stakeUnits),BigInt(p.closesAt),BigInt(p.observationStart),BigInt(p.observationEnd)]);
+  const receipt=await transact(job,'create-market','deployer',market,mAbi,'createMarket',ctx.createMarketArgs(p));
   for(const log of receipt.logs){try{const e=decodeEventLog({abi:mAbi,data:log.data,topics:log.topics});if(e.eventName==='MarketCreated')job.marketId=String((e.args as any).marketId ?? (e.args as any).id);}catch{}}
   if(!job.marketId)throw Error('Market receipt has no creation event; refusing to recreate');save();
  }
- let current=await readMarket(job.marketId);let now=Number((await publicClient.getBlock()).timestamp);
+ let current=await readMarket(job.marketId);if(p.version==='next'&&(Number(current.feedId)!==p.feedId||current.requestHash!==p.requestHash||current.recipeHash!==p.recipeHash||current.policyHash!==p.policyHash))throw Error('On-chain recipe/policy differs from the authorized market; no funding');let now=Number((await publicClient.getBlock()).timestamp);
  const zero='0x0000000000000000000000000000000000000000';
  if(Number(current.state)===0 && now<p.closesAt){
   const buyerOwner=p.side==='yes'?current.yesOwner:current.noOwner;
@@ -56,7 +61,7 @@ export async function runJob(job:Job){
   else{
    if(Number((job as any).observationCalls||0)>=32){job.status='waiting';job.stage='Observation call limit reached · awaiting refund deadline';save();return;}
    job.stage='Obtaining signed observation';(job as any).observationCalls=Number((job as any).observationCalls||0)+1;save();
-   let observation;try{observation=await observe();}catch(e:any){job.status='waiting';job.stage='Observation unavailable · retrying within approved window';job.error=e.message;event(job,'oracle-rejected',e.message);return;}
+   let observation;try{observation=await ctx.observe(p.feed);}catch(e:any){job.status='waiting';job.stage='Observation unavailable · retrying within approved window';job.error=e.message;event(job,'oracle-rejected',e.message);return;}
    if(observation.sourceAt<p.observationStart){job.status='waiting';job.stage='Waiting for a source update inside the window';save();return;}
    if(observation.sourceAt>p.observationEnd){job.status='waiting';job.stage='No qualifying observation · awaiting refund deadline';save();return;}
    (job as any).settlementObservation=observation;save();
@@ -75,9 +80,13 @@ export async function runJob(job:Job){
  }
  const final=await readMarket(job.marketId);job.status=Number(final.state??final.status)===3?'refunded':'complete';job.stage=job.status==='complete'?'Resolved and collected':'Voided and refunded';event(job,'delivered',job.stage);save();exportEvidence();
 }
-export async function tick(){if(active)return;active=true;try{for(const job of state.jobs.filter(j=>['queued','running','waiting'].includes(j.status))){try{await runJob(job);}catch(e:any){job.status='error';job.error=e.shortMessage||e.message;event(job,'error',job.error!);}}}finally{active=false;}}
-export function resume(id:string){const j=state.jobs.find(x=>x.id===id);if(!j)throw Error('Job not found');if(['complete','refunded'].includes(j.status)&&!j.transactions.some(t=>!['confirmed','reverted'].includes(t.status)))return publicJob(j);j.status='queued';j.error=undefined;save();return publicJob(j);}
-export function exportEvidence(){fs.writeFileSync('docs/evidence/agent-runs.json',JSON.stringify({generatedAt:new Date().toISOString(),jobs:state.jobs.map(publicJob),rejections:state.evidence},null,2)+'\n');}
-export async function marketState(){const d=deployment();if(!d)return[];return await Promise.all(state.jobs.filter(j=>j.marketId).map(async j=>{
+async function tick(){if(active)return;active=true;try{for(const job of state.jobs.filter(j=>['queued','running','waiting'].includes(j.status))){try{await runJob(job);}catch(e:any){job.status='error';job.error=e.shortMessage||e.message;event(job,'error',job.error!);}}}finally{active=false;}}
+function resume(id:string){const j=state.jobs.find(x=>x.id===id);if(!j)throw Error('Job not found');if(['complete','refunded'].includes(j.status)&&!j.transactions.some(t=>!['confirmed','reverted'].includes(t.status)))return publicJob(j);j.status='queued';j.error=undefined;save();return publicJob(j);}
+function exportEvidence(){fs.writeFileSync(ctx.evidencePath,JSON.stringify({generatedAt:new Date().toISOString(),jobs:state.jobs.map(publicJob),rejections:state.evidence},null,2)+'\n');}
+async function marketState(){const d=deployment();if(!d)return[];return await Promise.all(state.jobs.filter(j=>j.marketId).map(async j=>{
  try{const m=await readMarket(j.marketId!);const zero='0x0000000000000000000000000000000000000000'; const outcome=Number(m.state); return {...j.proposal,...m,explanation:`Agent selected ${j.proposal.side.toUpperCase()} with validated threshold $${j.proposal.thresholdUsd}. The first qualifying source observation determines the outcome.`,id:j.marketId,address:d.market,jobId:j.id,jobStatus:j.status,status:['Open','YES won','NO won','Voided'][outcome],outcome:['Pending','YES','NO','VOID'][outcome],reserveUnits:formatUnits(m.reserve,6),yesStakeUnits:m.yesOwner===zero?'0':formatUnits(m.stake,6),noStakeUnits:m.noOwner===zero?'0':formatUnits(m.stake,6),payoutUnits:formatUnits((m.yesClaimed||m.noClaimed)?(outcome===3?(m.yesClaimed?m.stake:0n)+(m.noClaimed?m.stake:0n):m.stake*2n):0n,6),settlementPrice:m.observedPrice?formatUnits(m.observedPrice,18):undefined,sourceObservedAt:m.sourceTimestamp.toString(),signedAt:m.signedTimestamp.toString(),envelope:(j as any).settlementObservation?.envelope,transactions:publicJob(j).transactions};}catch{return {id:j.marketId,jobId:j.id,error:'Could not refresh chain state'};}
 }));}
+
+return {authorize,runJob,tick,resume,marketState,exportEvidence};
+}
+export const {authorize,runJob,tick,resume,marketState,exportEvidence}=createAgentEngine({namespace:'v1',state:v1State,save:v1Save,event:v1Event,wallet:v1Wallet,deployment:v1Deployment,contractName:'FactMarket',observe:v1Observe,evidencePath:'docs/evidence/agent-runs.json',createMarketArgs:p=>[BigInt(p.threshold18),BigInt(p.stakeUnits),BigInt(p.closesAt),BigInt(p.observationStart),BigInt(p.observationEnd)]});

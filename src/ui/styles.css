@@ -8,3 +8,16 @@
 
 .snapshot-saved{font-size:11px;margin-top:10px;line-height:1.6}
 @media(min-width:641px) and (max-width:900px){.stake-line{display:flex}.amount-input{width:196px;max-width:196px;margin:0;flex:none}.amount-input input{text-align:right}.rule-row,.empty-policy .rule-row,.policy-rows .rule-row{grid-template-columns:150px minmax(0,1fr);gap:18px}.rule-row dd{text-align:right}.mandate-preview .section-heading{display:flex}.mandate-preview .section-heading>span{margin:0}.positions-panel .rule-row{grid-template-columns:1fr 1fr}.technical-values .rule-row{display:block}.technical-values .rule-row dd{text-align:left}}
+
+.version-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--muted);margin-left:-30px;white-space:nowrap}
+.version-link:hover{color:var(--text);text-decoration:underline}
+.recipe-details{border-top:1px solid var(--rule);padding:14px 0 18px}
+.recipe-details>p{line-height:1.65;margin-bottom:10px}
+.recipe-values .rule-row{display:block;padding:7px 0}
+.recipe-values .rule-row dd{text-align:left;font-size:11px;margin-top:5px;overflow-wrap:anywhere}
+.recipe-details h4{margin:14px 0 6px;font-size:12px;font-weight:500}
+.recipe-details pre{margin:0;max-height:240px}
+@media(max-width:900px){.version-link{margin-left:-12px}}
+@media(max-width:640px){.version-link{margin-left:auto;min-height:38px}.network-label{margin-left:0}.source-line>span:last-child{white-space:normal;text-align:right}.source-line{align-items:baseline}.recipe-values .rule-row dd{text-align:left}}
+
+@media(max-width:640px){.topbar-inner{gap:12px}}

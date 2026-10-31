@@ -2,7 +2,20 @@
 
 An agent turns a bounded question about ETH/USD into a fully collateralized test market. A pinned AirnodeHub response determines the winning side on Base Sepolia; the agent funds its position, submits the observation and collects the contract-enforced payout under one initial authorization.
 
-The working template is **Nodary ETH/USD, first accepted observation in a fixed window**. This is an observation market, not a historical exact-time price or proof that a price stayed above a threshold throughout a period. PandaScore paid discovery is separately verified; a complete PandaScore prediction lifecycle is not implemented. BSV qualification is not claimed.
+The V1 template is **Nodary ETH/USD, first accepted observation in a fixed window**; V2 adds goal-selected BTC/USD with an immutable recipe per market. This is an observation market, not a historical exact-time price or proof that a price stayed above a threshold throughout a period. PandaScore paid discovery is separately verified; a complete PandaScore prediction lifecycle is not implemented. BSV qualification is not claimed.
+
+## V1 and V2 comparison
+
+| Version | Local route | Source rule | Isolated state |
+|---|---|---|---|
+| V1 baseline | http://localhost:3102/ | Fixed ETH/USD request | `.local/state.json`, original factory and roles |
+| V2 | http://localhost:3102/next | Model selects ETH/USD or BTC/USD; each market pins its complete recipe | `.local/next/state.json`, new factory/token and disjoint roles |
+
+The published `v1-baseline` tag preserves working commit `e8fb85c`. V2 lives on `codex/next`; the same UI and executor primitives are shared, while API/storage/deployment/payment namespaces are separate. See [BASELINE_V1.md](BASELINE_V1.md) and [MORNING_HANDOFF_V2.md](MORNING_HANDOFF_V2.md).
+
+V2 recognizes one explicit supported asset in the goal, receives real signed observations for both feeds, and lets the local model select an allowlisted feed/side/offset. An independent lexical validator rejects unsupported, ambiguous or model-mismatched assets. It is deliberately not a general asset classifier. The deployed contract derives the canonical request hash itself from feed0(ETH) or feed1(BTC), then fixes source, exact operation/parameters/projection, signer, unit, predicate and observation/refund semantics in `recipeHash`; threshold/stake/chain/factory/token/windows are bound in `policyHash`. The same proposal supplies the UI and transaction arguments. A different registered feed's authentic response cannot settle the market.
+
+Nodary is free in both versions. The real economic action is capped test-position funding and contract-enforced collection; V2 does not invent an x402 charge or add PandaScore/BSV scope.
 
 ## Run locally
 
@@ -102,3 +115,28 @@ The immutable oracle signer is Nodary `0xE70f1e8b22a21e4Bb5188918a3033341b281E4c
 An authentic signature proves who signed the exact response to the fixed request. It does not prove upstream truth, market profitability or resistance to provider manipulation. The first accepted observation rule has keeper/ordering selection risk. No platform administrator can change the stored policy or withdraw reserves. This code is for valueless test use, not audited production wagering.
 
 See [track requirements](TRACK_REQUIREMENTS.md), [morning handoff](MORNING_HANDOFF.md), and [presentation/submission draft](SUBMISSION.md) for evidence, limits and remaining submission work.
+
+## V2 setup and verification
+
+After configuring your own V1 test roles as above, stop the server before the exclusive setup command:
+
+```sh
+npm run next:setup
+npm run build
+npm start
+```
+
+`next:setup` generates three separate `fact-market-next` test roles at mode0600 and grants each at most0.0005 Base Sepolia test ETH from this project's V1 deployer (at most0.0015 test ETH total, plus setup gas). This is a one-time setup grant, not customer payment or an automatic top-up. It deploys a separate FMCT and FactMarketNext. Existing grants/deployments reconcile their original signed transactions rather than paying again. All V2 keys/journals/deployment are under ignored `.local/next/`; `NEXT_WALLET_FILE` may select another private file, but role namespace and address-disjointness checks prevent V1 key reuse. Wallet files inside the checkout must remain under ignored `.local/`.
+
+```sh
+# Real model/funding/settlement tests; stop app server first:
+npm run next:smoke
+# Public replay: no private roles/journals or wallet needed:
+npx tsx scripts/next-verify.ts --public
+# Full retention audit in the preserved workspace with its original private journals:
+npx tsx scripts/next-verify.ts
+```
+
+The V2 smoke creates/funds both actual feeds, rejects four oracle variants plus both wrong-feed directions, settles/collects, then runs a new V1 ETH/USD lifecycle through the shared engine. Original V1 receipts/evidence remain intact; that intentional V1 regression appends one job to the V1 journal and publishes its new record separately under `docs/evidence/v2/`. Re-running a completed smoke reuses the journal instead of creating more positions. V2 private state is not served through HTTP; `/api/next/*` never looks up or acts on a V1 job.
+
+See `docs/evidence/v2/` for new evidence. Video recording and Devfolio submission remain team actions; the local comparison does not imply a completed competition entry.

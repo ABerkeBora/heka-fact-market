@@ -1,0 +1,323 @@
+{
+  "id": "fast-7aaa4f9e-e623-43e1-bc09-420e12de823e",
+  "goal": "Create a bounded ETH/USD prediction using the first accepted eligible Nodary price observation, with a fixed 1000 test-satoshi stake.",
+  "status": "refunded",
+  "network": "testnet",
+  "userSide": "no",
+  "thresholdUsd": "2238.23",
+  "buyerPub": "0241d3bf0e5e6b48309d2f638585656358b438085a605cc188871f45e32389646a",
+  "cpPub": "031b9394a16c16209ba0e0784ed8034af5cc32f0c5d3bec0e4102aa9cd4d7c4d6f",
+  "policy": {
+    "templateId": "nodary-fast-asm-v1",
+    "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "airnodePublicKey": "0x044e993579608baf1d542741675d347867f3d2c558d2e9bc3b74bac3583b569322eb85068fa43e4c5abd6db7dfa74999362bebf2322554918e1e13dec3cbc1a91a",
+    "expectedAirnodeAddress": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "validFrom": 1793445430,
+    "validTo": 1793445730,
+    "threshold18": "2238230000000000000000",
+    "collateralSatoshis": 2000,
+    "buyerStakeSatoshis": 1000,
+    "yesRecipientScript": "76a914f26bea4fa449cf5cc08ec1e6a6231b43cdf0642288ac",
+    "noRecipientScript": "76a914540213b692e6b21f6ff4b7431642e350a9b4a27088ac",
+    "refundAfter": 1793445850,
+    "refundBuyerScript": "76a914540213b692e6b21f6ff4b7431642e350a9b4a27088ac",
+    "refundCounterpartyScript": "76a914f26bea4fa449cf5cc08ec1e6a6231b43cdf0642288ac"
+  },
+  "policyHash": "1efd75ba7533901a25c0cb569dd4cab76e04653c69619ee4cb4cc78570f161ba",
+  "createdAt": 1793444830,
+  "initialObservation": {
+    "feedId": 0,
+    "feed": "ETH/USD",
+    "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "price": 2243.84,
+    "priceDisplay": "$2243.84",
+    "sourceAt": 1793444817,
+    "signedAt": 1793444817,
+    "receivedAt": 1793444817,
+    "envelope": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793444817",
+      "data": "{\"price\":2243.84,\"updatedAt\":1793444817161}",
+      "signature": "0xd93b2dfa5f0b3ab7f1480cfc7f80ecd8f453a3139b591fb65c1602639b5bfd694bfb0b77d7ba7e2be4e72f454b6e148e81901492bca41188f70063c06c4949531c"
+    },
+    "request": {
+      "operation": "latestFeeds",
+      "parameters": {
+        "name": "ETH/USD"
+      },
+      "responseProjection": {
+        "price": "/ETH~1USD/value",
+        "updatedAt": "/ETH~1USD/timestamp"
+      }
+    }
+  },
+  "llm": {
+    "model": "qwen3:4b",
+    "realCall": true,
+    "durationMs": 12496,
+    "suggestion": {
+      "templateId": "nodary-eth-window-v1",
+      "thresholdOffsetBps": -25,
+      "side": "no",
+      "explanation": "The real price is 2243.84, which is below the threshold of 2250 (2243.84 < 2250). The prediction is 'no' because the price is below the threshold."
+    }
+  },
+  "events": [
+    {
+      "at": "2026-10-31T11:13:30.844Z",
+      "kind": "prepared",
+      "message": "Both participant inputs signed. Exact fee sponsor signature is pending."
+    },
+    {
+      "at": "2026-10-31T11:15:35.924Z",
+      "kind": "funding",
+      "message": "Native prediction pool funded with two fixed1000sat shares",
+      "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099"
+    },
+    {
+      "at": "2026-10-31T12:28:49.572Z",
+      "kind": "payout",
+      "message": "Fixed native stakes refunded by mature contract branch",
+      "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab"
+    }
+  ],
+  "mandate": {
+    "id": "fast-7aaa4f9e-e623-43e1-bc09-420e12de823e",
+    "network": "testnet",
+    "buyerStakeSats": 1000,
+    "buyerPrepFeeCapSats": 500,
+    "cpStakeSats": 1000,
+    "deploymentFeeSponsorCapSats": 2000,
+    "claimFeeCapSats": 100,
+    "maxActions": 1,
+    "maxPayouts": 1,
+    "maxObservationCalls": 6,
+    "expiry": 1793446630
+  },
+  "observations": 0,
+  "plan": {
+    "partialRawSha256": "083fd0b3c47a37ff1bfbf92ae2c9095a8349ad0abf6eab30b7e5c3a6420efb89",
+    "lockingScriptSha256": "47b723ec6b5ccc03a45d521a1a16e0026d690d7ae93daf241cdb3b8375aeab02",
+    "contractInfo": {
+      "scope": "experimental NEW optimized ASM native original-Airnode outcome guard; not deployed by this helper",
+      "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "lockingScriptBytes": 1017821,
+      "nonPushOpcodes": 281400,
+      "postSeparatorScriptBytes": 1131,
+      "lockingScriptSha256": "47b723ec6b5ccc03a45d521a1a16e0026d690d7ae93daf241cdb3b8375aeab02",
+      "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+      "timing": "fixed signed/source observation window; no current-block timestamp; mature refund and valid settlement race for same UTXO"
+    },
+    "buyerPreparationTx": "9160243388a59fe2a9e2bdf4b32b741d7d38584b6b4ddf99078158a046267a66"
+  },
+  "funding": {
+    "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+    "vout": 0,
+    "satoshis": 2000,
+    "feeSats": 2000,
+    "proof": {
+      "status": "VALIDATED_BY_NODE_UTXO",
+      "network": "testnet",
+      "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+      "provider": "https://testnet.gorillanode.io/api/v1",
+      "http": 200,
+      "rawMatchesOriginal": true,
+      "rawBinding": "canonical-transaction-id",
+      "validatedInputs": true,
+      "validatedOutputs": true,
+      "inputCount": 3,
+      "outputCount": 3,
+      "totalOutputCount": 3,
+      "inputs": [
+        {
+          "inputIndex": 0,
+          "sourceTxid": "9160243388a59fe2a9e2bdf4b32b741d7d38584b6b4ddf99078158a046267a66",
+          "vout": 0,
+          "status": 1,
+          "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vin": 0
+        },
+        {
+          "inputIndex": 1,
+          "sourceTxid": "69f342859fc90effe713763f5e9217955d26022a8ef7e7e92cfd7bf1396c1eb0",
+          "vout": 0,
+          "status": 1,
+          "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vin": 1
+        },
+        {
+          "inputIndex": 2,
+          "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+          "vout": 2,
+          "status": 1,
+          "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vin": 2
+        }
+      ],
+      "outputs": [
+        {
+          "outputIndex": 0,
+          "status": 0,
+          "satoshis": 2000,
+          "scriptSha256": "47b723ec6b5ccc03a45d521a1a16e0026d690d7ae93daf241cdb3b8375aeab02"
+        },
+        {
+          "outputIndex": 1,
+          "status": 0,
+          "satoshis": 900,
+          "scriptSha256": "7874bcd317575cf6c0b3fd56fb6ffe4518e0eec889c5c1122de8ab711c17a3ec"
+        },
+        {
+          "outputIndex": 2,
+          "status": 0,
+          "satoshis": 2000,
+          "scriptSha256": "bceb97cb4a05ee4e85828f7c781aeab54a533afef7731f6645a1a9be315b43b7"
+        }
+      ],
+      "txMeta": {
+        "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+        "fee": 2000,
+        "sizeInBytes": 1018354,
+        "blockIDs": [],
+        "blockHashes": [],
+        "blockHeights": [],
+        "mainChainIndex": -1
+      },
+      "miningStatus": "UNCONFIRMED",
+      "checkedAt": "2026-10-31T11:29:52.731Z",
+      "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+    },
+    "acceptedAt": "2026-10-31T11:29:52.731Z",
+    "scriptInfo": {
+      "scope": "experimental NEW optimized ASM native original-Airnode outcome guard; not deployed by this helper",
+      "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "lockingScriptBytes": 1017821,
+      "nonPushOpcodes": 281400,
+      "postSeparatorScriptBytes": 1131,
+      "lockingScriptSha256": "47b723ec6b5ccc03a45d521a1a16e0026d690d7ae93daf241cdb3b8375aeab02",
+      "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+      "timing": "fixed signed/source observation window; no current-block timestamp; mature refund and valid settlement race for same UTXO"
+    },
+    "explorer": "https://test.whatsonchain.com/tx/00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+    "legacyTransportProof": {
+      "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+      "provider": "https://testnet.gorillanode.io/api/v1",
+      "http": 200,
+      "body": "OK",
+      "rawBytes": 1018354,
+      "at": "2026-10-31T11:15:34.692Z",
+      "status": "ACCEPTED_BY_NODE",
+      "witness": {
+        "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+        "provider": "https://testnet.gorillanode.io/api/v1",
+        "http": 200,
+        "decodedTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+        "rawMatchesOriginal": true,
+        "responseBytes": 1018462,
+        "at": "2026-10-31T11:15:34.859Z",
+        "scope": "Exact raw transaction observed at responding node; raw-store presence alone is not validation/mining proof"
+      },
+      "scope": "Synchronous Testnet node HTTP200 acceptance plus same-node exact canonical retrieval; block confirmation is separate"
+    },
+    "publishedAt": "2026-10-31T11:15:34.860Z",
+    "validatedAt": "2026-10-31T11:29:52.731Z",
+    "validationBeforeObservation": false
+  },
+  "lateFunding": true,
+  "activeIntent": "refund",
+  "evidenceCorrection": "Transport ACK/raw visibility is not validator acceptance; original timestamp proves public commitment only. Node UTXO validation observed later; no retroactive prefunding-validation claim.",
+  "payout": {
+    "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+    "outcome": "void",
+    "outputs": [
+      {
+        "satoshis": 1000,
+        "lockingScript": "76a914540213b692e6b21f6ff4b7431642e350a9b4a27088ac"
+      },
+      {
+        "satoshis": 1000,
+        "lockingScript": "76a914f26bea4fa449cf5cc08ec1e6a6231b43cdf0642288ac"
+      },
+      {
+        "satoshis": 800,
+        "lockingScript": "76a914f26bea4fa449cf5cc08ec1e6a6231b43cdf0642288ac"
+      }
+    ],
+    "proof": {
+      "status": "VALIDATED_BY_NODE_UTXO",
+      "network": "testnet",
+      "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+      "provider": "https://testnet.gorillanode.io/api/v1",
+      "http": 200,
+      "rawMatchesOriginal": true,
+      "rawBinding": "canonical-transaction-id",
+      "validatedInputs": true,
+      "validatedOutputs": true,
+      "inputCount": 2,
+      "outputCount": 3,
+      "totalOutputCount": 3,
+      "inputs": [
+        {
+          "inputIndex": 0,
+          "sourceTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vout": 0,
+          "status": 1,
+          "spendingTxid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+          "vin": 0
+        },
+        {
+          "inputIndex": 1,
+          "sourceTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vout": 1,
+          "status": 1,
+          "spendingTxid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+          "vin": 1
+        }
+      ],
+      "outputs": [
+        {
+          "outputIndex": 0,
+          "status": 0,
+          "satoshis": 1000,
+          "scriptSha256": "a4502de1dd205f1d28f0ea86f58f993e26b20b24c4b24173e53768c346c0f72c"
+        },
+        {
+          "outputIndex": 1,
+          "status": 0,
+          "satoshis": 1000,
+          "scriptSha256": "7874bcd317575cf6c0b3fd56fb6ffe4518e0eec889c5c1122de8ab711c17a3ec"
+        },
+        {
+          "outputIndex": 2,
+          "status": 0,
+          "satoshis": 800,
+          "scriptSha256": "7874bcd317575cf6c0b3fd56fb6ffe4518e0eec889c5c1122de8ab711c17a3ec"
+        }
+      ],
+      "txMeta": {
+        "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+        "fee": 100,
+        "sizeInBytes": 1626,
+        "blockIDs": [],
+        "blockHashes": [],
+        "blockHeights": [],
+        "mainChainIndex": -1
+      },
+      "miningStatus": "UNCONFIRMED",
+      "checkedAt": "2026-10-31T12:28:49.569Z",
+      "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+    },
+    "nativeScriptVerified": true,
+    "explorer": "https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab"
+  },
+  "finalObservation": null,
+  "walletImport": {
+    "status": "accepted",
+    "basket": "fact-market-fast-payouts",
+    "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+    "at": "2026-10-31T12:28:59.937Z"
+  }
+}

@@ -1,28 +1,42 @@
-# Fact Market — API3 presentation and submission draft
+# VeriFi Market — submission draft (API3 + BSV)
 
-## Presentation decision — 31 October 2026, 12:51:55 Europe/Berlin
+## Tracks and status — 31 October 2026
 
-**Present http://localhost:3102/next, the verified API3/Base Sepolia V2.** Its recorded live lifecycles and public chain audit pass. Keep `/` as the preserved original baseline. Native `/bsv/fast` is experimental: the 45-minute new-funding budget closed after exactly two authorized pools, and native readiness remains false for this run. No third pool will be created.
+One Devfolio entry, two partner tracks: **API3 — Any API in your contract** and **BSV — DeFi Rails for Agentic Payments**. The same rule runs on both chains: a market's payout is decided only by an authenticated AirnodeHub response, verified on chain.
 
-The native Script has now executed a real 2,000 sat outcome payout, with full-node UTXO validation but no recorded block confirmation. However, validated prefunding before the historical observation windows was not proven, and the separate refund is still waiting for chain median time. A later refund cannot repair the missing historical prefunding evidence. Do not combine these records into a completed native product or BSV qualification claim. Details and exact receipts are in [BSV_HANDOFF.md](BSV_HANDOFF.md) and [the native runbook](docs/BSV_FAST_RUNBOOK.md).
+- **API3 (Base Sepolia V2, `/next`):** complete. Real settlements and payouts for ETH/USD and BTC/USD, four tamper rejections on the same open market before its valid settlement, and a read-only judge replay (`scripts/judge-next.ts`).
+- **BSV (`/bsv/fast`):** the locking Script verifies the original Nodary EIP-191 signature itself — no relayer, no EVM approval. Funding comes from BSV Desktop through the BSV SDK / Wallet Toolbox; payout is enforced by the Script to fixed recipients. Real testnet funding and a 2,000 sat payout are on WhatsOnChain. Open points are listed honestly in the README "Known limitations": funding validation was first observed after the window opened, the BSV tamper cases are local-VM runs, and the second pool's timed refund became spendable about an hour after its nominal unlock because of median-time lag (it was broadcast at 12:28 UTC: [refund](https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab), 1,000 + 1,000 sat back, fee from a separate input).
 
-## 150-second API3 presentation outline
+Details and exact receipts: [the native runbook](docs/BSV_FAST_RUNBOOK.md) and [docs/history/BSV_HANDOFF.md](docs/history/BSV_HANDOFF.md).
 
-- **0:00–0:15 — Problem.** A platform should not be able to change the data channel or settlement rule after a user funds a position. Fact Market fixes both, together with the beneficiary and payment limits.
-- **0:15–0:35 — Real agent proposal.** Open `/next`, use the ETH/USD goal and show the recorded local model call, allowed recipe and independently derived threshold. The model proposes a bounded position; it cannot select arbitrary tools, signers, destinations or the winning result.
-- **0:35–0:55 — Initial delegation and funding.** Show the immutable recipe/policy hashes, observation window, strict comparator, fixed beneficiary and one-position FMCT cap. Open the actual buyer and opposing-role funding receipts. These are isolated local test roles, not independent customers.
-- **0:55–1:20 — Signed evidence and payout.** Open the completed ETH/USD market. Show original response bytes, source time separately from signature time, the accepted outcome, real Base Sepolia settlement/claim receipts and zero remaining reserve. The agent initiates the economic action after the initial mandate; Nodary itself is free.
-- **1:20–1:55 — Valid plus four rejected responses.** Show the existing actual on-chain tamper receipts and historical replay: edited value, authentic stale response, authentic different request and wrong signer. Explain the decoded expected error and unchanged protected reserve. Do not rerun them against an already-settled market and call its unrelated closed-state rejection a signature test.
-- **1:55–2:15 — Immutable rules and retry safety.** Show duplicate-intent rejection, wrong-feed protection, and the recipe/beneficiary that cannot be edited after funding. Explain the no-valid-data refund rule without borrowing the unfinished native refund as EVM evidence. First accepted eligible window observation sets the result; it is not an exact-second quote.
-- **2:15–2:30 — Verify.** Show the public repository, actual deployed contract/network, explorer links and judge response-submission route. State the source-authenticity/upstream-truth boundary. End on the working API3 flow.
+## BSV track items (official "Extra items per track")
 
-This remains an outline. Actual video recording/upload and competition submission have not been performed. The video must be at most 150 seconds.
+**Example transactions on WhatsOnChain.** [First pool funding](https://test.whatsonchain.com/tx/42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9) (mined, block 1766139) · [2,000 sat outcome payout](https://test.whatsonchain.com/tx/486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e) (node-validated) · [second pool funding](https://test.whatsonchain.com/tx/00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099) (mined, block 1766140) · [timed refund of the second pool](https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab) (1,000 sat to each side, broadcast 12:28 UTC, not yet mined at the last check).
 
-## Main Devfolio description draft — API3
+**Problem.** When an agent puts money behind an outcome, whoever settles the outcome can redirect the money. On most platforms that is the operator's database.
 
-**Fact Market: agent-funded positions under a fixed signed-source rule.**
+**Target users.** Agent developers and market creators who want an agent to take a bounded, fully collateralized position on a data question, and counterparties who want to know the result cannot be chosen by the platform.
 
-Market creators and agent developers need a way to turn an external-data question into a collateralized position without letting the platform choose a different evidence channel after users fund it. Fact Market uses a real local language model to propose a bounded ETH/USD rule. V2 also supports the existing BTC/USD recipe; a separate validator checks the requested asset and derives the threshold. Source operation, exact request/projection, signer, timing, stake limits and payout recipients are pinned before exposure.
+**How people use it.** Ask a question in plain language. The agent picks a vetted data source, side and threshold; the rule is locked into a BSV Script before funding; the user funds from BSV Desktop; the Script pays the winner only when presented with the provider's original signed response, or refunds both sides after the deadline.
+
+**What it brings to BSV.** Trust-minimised conditional payments on BSV that consume authenticated off-chain data directly in Script, using BSV's large-script capacity, plus an agent payment flow on the official TypeScript stack. Any AirnodeHub-signed data source can, in principle, become a settlement input for BSV escrow without a bridge or relayer.
+
+## 150-second video (API3 + BSV)
+
+Recorded receipts from 31 October are shown as recorded; label any time cut on screen.
+
+- **0:00–0:12 — Problem.** Whoever settles an outcome can redirect the money. VeriFi Market locks the rule before funding and lets only an API3-signed response decide.
+- **0:12–0:35 — Agent.** At `/next`, type a goal. The local model reads a real signed price and proposes feed, side and threshold; independent code checks it. The resolution card shows source, request, signer, threshold and window fixed before funding.
+- **0:35–0:55 — Payment and payout (Base Sepolia).** Open the completed ETH/USD market: agent and counterparty funding, original signed bytes, settlement, 2 FMCT payout on Basescan.
+- **0:55–1:25 — Tamper test, pass/fail.** In a terminal: `npx tsx scripts/judge-next.ts --case valid` → ACCEPTED, then `edited-value`, `stale-real-response`, `different-request`, `wrong-signer` → REJECTED with the contract's error. Then Basescan: the same four reverted transactions on the open market, before its settlement block.
+- **1:25–2:05 — BSV.** At `/bsv/fast`: the BSV Script itself verifies the same Nodary signature, with no relayer. Show the recorded agent proposal and BSV Desktop funding, then WhatsOnChain: pool 1 funding → 2,000 sat payout; pool 2 funding → timed 1,000/1,000 refund. The BSV tamper checker runs locally against the real policy; say so.
+- **2:05–2:30 — Close.** Signatures authenticate the provider, not the truth; providers come from a curated list. Repo, contract address and WhatsOnChain links on screen.
+
+## Main Devfolio description draft
+
+**VeriFi Market: agent-funded positions under a fixed signed-source rule.**
+
+Market creators and agent developers need a way to turn an external-data question into a collateralized position without letting the platform choose a different evidence channel after users fund it. VeriFi Market uses a real local language model to propose a bounded ETH/USD rule. V2 also supports the existing BTC/USD recipe; a separate validator checks the requested asset and derives the threshold. Source operation, exact request/projection, signer, timing, stake limits and payout recipients are pinned before exposure.
 
 After one capped initial mandate, the executor funds matched test positions, submits an eligible original AirnodeHub response to the deployed Base Sepolia contract, and triggers the fixed beneficiary's claim. The contract checks the expected signer, intended request, envelope and source timestamps, immutable observation window and duplicate-action protection. Real recorded lifecycles include both feeds, payouts and rejected tamper/wrong-feed responses. Anyone can inspect the public receipts or submit an original response through the documented UI/script.
 
@@ -32,7 +46,19 @@ These valueless test roles are controlled by the installation and do not establi
 
 All completed main-product value actions use valueless Base Sepolia test assets. The separate native BSV investigation is an experimental engineering extension with explicit gaps, not a completed dual-track qualification claim. No hosted deployment, mainnet spending, video upload or Devfolio submission was performed by this delivery.
 
-## Optional native engineering appendix — latest node snapshot 12:51:55 Berlin
+## API3 track items (official "For this track" list, rechecked 31 Oct 2026, 13:12 Berlin)
+
+**Deployed contract and network.** FactMarketNext `0x9319e85d84beb94307e91c350209e5e429b8be34`, Base Sepolia (chain 84532). Test collateral FMCT `0xd6e4968b75422dfb13759138808a4310cec061b3`.
+
+**Judge response route.** Read-only replay with your own edited or re-signed envelope: `npx tsx scripts/judge-next.ts --case valid --save valid.json`, edit, then `--file valid.json` (no wallet, no gas). Live route on a fresh market: the `/next` Evidence form or `POST /api/next/markets/:id/submit`, or a direct `settle` call with the public ABI. Details and limits: README, "Judge tamper test — V2".
+
+**Who relies on the data.** The two position holders in each market: the agent's user, who funds one side under a capped mandate, and the opposite side. In this build both are test roles controlled by this installation. The data is their only settlement input; the contract pays the full pool to whichever side the signed ETH/USD or BTC/USD value selects. A market operator also relies on it, because it can then show participants that it did not choose the result.
+
+**What goes wrong if it is forged.** The full collateral goes to the wrong side. An edited price, a real but old price, a real price for a different asset or request, or a value signed by another key could each flip the YES/NO result. A settled market cannot be re-settled, so the error would be permanent. The contract rejects all four before any state change; the recorded receipts are listed in the README. The signature proves the response came from Nodary for this exact request; it does not prove that Nodary's upstream price is correct.
+
+**What data we wanted but could not find.** We did not hit a missing-data blocker for this MVP: the ETH/USD and BTC/USD feeds we needed were available. The data we most wanted next is a signed point-in-time price, so settlement does not depend on which in-window observation is submitted first. Nodary, which we integrated, exposes only `latestFeeds`; the AirnodeHub catalogue does list CoinPaprika daily history and Blocksize 30-minute closes, which we have not integrated yet. We also tested paid PandaScore discovery and match metadata (0.02 test aUSD); that data was available, but we did not build a sports market from it.
+
+## Native engineering appendix — latest node snapshot 12:51:55 Berlin
 
 The new BSV Script computes Keccak/EIP-191 over original Airnode bytes and verifies the original secp256k1 signature itself; there is no relayer re-signature or EVM approval in that native contract. The immutable rule protects the full 2,000 sat pool and fixed 1,000/1,000 refund shares, with fees from an external input. A real outcome has current UTXO spend/create validation, proving more than a local VM replay. Block confirmation and economic prefunding chronology remain separate facts.
 
@@ -41,7 +67,7 @@ The new BSV Script computes Keccak/EIP-191 over original Airnode bytes and verif
 | [First funding](https://test.whatsonchain.com/tx/42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9) | MINED in block 1766139 |
 | [First 2,000 sat payout](https://test.whatsonchain.com/tx/486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e) | Full-node UTXO-validated, UNCONFIRMED |
 | [Second funding](https://test.whatsonchain.com/tx/00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099) | MINED in block 1766140 |
-| Saved refund `114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab` | Waiting for chain median time >11:24:10 UTC; not a completed refund |
+| [Timed refund](https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab) | Broadcast 12:28 UTC after chain median time passed 11:24:10 UTC; node-accepted, 1,000/1,000 sat principal, fee from a separate input; not yet mined at the last check |
 
 Strong validation was observed at 11:29:52 UTC, after both source windows. Earlier HTTP 200/raw/public observations established transport and commitment, not validated prefunding. Teranode can acknowledge asynchronous Kafka submission before validation, and a raw-store GET does not prove script execution. No earlier validated UTXO observation was recorded; this is an unknown historical validation time, not proof that the transactions were invalid beforehand. Current code distinguishes transport/validation/mining, gates on canonical UTXO state and chooses saved refund when new funding validation is observed late.
 
@@ -53,7 +79,7 @@ The second refund was signed before publication. Its initial mandate expires 11:
 
 - Main version: `/next`, public audit `docs/evidence/v2/verification-public.json` PASS; real chain lifecycles in `docs/evidence/v2/chain-smoke.json`. Reproduce with `npx tsx scripts/next-verify.ts --public`, without private roles or new payment.
 - Public repository/setup: [ABerkeBora/heka-fact-market](https://github.com/ABerkeBora/heka-fact-market), [README](README.md). Verify the final source commit's publication separately from an earlier public commit.
-- API3 judge route: Evidence submission UI and documented permissionless contract ABI/script. Native `/bsv/fast` checker is a separate read-only VM check, with the selected historical market context labelled explicitly.
+- API3 judge route: read-only `scripts/judge-next.ts` replay against the deployed V2 contract (own envelopes, no wallet), the `/next` Evidence UI / `POST /api/next/markets/:id/submit` on a fresh market, and the permissionless `settle` ABI. `npm run judge:submit` is V1 only. Native `/bsv/fast` checker is a separate read-only VM check, with the selected historical market context labelled explicitly.
 - Native recovery: saved refund waiting; historical prefunding proof missing; `nativeReady=false` for this run. Do not claim all native qualification items PASS or call UNCONFIRMED receipts mined.
 - Video<=2.5 minutes: **PENDING** recording/upload. Devfolio entry: description draft only, **PENDING** team action.
 - General deadline last checked: **31 October 2026, 15:00 Europe/Berlin**, one team entry and up to three partner tracks. The final official rule check is recorded in the track checklist.

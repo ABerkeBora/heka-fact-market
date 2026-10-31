@@ -1,6 +1,6 @@
-# Fact Market track requirements
+# VeriFi Market track requirements
 
-Selected track: **API3 — Any API in your contract**. BSV conditional technical gate did not establish a native verifier or standard-wallet transaction and is excluded. Cardano is outside scope.
+Selected track: **API3 — Any API in your contract**. BSV conditional technical gate did not establish a native verifier or standard-wallet transaction and is excluded. *(Superseded 31 Oct 13:45: the submission also enters the BSV track with `/bsv/fast`; see TRACK_REQUIREMENTS_BSV.md.)* Cardano is outside scope.
 
 Start check: **2026-10-31 approximately03:39 Europe/Berlin**, before application/contract code. Correct API3 tab selected in real browser; qualification/submission/judging/examples and About expanded; general submission separately read. Official starter and guides read.
 
@@ -95,3 +95,19 @@ Finish recheck: **2026-10-31 04:47 Europe/Berlin**, actual page reload, correct 
 | Video/Devfolio | Updated150s outline; no video recording/upload or competition submission performed | PENDING team action |
 
 Public audit explicitly omits private-journal checks rather than counting them as passes; the separate preserved-workspace audit verified those checks. Original V1 evidence files were not overwritten by new V2 or regression evidence. V1 journal intentionally contains one additional V1 regression job, not a V2 job. Nodary calls were free; no V2 x402 fee is claimed. No external customer pilot was performed.
+
+## Final official recheck and independent review — 31 October 2026, 13:12–13:20 Europe/Berlin
+
+Rules reread in a real browser: the actual **API3** tab was selected (the bare `#api3` URL first showed the BSV panel), About/qualification/"What to submit"/"What judges look for" were expanded, then the **How to submit** tab was read separately. Deadline still **Saturday 31 October 15:00** (Berlin), one Devfolio entry per team, up to three partner tracks, TUM track automatic, video at most 2.5 minutes, public repo with setup README, live judging 15:00–17:00. No material change from the earlier checks. The API3 track adds: contract address/network, a judge route for own responses, the video tamper test (valid action plus four rejections before that action), and a description of who relies on the data, the forgery harm and data not found.
+
+Independently verified in this review (public RPC, not inherited from reports): FactMarketNext has code at `0x9319…be34`; the four V2 tamper transactions are reverted receipts to it in blocks 52479836, 52479847, 52479857 and 52479869; the ETH/USD settlement (52479898) and 2 FMCT payout (52479912) succeeded afterwards. An `eth_call` replay of all five recorded inputs at block 52479897 returned success for the valid envelope and `NotSignedByAirnode` (edited, different request, wrong signer) / `ResponseTooOld` (stale) for the others.
+
+| API3 mandatory item (V2, presented) | Evidence | Status |
+|---|---|---|
+| AirnodeHub essential; signer/request/timing verified by deployed contract; value drives payout; duplicate protection | V2 table above; receipts rechecked on chain in this review | **PASS** |
+| Tamper test: valid action + four rejections on the same open market | Receipts above; `scripts/judge-next.ts` replay | **PASS** (evidence) |
+| Contract address and network | README "Judge tamper test — V2"; SUBMISSION.md | **PASS** |
+| Judge route for own responses | New read-only `scripts/judge-next.ts` (no wallet); `/next` Evidence UI and `POST /api/next/markets/:id/submit` on a fresh market; permissionless ABI | **PASS** (script type-checked and run against an RPC stub; same eth_call verified live in browser; not yet executed from a shell with Base Sepolia access) |
+| Description: users, forged-data harm, data not found | SUBMISSION.md "API3 track items" | **PASS** content · **PENDING** Devfolio entry |
+| Video ≤ 2.5 min with tamper test | Outline only | **PENDING** team recording |
+| Public repo with setup README | Public repo exists; this review's changes need a push | **PENDING** push of the final commit |

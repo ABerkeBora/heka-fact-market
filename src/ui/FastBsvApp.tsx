@@ -125,7 +125,7 @@ export function FastBsvApp() {
     <div className="bsv-shell" data-ui="fast-native-market">
       <header className="bsv-top">
         <a className="bsv-brand" href="/">
-          Fact Market<span>ETH/USD · signed-source settlement</span>
+          VeriFi Market<span>ETH/USD · signed-source settlement</span>
         </a>
         <nav>
           <a href="/next">API3 version</a>

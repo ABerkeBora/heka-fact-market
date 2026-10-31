@@ -12,6 +12,7 @@
     "chain:deploy": "tsx scripts/deploy.ts",
     "chain:smoke": "tsx scripts/chain-smoke.ts",
     "judge:submit": "tsx scripts/submit.ts",
+    "judge:next": "tsx scripts/judge-next.ts",
     "next:setup": "tsx scripts/next-setup.ts",
     "next:smoke": "tsx scripts/next-smoke.ts",
     "bsv:check": "tsx scripts/bsv-native-check.ts",

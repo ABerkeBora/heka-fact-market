@@ -2,7 +2,7 @@
 
 ## Which version to present — 31 October 2026, 12:51:55 Europe/Berlin
 
-**Present http://localhost:3102/next**, the verified API3/Base Sepolia V2. Its live/public audit is PASS. **http://localhost:3102/bsv/fast remains experimental**, and `presentation.nativeReady` is false for this run. The 45-minute funding budget closed at 12:33:40 Berlin after exactly two authorized native pools; do not create a third or reset the budget. All earlier routes and baseline history remain intact.
+**Current status (31 Oct, 13:45 Berlin):** `/bsv/fast` is the submitted BSV flow. Both pilot pools completed: pool 1 funding → 2,000 sat payout, pool 2 funding → timed 1,000/1,000 refund (broadcast 12:28 UTC). New pools need the user's explicit go-ahead; the next pool uses a 25-minute pre-window margin. The text below is the 12:51 snapshot, kept for its detail.
 
 The first [native funding](https://test.whatsonchain.com/tx/42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9) is MINED. Its [2,000 sat outcome payout](https://test.whatsonchain.com/tx/486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e) has canonical full-node UTXO validation but remains UNCONFIRMED. The [second funding](https://test.whatsonchain.com/tx/00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099) is now MINED in block 1766140, observed at 12:51:55 Berlin. The second saved refund, `114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab`, waits for chain median time to pass 11:24:10 UTC. It is not yet a successful refund receipt.
 

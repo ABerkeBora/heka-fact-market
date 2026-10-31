@@ -1,16 +1,20 @@
 # Fact Market — repository instructions
 
+## Current submission scope — 31 October 2026, 13:45 Berlin (supersedes conflicting lines below)
+
+The user decided on one Devfolio entry for two partner tracks: **API3** (Base Sepolia V2, `/next`) and **BSV** (native Script at `/bsv/fast`). Product name: **VeriFi Market**; code identifiers keep "Fact Market". Earlier "BSV is excluded" and "do not create a third pool" lines record earlier phases. Any new native pool still needs the user's explicit go-ahead in chat. `/bsv` (custodial relay) and `/bsv/native` (blocked artifact) stay history only.
+
 ## Authorized BSV migration — 31 October 2026
 
-The user authorized an isolated BSV prediction-collateral/payout workflow on `codex/bsv`, at `/bsv` and `/api/bsv`. Preserve both `/` and `/next`, their deployments, baselines, journals and proofs. Read `TRACK_REQUIREMENTS_BSV.md` and `BSV_HANDOFF.md`. Earlier BSV-excluded language below is historical and is superseded only for this bounded workflow. Use pinned official SDK 3.2.1 and Wallet Toolbox 2.14.9, derived BRC-100 wallet keys, runtime LLM and testnet only. No mainnet spend. An output-bound attestor after original-envelope EVM verification is a trusted relayer, not native API3 verification or automatic dual-track eligibility. No unilateral refund guarantee unless actually enforced independently of the attestor. Do not modify the native spike owned by the feasibility agent under `.local/bsv-native-spike`.
+The user authorized an isolated BSV prediction-collateral/payout workflow on `codex/bsv`, at `/bsv` and `/api/bsv`. Preserve both `/` and `/next`, their deployments, baselines, journals and proofs. Read `TRACK_REQUIREMENTS_BSV.md` and `docs/history/BSV_HANDOFF.md`. Earlier BSV-excluded language below is historical and is superseded only for this bounded workflow. Use pinned official SDK 3.2.1 and Wallet Toolbox 2.14.9, derived BRC-100 wallet keys, runtime LLM and testnet only. No mainnet spend. An output-bound attestor after original-envelope EVM verification is a trusted relayer, not native API3 verification or automatic dual-track eligibility. No unilateral refund guarantee unless actually enforced independently of the attestor. Do not modify the native spike owned by the feasibility agent under `.local/bsv-native-spike`.
 
 ### Current BSV resource gate
 
-`/bsv/native` has real network-visible2000test-sat funding, but the original-signature outcome claim is rejected by public-node operation/time policy. Its separate fixed refund is signed and pending chain median time; skipped-branch opcount may still prevent execution. Read `BSV_HANDOFF.md`. Preserve all three canonical funding/claim/refund journals and the originalV1/V2. Never describe a local VM pass as network acceptance. New native preparation/funding of the known-blocked artifact is disabled. An optimized artifact must use a separate template/state and prove live compatibility before new collateral; never overwrite the immutable old contract or count two server-held keys as independent parties.
+`/bsv/native` has real network-visible2000test-sat funding, but the original-signature outcome claim is rejected by public-node operation/time policy. Its separate fixed refund is signed and pending chain median time; skipped-branch opcount may still prevent execution. Read `docs/history/BSV_HANDOFF.md`. Preserve all three canonical funding/claim/refund journals and the originalV1/V2. Never describe a local VM pass as network acceptance. New native preparation/funding of the known-blocked artifact is disabled. An optimized artifact must use a separate template/state and prove live compatibility before new collateral; never overwrite the immutable old contract or count two server-held keys as independent parties.
 
 ## Authorized V2 successor
 
-The user explicitly authorized the narrow V2 Goal after V1. Read `BASELINE_V1.md`, `NEXT_GOAL_STATUS.md`, `MORNING_HANDOFF_V2.md` and `REVIEW_SUMMARY.json` as applicable. `v1-baseline` freezes working V1 commit `e8fb85c`; never move the tag or reset/delete its source, receipts, state or pending transactions. V2 branch is `codex/next` in the same public repository.
+The user explicitly authorized the narrow V2 Goal after V1. Read `docs/history/BASELINE_V1.md`, `docs/history/NEXT_GOAL_STATUS.md`, `docs/history/MORNING_HANDOFF_V2.md` and `REVIEW_SUMMARY.json` as applicable. `v1-baseline` freezes working V1 commit `e8fb85c`; never move the tag or reset/delete its source, receipts, state or pending transactions. V2 branch is `codex/next` in the same public repository.
 
 - Preserve V1 `/` and `/api/*` fixed ETH/USD behavior. V2 `/next` and `/api/next/*` use only verified Nodary ETH/USD(feed0) or BTC/USD(feed1), selected by the real model and checked against the goal independently.
 - FactMarketNext derives the exact canonical request hash on chain and pins recipeHash/policyHash before funding. Source/endpoint/method/operation/parameters/projection/signer/unit/decimals/predicate/window/refund semantics cannot be changed after exposure. An authentic other-feed response must fail.
@@ -30,7 +34,7 @@ Fact Market is an implementation project, not a handoff-only proposal. The user 
 - Primary track: **API3 — Any API in your contract**. BSV is excluded: its conditional standard-wallet/native-verifier/DeFi gate was not demonstrated. Cardano is outside scope.
 - Public repository: `ABerkeBora/heka-fact-market`. Source publication is authorized; inspect the publishable tree for secrets/private data first. Verify the actual repository root before Git operations. Use repository-local author/committer identity mapped to the user's GitHub account; do not change global identity or substitute a bot.
 - No hosted deployment, competition submission, third-party messaging, mainnet value spend or new paid service is authorized by this scope.
-- Read [README.md](README.md), [HANDOFF.md](HANDOFF.md), [TRACK_REQUIREMENTS.md](TRACK_REQUIREMENTS.md) and [MORNING_HANDOFF.md](MORNING_HANDOFF.md) before changing the product. They are self-contained; no parent workspace is required.
+- Read [README.md](README.md), [docs/history/HANDOFF.md](docs/history/HANDOFF.md), [TRACK_REQUIREMENTS.md](TRACK_REQUIREMENTS.md) and [docs/history/MORNING_HANDOFF.md](docs/history/MORNING_HANDOFF.md) before changing the product. They are self-contained; no parent workspace is required.
 
 ## Mandatory official-rule gates
 
@@ -94,7 +98,7 @@ Prioritize the risky integration, then the smallest useful payment→state-chang
 - Exercise the real browser flow and inspect desktop/tablet/phone screenshots. Keep the source-bound resolution card central; use restrained light editorial surfaces/green data emphasis. No invented metrics, transactions or success states, dead controls, repeated demo labels or decorative dashboard chrome.
 - Distinguish fixture/unit tests from actual testnet transactions. Four required oracle failures must be tied to authentic envelopes, the intended rejection reasons and protected-state evidence.
 - Preserve chain history when creating fresh sample markets. Record commands, contract/network/explorer links and trust limits.
-- Deliver README, environment example, lockfile, public source, `TRACK_REQUIREMENTS.md`, concise `MORNING_HANDOFF.md` and `SUBMISSION.md` with a 150-second presentation outline. Do not call a draft outline a recorded/submitted video or claim full eligibility with mandatory items unresolved.
+- Deliver README, environment example, lockfile, public source, `TRACK_REQUIREMENTS.md`, concise `docs/history/MORNING_HANDOFF.md` and `SUBMISSION.md` with a 150-second presentation outline. Do not call a draft outline a recorded/submitted video or claim full eligibility with mandatory items unresolved.
 
 ## Authorized completion run — 31 October 2026
 

@@ -60,7 +60,7 @@ export function BsvApp() {
     <div className="bsv-shell" data-ui="relay-market">
       <header className="bsv-top">
         <a href="/" className="bsv-brand">
-          Fact Market<span>Native BSV collateral</span>
+          VeriFi Market<span>Native BSV collateral</span>
         </a>
         <nav>
           <a href="/">Original</a>

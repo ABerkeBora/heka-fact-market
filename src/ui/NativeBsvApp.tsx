@@ -73,7 +73,7 @@ export function NativeBsvApp() {
     <div className="bsv-shell" data-ui="native-market">
       <header className="bsv-top">
         <a className="bsv-brand" href="/">
-          Fact Market<span>Native signed-source contract</span>
+          VeriFi Market<span>Native signed-source contract</span>
         </a>
         <nav>
           <a href="/">Original</a>

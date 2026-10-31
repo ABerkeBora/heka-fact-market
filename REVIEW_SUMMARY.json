@@ -1,6 +1,6 @@
 {
   "project": "fact-market",
-  "checkedAtUtc": "2026-10-31T11:59:04.891089+00:00",
+  "checkedAtUtc": "2026-10-31T12:22:00+00:00",
   "v1": {
     "url": "http://localhost:3102/",
     "status": "READY",
@@ -22,7 +22,8 @@
     "docs/evidence/v2/chain-smoke.json: yeni V1 döngüsü dahil"
   ],
   "pending": [
-    "Video kaydı ve Devfolio gönderimi.",
+    "Push final commit to public repo.",
+    "Video recording (<=150 s) and Devfolio submission before 15:00 Berlin.",
     "Harici müşteri pilotu yapılmadı; test rolleri kullanıldı."
   ],
   "recommendation": {
@@ -38,7 +39,7 @@
     "refundTxid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
     "evidence": "docs/evidence/bsv/fast-node-utxo-validation-final.json",
     "pending": [
-      "Fixed refund awaits chain median time.",
+      "Fixed refund broadcast 12:28:48 UTC after MTP passed 11:24:10 UTC; WhatsOnChain shows 1000/1000 sat principal + 800 sat change (fee from separate input); not mined at last check.",
       "Historical validation before observation was not proven; public commitment and validation timestamps are distinct.",
       "Block finality is separate from node UTXO validation."
     ],
@@ -50,5 +51,25 @@
     "contractTests": 73,
     "productionBuild": "PASS",
     "browser": "PASS desktop/tablet/phone; final screenshots preserved"
+  },
+  "independentReview": {
+    "reviewer": "Claude (independent review, 31 Oct 2026 13:09-13:25 Berlin)",
+    "rulesRecheckBerlin": "2026-10-31T13:12 API3 tab and How to submit tab; deadline 15:00 Berlin unchanged",
+    "verifiedHere": [
+      "Base Sepolia RPC: FactMarketNext has code; four V2 tamper txs reverted (blocks 52479836-52479869) before successful settlement 52479898 and payout 52479912",
+      "eth_call replay at block 52479897: valid envelope accepted; edited/different-request/wrong-signer -> NotSignedByAirnode; stale -> ResponseTooOld",
+      "Clean copy without .local: tsc PASS, 48/48 application tests PASS, vite build PASS; public-tree secret scan PASS (320 files)",
+      "/next renders at desktop 1440 and phone 375; /api/bsv/fast/state keeper active"
+    ],
+    "notRunHere": [
+      "forge test (Foundry unavailable in review shell; contracts unchanged)",
+      "judge-next.ts against live RPC from a shell (verified with RPC stub plus the same eth_call in browser)"
+    ],
+    "changes": [
+      "scripts/judge-next.ts + npm run judge:next: read-only V2 judge tamper replay",
+      "README: V2 judge section and contract address",
+      "SUBMISSION.md: API3 track answers (users, forgery harm, data not found)",
+      "TRACK_REQUIREMENTS.md: final recheck table"
+    ]
   }
 }

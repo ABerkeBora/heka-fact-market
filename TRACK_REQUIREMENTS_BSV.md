@@ -1,4 +1,22 @@
-# Fact Market BSV — requirements and actual evidence
+# VeriFi Market BSV — requirements and actual evidence
+
+## Current mapping — `/bsv/fast`, submitted flow (rules reread 31 Oct 2026, 13:25 Berlin)
+
+The tables further down describe earlier BSV artifacts (`/bsv/native`, `/bsv` relay) and are kept as history. The submitted BSV flow is the optimized Script at `/bsv/fast`.
+
+| BSV requirement | Evidence | Status |
+|---|---|---|
+| BSV SDK and Wallet Toolbox (ts-stack) | `package.json` pins `@bsv/sdk` 3.2.1 and `@bsv/wallet-toolbox` 2.14.9; `server/bsv/wallets.ts`, `server/bsv/fast.ts` | PASS |
+| Standard BSV wallet in user flows | BSV Desktop (Testnet) through WalletClient prepares the buyer stake from wallet-derived inputs; keys stay in the wallet | PASS |
+| Real transactions | Pool 1: [funding](https://test.whatsonchain.com/tx/42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9) (block 1766139) → [2,000 sat payout](https://test.whatsonchain.com/tx/486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e). Pool 2: [funding](https://test.whatsonchain.com/tx/00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099) (block 1766140) → [timed refund 1,000/1,000](https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab) | PASS |
+| Non-custodial funds | The locking Script pays only fixed recipients: the winner (with the original Nodary signature, verified in Script) or both sides after the refund time. No relayer or platform withdrawal key. The counterparty is a local test role — a market party, not a custodian | PASS (design and recorded spends) |
+| AI agent makes a payment | Local `qwen3:4b` proposes side and threshold from a real signed price; the executor funds the agent's stake under a capped mandate | PASS |
+| DeFi product is the core | Conditional-payment escrow settled by authenticated external data | Judgment for the judges |
+| WhatsOnChain example transactions | Links above | PASS |
+| Video: end to end incl. agent payment | Plan in SUBMISSION.md | PENDING |
+| Description: problem, users, usage, value for BSV | SUBMISSION.md "BSV track items" | PASS content · PENDING Devfolio |
+
+Known gaps (README "Known limitations"): funding validation was first observed after the observation window opened; BSV tamper cases are local-VM runs; refund timing follows chain median time.
 
 Start gate: **31 October2026 10:22 Europe/Berlin**. Finish recheck: **31 October2026 11:04 Europe/Berlin**, actual BSV/API3/general tabs selected, submission/judging/examples expanded. No material change. Sources: [BSV rules](https://hackathon.tum-blockchain.com/prizes#bsv-association), [API3 rules](https://hackathon.tum-blockchain.com/prizes#api3), [general submission](https://hackathon.tum-blockchain.com/prizes#how-to-submit), [official ts-stack](https://github.com/bsv-blockchain/ts-stack), [API3 starter](https://github.com/api3dao/airnodehub-hackathon-starter). Local sponsor pack `START-HERE.md`, `AGENTS.md` and relevant complete stack guide wallet/signing/treasury sections were read before code. Pinned SDK3.2.1/Wallet Toolbox2.14.9.
 
@@ -27,7 +45,7 @@ The `/bsv` relay history has actual1000+1000 deposits and1900sat payout. Its ser
 | Valid plus edited/stale/wrong-request/wrong-signer tamper cases | `native-oracle-rejections.json`: actual pilot policy/recipients,5/5 official SDK VM; `bsv:check` CLI and read-only UI. These are not failing transactions mined on-chain | PASS reproducible local checks; required live positive BLOCKED |
 | Deployed contract/network and judge submission | BSV Testnet contract outpoint248baaa…:0 and locking SHA2560cb313…; app checker/CLI uses actual immutable policy. Live custom-response action is not offered while resource gate is blocked | PENDING native judging acceptance |
 
-V1/V2 retain their separate, completed API3/EVM evidence in `TRACK_REQUIREMENTS.md`, `MORNING_HANDOFF_V2.md` and `docs/evidence/v2/`. Their qualification is not automatically transferred to this BSV-native experiment. Relay EVM approval [9c06840…](https://sepolia.basescan.org/tx/0x9c06840d3bc104a579adfe4068c7490c1e5a415a80b0f2732371fc736b666a6b) is original-envelope EVM verification followed by a trusted attestor, not native BSV verification.
+V1/V2 retain their separate, completed API3/EVM evidence in `TRACK_REQUIREMENTS.md`, `docs/history/MORNING_HANDOFF_V2.md` and `docs/evidence/v2/`. Their qualification is not automatically transferred to this BSV-native experiment. Relay EVM approval [9c06840…](https://sepolia.basescan.org/tx/0x9c06840d3bc104a579adfe4068c7490c1e5a415a80b0f2732371fc736b666a6b) is original-envelope EVM verification followed by a trusted attestor, not native BSV verification.
 
 Freshness is the immutable observation window/source-signature relation, not a BSV current-clock quote. An eligible historical window proof can compete with matured refund until one valid spend wins. API signatures authenticate origin/bytes, not upstream factual truth. Funding bytes were signed/journaled before the window; independent network visibility was only observed after the window, so this pilot does not prove public prefunding before the result became knowable.
 
@@ -36,8 +54,8 @@ Freshness is the immutable observation window/source-signature relation, not a B
 | Submission item | Evidence / remaining action | Status |
 |---|---|---|
 | Public source + setup README | Authorized repo `ABerkeBora/heka-fact-market`, `codex/bsv`; `README.md`, `docs/BSV_SETUP.md`, lockfile, public native source/artifact/provenance | PASS — delivery source on `codex/bsv` |
-| At most150second video | Outline in `BSV_HANDOFF.md`; no recording made | PENDING |
-| Detailed Devfolio description | Draft in `BSV_HANDOFF.md`; no entry submitted | PENDING |
+| At most150second video | Outline in `docs/history/BSV_HANDOFF.md`; no recording made | PENDING |
+| Detailed Devfolio description | Draft in `docs/history/BSV_HANDOFF.md`; no entry submitted | PENDING |
 | BSV example transactions and end-to-end agent payment | Linked real funding/relay transactions; native outcome/recovery incomplete | PENDING complete native flow/video |
 | API3 address/network, own-response path, valid+four-reject video | Existing API3 V1/V2 evidence retained; native live action blocked | BLOCKED native / PENDING video |
 | Deadline and track count | Rechecked31 October2026 **15:00 Europe/Berlin**; one submission/team, up to3 partner tracks | PASS rule check |
@@ -46,7 +64,7 @@ Useful DeFi/adoption, technical quality, originality, non-custodial execution an
 
 ## Completion run start — 31 October2026,11:49Europe/Berlin
 
-Actual BSV, API3 and general tabs selected in Chrome; submission/judging expanded. No selected-track changes. Deadline15:00Berlin, public repository, video<=150seconds and one team submission remain. User selected Fact Market only; optimized native success remains PENDING until genuine payout and refund. Existing API3 V2 is the confirmed fallback. No new native funding after11:33:40UTC.
+Actual BSV, API3 and general tabs selected in Chrome; submission/judging expanded. No selected-track changes. Deadline15:00Berlin, public repository, video<=150seconds and one team submission remain. User selected VeriFi Market only; optimized native success remains PENDING until genuine payout and refund. Existing API3 V2 is the confirmed fallback. No new native funding after11:33:40UTC.
 
 ## Completion-run result — 31 October2026,12:40Europe/Berlin
 

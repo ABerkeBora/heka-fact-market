@@ -269,8 +269,8 @@ export async function fastPropose(goal: string) {
         requestHash: o.requestHash,
         airnodePublicKey: POINT,
         expectedAirnodeAddress: "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
-        validFrom: now + 600,
-        validTo: now + 900,
+        validFrom: now + 1500, // 25 min for node validation of funding before the window
+        validTo: now + 1800,
         threshold18: parseUnits(thresholdUsd, 18).toString(),
         collateralSatoshis: 2000,
         buyerStakeSatoshis: 1000,
@@ -280,7 +280,7 @@ export async function fastPropose(goal: string) {
         noRecipientScript: payoutScript(
           suggestion.side === "yes" ? cpPub : buyerPub,
         ),
-        refundAfter: now + 1020,
+        refundAfter: now + 1920, // compared with chain median time, which lags wall clock on testnet
         refundBuyerScript: payoutScript(buyerPub),
         refundCounterpartyScript: payoutScript(cpPub),
       };
@@ -315,7 +315,7 @@ export async function fastPropose(goal: string) {
           maxActions: 1,
           maxPayouts: 1,
           maxObservationCalls: 6,
-          expiry: now + 1800,
+          expiry: now + 2700,
         },
         observations: 0,
       };

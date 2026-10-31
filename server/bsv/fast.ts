@@ -105,7 +105,7 @@ function nativePresentation(m:any){
   const checked=!!outcome&&checks?.status==="PASS"&&checks.marketId===outcome.id&&checks.sourceTXID===outcome.funding.txid&&checks.lockingScriptSha256===outcome.funding.scriptInfo.lockingScriptSha256;
   const prefunding=!!outcome&&!!refund&&[outcome,refund].every(x=>x.funding.validationBeforeObservation===true&&Date.parse(x.funding.validatedAt)/1000<x.policy.validFrom);
   const nativeReady=!!outcome&&!!refund&&checked&&prefunding;
-  return {nativeReady,recommendedUrl:nativeReady?"/bsv/fast":"/next",outcomeTxid:outcome?.payout.txid||null,refundTxid:refund?.payout.txid||null,reason:nativeReady?"Native outcome and fixed refund accepted on Testnet; block confirmation is separate.":outcome&&refund&&!prefunding?"Native payout and refund validated; validation before the observation window was not proven for this run. Use the API3 presentation.":outcome?"Native outcome validated. Fixed refund is pending, and pre-window funding validation was not proven. Use the API3 presentation.":"Native readiness requires separate real payout and refund receipts."};
+  return {nativeReady,recommendedUrl:nativeReady?"/bsv/fast":"/next",outcomeTxid:outcome?.payout.txid||null,refundTxid:refund?.payout.txid||null,reason:nativeReady?"Native outcome and fixed refund accepted on Testnet; block confirmation is separate.":outcome&&refund&&!prefunding?"Native payout and refund validated; validation before the observation window was not proven for this run.":outcome?"Native outcome validated. Fixed refund is pending, and pre-window funding validation was not proven.":"Native readiness requires separate real payout and refund receipts."};
 }
 export function fastState() {
   const m = fastCurrent();

@@ -162,8 +162,8 @@ export function FastBsvApp() {
         {data.presentation && !data.presentation.nativeReady && (
           <p className="bsv-note" role="status">
             {data.presentation.reason}{" "}
-            <a href={data.presentation.recommendedUrl || "/next"}>
-              Open the API3 version
+            <a href="https://github.com/ABerkeBora/heka-fact-market/tree/codex/bsv#known-limitations">
+              Known limitations
             </a>
           </p>
         )}

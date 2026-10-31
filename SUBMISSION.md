@@ -4,6 +4,8 @@
 
 One Devfolio entry, two partner tracks: **API3 — Any API in your contract** and **BSV — DeFi Rails for Agentic Payments**. The same rule runs on both chains: a market's payout is decided only by an authenticated AirnodeHub response, verified on chain.
 
+**Agent payments:** the executor paid two x402 data calls (PandaScore, 0.02 test aUSD in total), funded the agent's positions (FMCT on Base Sepolia, 1,000 sat stakes on BSV), and the verified data then released the payouts. Transaction links: README "Agent payments".
+
 - **API3 (Base Sepolia V2, `/next`):** complete. Real settlements and payouts for ETH/USD and BTC/USD, four tamper rejections on the same open market before its valid settlement, and a read-only judge replay (`scripts/judge-next.ts`).
 - **BSV (`/bsv/fast`):** the locking Script verifies the original Nodary EIP-191 signature itself — no relayer, no EVM approval. Funding comes from BSV Desktop through the BSV SDK / Wallet Toolbox; payout is enforced by the Script to fixed recipients. Real testnet funding and a 2,000 sat payout are on WhatsOnChain. Open points are listed honestly in the README "Known limitations": funding validation was first observed after the window opened, the BSV tamper cases are local-VM runs, and the second pool's timed refund became spendable about an hour after its nominal unlock because of median-time lag (it was broadcast at 12:28 UTC: [refund](https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab), 1,000 + 1,000 sat back, fee from a separate input).
 
@@ -19,7 +21,7 @@ Details and exact receipts: [the native runbook](docs/BSV_FAST_RUNBOOK.md) and [
 
 **How people use it.** Ask a question in plain language. The agent picks a vetted data source, side and threshold; the rule is locked into a BSV Script before funding; the user funds from BSV Desktop; the Script pays the winner only when presented with the provider's original signed response, or refunds both sides after the deadline.
 
-**What it brings to BSV.** Trust-minimised conditional payments on BSV that consume authenticated off-chain data directly in Script, using BSV's large-script capacity, plus an agent payment flow on the official TypeScript stack. Any AirnodeHub-signed data source can, in principle, become a settlement input for BSV escrow without a bridge or relayer.
+**What it brings to BSV.** A pay-on-verified-data rail for agents: an agent locks BSV in a Script that releases it only when an authenticated AirnodeHub response confirms the outcome — no bridge, no relayer, no operator decision. The prediction question is the first template; the same pattern can condition agent payments on flight status, deliveries or weather (not implemented yet). Every conditional payment is BSV liquidity and on-chain activity, and BSV's low fees make small stakes (we used 1,000 sat) practical. Built on the official TypeScript stack: BSV SDK, Wallet Toolbox and BSV Desktop.
 
 ## 150-second video (API3 + BSV)
 

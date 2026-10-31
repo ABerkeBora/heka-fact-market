@@ -15,17 +15,34 @@ Example: *"Will ETH/USD be above $2,236.01 in the observation window?"* The agen
 | Rule fixed before funding | Source, request, signer, threshold, window, stake and recipients are locked before any money moves: `recipeHash`/`policyHash` in the contract, an immutable locking Script on BSV. The operator cannot change them later, so no dispute step is needed. |
 | Agent | Local Ollama `qwen3:4b` reads real signed prices and proposes feed, side and threshold step. Independent code validates the proposal; the model never sees keys. After one capped mandate the executor funds the position, submits the observation and triggers the payout. |
 | API3 track | Base Sepolia V2: real settlements and payouts, plus four tamper rejections (edited value, stale response, different request, wrong signer) on the same open market. Judges can rerun the test without a wallet. |
-| BSV track | `/bsv/fast`: a BSV Script verifies the original API3 EIP-191 signature (Keccak + secp256k1) itself, with no relayer. Funding from BSV Desktop via the BSV SDK / Wallet Toolbox; real testnet funding and a 2,000 sat payout on WhatsOnChain. |
+| BSV track | Pay-on-verified-data escrow for agents on BSV. `/bsv/fast`: a BSV Script verifies the original API3 EIP-191 signature (Keccak + secp256k1) itself, with no relayer. Funding from BSV Desktop via the BSV SDK / Wallet Toolbox; real testnet funding and a 2,000 sat payout on WhatsOnChain. |
 
 ## Where to look
 
 | | |
 |---|---|
 | API3 flow (V2) | http://localhost:3102/next — contract FactMarketNext [`0x9319e85d84beb94307e91c350209e5e429b8be34`](https://sepolia.basescan.org/address/0x9319e85d84beb94307e91c350209e5e429b8be34), Base Sepolia (84532) |
-| API3 tamper test | [Judge tamper test — V2](#judge-tamper-test--v2-presented-at-next) |
+| API3 tamper test | [Judge tamper test — V2](#judge-tamper-test--v2-presented-at-next) · [Demo limits](#demo-limits-live-judging) · [Agent payments](#agent-payments-real-testnet-transactions) |
 | BSV flow | http://localhost:3102/bsv/fast — [funding](https://test.whatsonchain.com/tx/42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9), [2,000 sat payout](https://test.whatsonchain.com/tx/486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e), [timed refund](https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab); status in [BSV native flow](#bsv-native-flow-bsvfast) |
 | Original baseline (V1) | http://localhost:3102/ — fixed ETH/USD, kept unchanged |
 | Submission text | [SUBMISSION.md](SUBMISSION.md) · evidence in [docs/evidence](docs/evidence) · build history in [docs/history](docs/history) |
+
+## Agent payments (real testnet transactions)
+
+VeriFi Market is a pay-on-verified-data rail for agents: money moves only when an authenticated data response says so. The prediction question is the first template; the same pattern can condition an agent's payment on any AirnodeHub-signed fact (a flight landed, a delivery, a weather reading), which is not implemented yet.
+
+| Step | Base Sepolia (API3 track) | BSV testnet (BSV track) |
+|---|---|---|
+| Agent pays for data (x402) | Two PandaScore calls, 0.01 test aUSD each, under a capped mandate: [discovery](https://sepolia.basescan.org/tx/0xe95f2ac7498a1dce74004f66a5997dbcd9c32936721e731d77d0de31e15c4ead), [match metadata](https://sepolia.basescan.org/tx/0xe209b8ef317235d947e84d66f8ee545c5d603ef583eaf2392725a9201cf2e9cb). Data purchase only — no market was settled from it. Nodary, used for settlement, is free. | — |
+| Agent funds its position | ETH/USD [1 FMCT](https://sepolia.basescan.org/tx/0xf20a13dd83fa805dcc25fe8f70c7ad1f7b94e86efcdfbc917ebe67b9f8efac94), BTC/USD [1 FMCT](https://sepolia.basescan.org/tx/0x55d2a83853ede4f6dc16044debb92716c4f17061ad25d2f488e447ef455113e6) | 1,000 sat stake from BSV Desktop wallet-derived inputs in [pool 1 funding](https://test.whatsonchain.com/tx/42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9) and [pool 2 funding](https://test.whatsonchain.com/tx/00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099) |
+| Verified data releases the money | [ETH/USD 2 FMCT payout](https://sepolia.basescan.org/tx/0xfe5fd704bbea10f24ee542f296e376827244c3e07d6d5600a9dd9e25c13e1986), [BTC/USD 2 FMCT payout](https://sepolia.basescan.org/tx/0x65ee96e4bf86ce3b243d4968de571d391ea7d76df2c8346f27a1ea7ba3c60357) | [2,000 sat payout](https://test.whatsonchain.com/tx/486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e) (Script-verified API3 signature); no data → [timed refund 1,000/1,000](https://test.whatsonchain.com/tx/114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab) |
+
+## Demo limits (live judging)
+
+- The API3 tamper test runs live with `npx tsx scripts/judge-next.ts` — no wallet, no gas.
+- This installation's V2 test roles have used their one-time FMCT faucet, so no new live V2 market can be funded here; a fresh install creates its own roles with `npm run next:setup`. Recorded lifecycles are shown instead.
+- New BSV pools need the operator's explicit go-ahead and a funded fee sponsor ([runbook](docs/BSV_FAST_RUNBOOK.md)); the recorded pools are shown.
+- New model proposals need local Ollama with `qwen3:4b`; recorded model calls are in `docs/evidence/v2/agent-runs.json`.
 
 ## Trust model
 

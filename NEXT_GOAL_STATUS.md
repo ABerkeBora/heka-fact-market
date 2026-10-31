@@ -1,6 +1,6 @@
 # Fact Market next Goal
 
-Status: **ACTIVE** (real create_goal followed by get_goal; no token budget specified).
+Status: **COMPLETE** (actual update_goal result, 2026-10-31 03:51:59 UTC / 04:51:59 Europe/Berlin; no token budget specified).
 Goal/thread identity: `01a18fd2-5a1c-7ef0-baae-8ab15f399faf`.
 
 Objective: Fact Market V2’yi tek ETH/USD global request hash’inden iki resmen doğrulanmış Nodary feed’iyle market başına immutable reçeteye taşı. Gerçek LLM hedefe göre seçsin; bağımsız validator denetlesin. Source/operation/parameters/projection/predicate/window bağı zincirde kilitlensin; agent test fonlama–settlement–claim akışını yürütürken V1 `/`, V2 `/next` üzerinde incelensin. Ayrı deployment/namespace/roles, iki feed gerçek fonlama ve yeni kabul/ret kanıtları, V1 regresyon, public branch ve MORNING_HANDOFF_V2 teslim edilir.
@@ -18,3 +18,5 @@ Technical update recorded: 2026-10-31 04:39:20 CET.
 Acceptance update: fresh V1 market3 also completed settlement/claim. Full retained-workspace audit and public-only audit PASS; all5new live rejection reasons,2V2payouts, old26receipts and frozen source/evidence checks passed. Real browser exercised both routes, supported BTC draft and SOL no-payment rejection;1440/768/390 checked. Current remaining steps: codex/next publication, clean public clone check, REVIEW_SUMMARY.json with actual code commit, and final Goal bookkeeping. No technical acceptance blocker remains; status is still ACTIVE until those delivery steps finish.
 
 Final delivery verification: public codex/next code commit8c14e8f34bb13c323c0daaab04ba6e66cf083ba7 and ABerkeBora attribution confirmed. A clean public clone passed npm ci/build/15TS+64Soliditytests and retained the baseline tag. Both live routes returned the intended isolated complete histories. REVIEW_SUMMARY.json records the actual final route-check UTC time and recommends V2 with medium live-demo risk; external pilot/video/submission are not claimed. All objective work is complete; Goal tool completion and status-publication bookkeeping follow.
+
+Completion record: update_goal returned status complete at 03:51:59 UTC, elapsed1386seconds (about23minutes). The objective above was achieved; this final status record publishes the actual result. V1 and V2 servers/routes remain available. No additional feature work, pilot, video upload or submission is implied.

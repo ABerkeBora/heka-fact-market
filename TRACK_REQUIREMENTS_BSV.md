@@ -35,7 +35,7 @@ Freshness is the immutable observation window/source-signature relation, not a B
 
 | Submission item | Evidence / remaining action | Status |
 |---|---|---|
-| Public source + setup README | Authorized repo `ABerkeBora/heka-fact-market`, `codex/bsv`; `README.md`, `docs/BSV_SETUP.md`, lockfile, public native source/artifact/provenance | PENDING final push |
+| Public source + setup README | Authorized repo `ABerkeBora/heka-fact-market`, `codex/bsv`; `README.md`, `docs/BSV_SETUP.md`, lockfile, public native source/artifact/provenance | PASS — delivery source on `codex/bsv` |
 | At most150second video | Outline in `BSV_HANDOFF.md`; no recording made | PENDING |
 | Detailed Devfolio description | Draft in `BSV_HANDOFF.md`; no entry submitted | PENDING |
 | BSV example transactions and end-to-end agent payment | Linked real funding/relay transactions; native outcome/recovery incomplete | PENDING complete native flow/video |
@@ -43,3 +43,26 @@ Freshness is the immutable observation window/source-signature relation, not a B
 | Deadline and track count | Rechecked31 October2026 **15:00 Europe/Berlin**; one submission/team, up to3 partner tracks | PASS rule check |
 
 Useful DeFi/adoption, technical quality, originality, non-custodial execution and clear demonstration are judging guidance after qualification. Example swaps, launchpads and bridges are optional, not extra requirements. A paid API call or control dashboard alone does not establish the DeFi core. The user's requested agentic-payment focus is a product constraint, not an invented official requirement that every action use an LLM.
+
+## Completion run start — 31 October2026,11:49Europe/Berlin
+
+Actual BSV, API3 and general tabs selected in Chrome; submission/judging expanded. No selected-track changes. Deadline15:00Berlin, public repository, video<=150seconds and one team submission remain. User selected Fact Market only; optimized native success remains PENDING until genuine payout and refund. Existing API3 V2 is the confirmed fallback. No new native funding after11:33:40UTC.
+
+## Completion-run result — 31 October2026,12:40Europe/Berlin
+
+**Present API3 V2 at `/next`. Native `/bsv/fast` remains experimental.** The45-minute new-funding window closed at11:33:40UTC; exactly two optimized pools were funded, with no third pool or mainnet spend. V1/V2 sources and history remain preserved. This section supersedes transport-only acceptance interpretations in earlier experimental snapshots.
+
+| New optimized requirement | Evidence and current status |
+|---|---|
+| Original Airnode signature and protected native outputs | PASS compiled SDK and actual node UTXO validation: first output2000sat to the real YES beneficiary, separate100sat fee. `fast-live-tamper.json`, `fast-node-utxo-validation-final.json` |
+| Runtime LLM and standard-wallet bounded funding | PASS two actual qwen3:4b calls and1000sat buyer stakes; node-validated funding42926a… and00e133…. No fabricated fee for free Nodary |
+| Full validation before observation | UNKNOWN for this run. Public funding commitment/visibility preceded each window, but strong validation was first inspected later. The corrected executor requires observed validation before a future market's window; late validation goes to fixed refund |
+| Real native outcome | PASS node-execution evidence for486b0e…; UNCONFIRMED at11:29snapshot. First funding42926a… and second funding00e133… are MINED in the11:51:55UTC final node snapshot. No mining/finality claim from raw availability |
+| Separate fixed refund and no new signature after expiry | PENDING live clock. Refund114518… was signed11:15:29UTC before funding; fixed1000/1000 returns, lock11:24:10UTC, mandate expiry11:37:10UTC. Existing signed bytes remain usable after expiry; chain median time controls maturity |
+| Invalid data and output changes | PASS seven actual-policy read-only VM checks and historical replay. These are local Script replays, not mined failing transactions |
+| Replay/crash/accounting safety | PASS48application tests, native12/12plusSDK tests, early-refund API rejection and unchanged canonical funding replay. Standard wallet spent-source repair and read-only reservation gates verified. Two actual post-expiry refund requests retained identical signed bytes and stayed pending at chain MTP; `fast-expired-authority-recovery.json` |
+| Complete native readiness / qualification | PENDING. The UI cannot promote a transport ACK into success or retroactively prove prefunding validation. Current recommendation remains API3 V2 |
+
+Teranode propagation HTTP200 can precede the validator on the Kafka path. Full Script validation precedes atomic UTXO spend/create; the implementation now inspects exact input spender/vin and created output states. `VALIDATED_BY_NODE_UTXO` is separate from `MINED`. WOC unconfirmed visibility alone is not assigned validation semantics. Sources pinned in `fast-node-utxo-validation.json` and `server/bsv/node-proof.ts`.
+
+The old5MB2000sat native pool remains separate and execution-blocked; its one later mature refund P2P attempt was refused for validation time. No old history was reset. Video recording and Devfolio submission remain PENDING; no entry was submitted on the team's behalf.

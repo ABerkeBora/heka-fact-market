@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-31T11:15:39.508Z",
+  "network": "testnet",
+  "marketId": "fast-40dcc779-1055-4928-8ec2-94a991bce85a",
+  "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+  "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+  "fundingScriptCommitmentMatched": true,
+  "policy": {
+    "templateId": "nodary-fast-asm-v1",
+    "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "airnodePublicKey": "0x044e993579608baf1d542741675d347867f3d2c558d2e9bc3b74bac3583b569322eb85068fa43e4c5abd6db7dfa74999362bebf2322554918e1e13dec3cbc1a91a",
+    "expectedAirnodeAddress": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "validFrom": 1793444673,
+    "validTo": 1793444973,
+    "threshold18": "2238810000000000000000",
+    "collateralSatoshis": 2000,
+    "buyerStakeSatoshis": 1000,
+    "yesRecipientScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac",
+    "noRecipientScript": "76a9147b9749cd43dff86e967813f35e234e5954e719e188ac",
+    "refundAfter": 1793445093,
+    "refundBuyerScript": "76a9147b9749cd43dff86e967813f35e234e5954e719e188ac",
+    "refundCounterpartyScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac"
+  },
+  "scope": "Read-only official SDK compiled Script VM using public policy and original envelopes. No wallet accessed, value transaction signed or broadcast, or collateral state changed. Network receipts are separate evidence.",
+  "fixtures": [
+    {
+      "name": "valid original eligible ETH/USD",
+      "expectedAccepted": true,
+      "envelope": {
+        "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "timestamp": "1793444673",
+        "data": "{\"price\":2244.24,\"updatedAt\":1793444673616}",
+        "signature": "0xf5938953813631485d526ffb39a438c8b869f1c48f59dacd5cb884ab394d39b255f16d4e2002e05572d82cedd689beb654869e0c33ff2699f8136755c28dca5d1b"
+      },
+      "accepted": true,
+      "outcome": "yes",
+      "reason": "Original signature, window, predicate and fixed output passed the native Script",
+      "durationMs": 1046,
+      "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+      "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "network": "testnet",
+      "scope": "Read-only native Script VM; no transaction signed or broadcast and no collateral state changed",
+      "checkedAt": "2026-10-31T11:15:33.513Z",
+      "pass": true
+    },
+    {
+      "name": "edited raw price with unchanged signature",
+      "expectedAccepted": false,
+      "envelope": {
+        "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "timestamp": "1793444673",
+        "data": "{\"price\":2245.24,\"updatedAt\":1793444673616}",
+        "signature": "0xf5938953813631485d526ffb39a438c8b869f1c48f59dacd5cb884ab394d39b255f16d4e2002e05572d82cedd689beb654869e0c33ff2699f8136755c28dca5d1b"
+      },
+      "accepted": false,
+      "outcome": null,
+      "reason": "Script evaluation error: OP_VERIFY requires the top stack value to be truthy.\nTXID: 42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9, OutputIdx: 0\nContext: LockingScript, PC: 439006\nStack: [, 41cbe56a, 7b227072696365223a323234352e32342c22757064617465644174223a313739333434343637333631",
+      "durationMs": 790,
+      "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+      "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "network": "testnet",
+      "scope": "Read-only native Script VM; no transaction signed or broadcast and no collateral state changed",
+      "checkedAt": "2026-10-31T11:15:34.373Z",
+      "pass": true
+    },
+    {
+      "name": "authentic original stale ETH/USD",
+      "expectedAccepted": false,
+      "envelope": {
+        "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "timestamp": "1793438605",
+        "data": "{\"price\":2244.08,\"updatedAt\":1793438605061}",
+        "signature": "0x51b97a4bff7ead344a9a52a07048a450760a63e661c3213910276d5c30bcc0a3506d26b0fa117bc858a07bc7cbe78186bb539483addf914b83bae7ea0d0a53091b"
+      },
+      "accepted": false,
+      "outcome": null,
+      "reason": "Script evaluation error: OP_VERIFY requires the top stack value to be truthy.\nTXID: 42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9, OutputIdx: 0\nContext: LockingScript, PC: 545\nStack: [, 8db3e56a, 7b227072696365223a323234342e30382c22757064617465644174223a313739333433383630353036317",
+      "durationMs": 164,
+      "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+      "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "network": "testnet",
+      "scope": "Read-only native Script VM; no transaction signed or broadcast and no collateral state changed",
+      "checkedAt": "2026-10-31T11:15:34.649Z",
+      "pass": true
+    },
+    {
+      "name": "authentic same-window BTC wrong request",
+      "expectedAccepted": false,
+      "envelope": {
+        "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+        "requestHash": "0x78094ba4768ebdadb2012f2de22e779ce0992ecc290ebab208233addaaef106a",
+        "timestamp": "1793444715",
+        "data": "{\"price\":77366.54500000001,\"updatedAt\":1793444713627}",
+        "signature": "0xa47f569ef8046aa90e79e5fcfa15d07ee2059d7081c9ea9f8a400ebaa49ef93a4b453b3b1c39c9247b2d7ed84f5054223456b0a8c8f914b294f50f503208b7281b"
+      },
+      "accepted": false,
+      "outcome": null,
+      "reason": "Script evaluation error: OP_VERIFY requires the top stack value to be truthy.\nTXID: 42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9, OutputIdx: 0\nContext: LockingScript, PC: 439006\nStack: [, 6bcbe56a, 7b227072696365223a37373336362e35343530303030303030312c22757064617465644174223a3137",
+      "durationMs": 1076,
+      "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+      "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "network": "testnet",
+      "scope": "Read-only native Script VM; no transaction signed or broadcast and no collateral state changed",
+      "checkedAt": "2026-10-31T11:15:35.805Z",
+      "pass": true
+    },
+    {
+      "name": "exact request and data signed by ephemeral wrong key",
+      "expectedAccepted": false,
+      "envelope": {
+        "airnode": "0x4D26bB9B0Cea15B8ef55B2EEf0fBBDB981B6ea3A",
+        "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+        "timestamp": "1793444673",
+        "data": "{\"price\":2244.24,\"updatedAt\":1793444673616}",
+        "signature": "0x99342c3356afe656c3ed387935a6c5dba6a6b98141f991ea84d7cb8dd8cfe4f41abb35197fe62ff35aace9e2e2de9d971716f6e8743e4b01b14c23af3b1aeb731b"
+      },
+      "accepted": false,
+      "outcome": null,
+      "reason": "Script evaluation error: OP_VERIFY requires the top stack value to be truthy.\nTXID: 42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9, OutputIdx: 0\nContext: LockingScript, PC: 439006\nStack: [, 41cbe56a, 7b227072696365223a323234342e32342c22757064617465644174223a313739333434343637333631",
+      "durationMs": 1458,
+      "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+      "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "network": "testnet",
+      "scope": "Read-only native Script VM; no transaction signed or broadcast and no collateral state changed",
+      "checkedAt": "2026-10-31T11:15:37.353Z",
+      "pass": true
+    },
+    {
+      "name": "cannot redirect the protected payout",
+      "expectedAccepted": false,
+      "accepted": false,
+      "reason": "Script evaluation error: The top stack element must be truthy after script evaluation.\nTXID: 42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9, OutputIdx: 0\nContext: LockingScript, PC: 447186\nStack: [] (len: 1, mem: 0)\nAltStack: [] (len: 0, mem: 0)\nIfStack: []",
+      "durationMs": 832,
+      "pass": true
+    },
+    {
+      "name": "cannot reduce protected collateral for fees",
+      "expectedAccepted": false,
+      "accepted": false,
+      "reason": "Script evaluation error: The top stack element must be truthy after script evaluation.\nTXID: 42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9, OutputIdx: 0\nContext: LockingScript, PC: 447186\nStack: [] (len: 1, mem: 0)\nAltStack: [] (len: 0, mem: 0)\nIfStack: []",
+      "durationMs": 1082,
+      "pass": true
+    }
+  ],
+  "protectedState": "Read-only checks did not submit any transaction or alter the protected funding output",
+  "fixtureSources": {
+    "btc": {
+      "kind": "historical-public-report",
+      "path": "docs/evidence/bsv/fast-live-tamper.json",
+      "marketId": "fast-40dcc779-1055-4928-8ec2-94a991bce85a",
+      "reportCheckedAt": "2026-10-31T11:05:20.191Z",
+      "scope": "Original response from this immutable historical window; not a current quote or a new network payment"
+    }
+  }
+}

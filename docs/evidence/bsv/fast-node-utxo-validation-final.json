@@ -1,0 +1,373 @@
+{
+  "checkedAt": "2026-10-31T11:51:55.202Z",
+  "network": "testnet",
+  "scope": "Final read-only canonical UTXO spend/create observations. Validation times are observations, not retroactive prefunding proof. No signature, broadcast, new funding or wallet mutation.",
+  "chainTime": {
+    "provider": "https://api.whatsonchain.com/v1/bsv/test/chain/info",
+    "http": 200,
+    "chain": "test",
+    "height": 1766142,
+    "bestBlockHash": "00000000001a06687edd7b4046573eb6e027936647cd572734d9c266a03770d5",
+    "medianTime": 1793443855,
+    "checkedAt": "2026-10-31T11:51:55.202Z"
+  },
+  "refund": {
+    "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+    "refundAfter": 1793445850,
+    "mandateExpiry": 1793446630,
+    "savedBeforeExpiry": true,
+    "matureAtObservedMedianTime": false,
+    "savedAt": "2026-10-31T11:15:29.837Z"
+  },
+  "entries": [
+    {
+      "label": "first-native-funding",
+      "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "transportJournalAt": "2026-10-31T10:56:39.587Z",
+      "status": "PASS",
+      "proof": {
+        "status": "VALIDATED_BY_NODE_UTXO",
+        "network": "testnet",
+        "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "provider": "https://testnet.gorillanode.io/api/v1",
+        "http": 200,
+        "rawMatchesOriginal": true,
+        "rawBinding": "canonical-transaction-id",
+        "validatedInputs": true,
+        "validatedOutputs": true,
+        "inputCount": 3,
+        "outputCount": 3,
+        "totalOutputCount": 3,
+        "inputs": [
+          {
+            "inputIndex": 0,
+            "sourceTxid": "21dfe2260335b7234f50f23943e53c08fc7b7b0b4e62dbcf61961667e9cc40a4",
+            "vout": 0,
+            "status": 1,
+            "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+            "vin": 0
+          },
+          {
+            "inputIndex": 1,
+            "sourceTxid": "2ab3a28f350b241761a4167aca841370e4bd0fffa30d51b8ed2d8925ab95d7b4",
+            "vout": 0,
+            "status": 1,
+            "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+            "vin": 1
+          },
+          {
+            "inputIndex": 2,
+            "sourceTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+            "vout": 2,
+            "status": 1,
+            "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+            "vin": 2
+          }
+        ],
+        "outputs": [
+          {
+            "outputIndex": 0,
+            "status": 1,
+            "satoshis": 2000,
+            "scriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+            "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+            "vin": 0
+          },
+          {
+            "outputIndex": 1,
+            "status": 1,
+            "satoshis": 900,
+            "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce",
+            "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+            "vin": 1
+          },
+          {
+            "outputIndex": 2,
+            "status": 1,
+            "satoshis": 4000,
+            "scriptSha256": "bceb97cb4a05ee4e85828f7c781aeab54a533afef7731f6645a1a9be315b43b7",
+            "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+            "vin": 2
+          }
+        ],
+        "txMeta": {
+          "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+          "fee": 2000,
+          "sizeInBytes": 1018355,
+          "blockIDs": [
+            1766504
+          ],
+          "blockHashes": [
+            "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470"
+          ],
+          "blockHeights": [
+            1766139
+          ],
+          "mainChainIndex": 0
+        },
+        "miningStatus": "MINED",
+        "blockHash": "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470",
+        "blockHeight": 1766139,
+        "checkedAt": "2026-10-31T11:51:53.574Z",
+        "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+      }
+    },
+    {
+      "label": "first-native-payout",
+      "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+      "transportJournalAt": "2026-10-31T11:04:35.158Z",
+      "status": "PASS",
+      "proof": {
+        "status": "VALIDATED_BY_NODE_UTXO",
+        "network": "testnet",
+        "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "provider": "https://testnet.gorillanode.io/api/v1",
+        "http": 200,
+        "rawMatchesOriginal": true,
+        "rawBinding": "canonical-transaction-id",
+        "validatedInputs": true,
+        "validatedOutputs": true,
+        "inputCount": 2,
+        "outputCount": 2,
+        "totalOutputCount": 2,
+        "inputs": [
+          {
+            "inputIndex": 0,
+            "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+            "vout": 0,
+            "status": 1,
+            "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+            "vin": 0
+          },
+          {
+            "inputIndex": 1,
+            "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+            "vout": 1,
+            "status": 1,
+            "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+            "vin": 1
+          }
+        ],
+        "outputs": [
+          {
+            "outputIndex": 0,
+            "status": 0,
+            "satoshis": 2000,
+            "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+          },
+          {
+            "outputIndex": 1,
+            "status": 0,
+            "satoshis": 800,
+            "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+          }
+        ],
+        "txMeta": {
+          "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+          "fee": 100,
+          "sizeInBytes": 1770,
+          "blockIDs": [],
+          "blockHashes": [],
+          "blockHeights": [],
+          "mainChainIndex": -1
+        },
+        "miningStatus": "UNCONFIRMED",
+        "checkedAt": "2026-10-31T11:51:54.070Z",
+        "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+      }
+    },
+    {
+      "label": "second-native-funding",
+      "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+      "transportJournalAt": "2026-10-31T11:15:28.837Z",
+      "status": "PASS",
+      "proof": {
+        "status": "VALIDATED_BY_NODE_UTXO",
+        "network": "testnet",
+        "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+        "provider": "https://testnet.gorillanode.io/api/v1",
+        "http": 200,
+        "rawMatchesOriginal": true,
+        "rawBinding": "canonical-transaction-id",
+        "validatedInputs": true,
+        "validatedOutputs": true,
+        "inputCount": 3,
+        "outputCount": 3,
+        "totalOutputCount": 3,
+        "inputs": [
+          {
+            "inputIndex": 0,
+            "sourceTxid": "9160243388a59fe2a9e2bdf4b32b741d7d38584b6b4ddf99078158a046267a66",
+            "vout": 0,
+            "status": 1,
+            "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+            "vin": 0
+          },
+          {
+            "inputIndex": 1,
+            "sourceTxid": "69f342859fc90effe713763f5e9217955d26022a8ef7e7e92cfd7bf1396c1eb0",
+            "vout": 0,
+            "status": 1,
+            "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+            "vin": 1
+          },
+          {
+            "inputIndex": 2,
+            "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+            "vout": 2,
+            "status": 1,
+            "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+            "vin": 2
+          }
+        ],
+        "outputs": [
+          {
+            "outputIndex": 0,
+            "status": 0,
+            "satoshis": 2000,
+            "scriptSha256": "47b723ec6b5ccc03a45d521a1a16e0026d690d7ae93daf241cdb3b8375aeab02"
+          },
+          {
+            "outputIndex": 1,
+            "status": 0,
+            "satoshis": 900,
+            "scriptSha256": "7874bcd317575cf6c0b3fd56fb6ffe4518e0eec889c5c1122de8ab711c17a3ec"
+          },
+          {
+            "outputIndex": 2,
+            "status": 0,
+            "satoshis": 2000,
+            "scriptSha256": "bceb97cb4a05ee4e85828f7c781aeab54a533afef7731f6645a1a9be315b43b7"
+          }
+        ],
+        "txMeta": {
+          "txid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "fee": 2000,
+          "sizeInBytes": 1018354,
+          "blockIDs": [
+            1766505
+          ],
+          "blockHashes": [
+            "00000000a972448b58d00ef2036ba1b157d5b4ae756920001eac34c4de54171f"
+          ],
+          "blockHeights": [
+            1766140
+          ],
+          "mainChainIndex": 0
+        },
+        "miningStatus": "MINED",
+        "blockHash": "00000000a972448b58d00ef2036ba1b157d5b4ae756920001eac34c4de54171f",
+        "blockHeight": 1766140,
+        "checkedAt": "2026-10-31T11:51:54.795Z",
+        "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+      }
+    },
+    {
+      "label": "second-native-refund",
+      "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+      "transportJournalAt": "2026-10-31T11:15:29.837Z",
+      "status": "PENDING",
+      "proof": null
+    }
+  ],
+  "principalAccounting": [
+    {
+      "label": "first-native-payout",
+      "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+      "outcome": "yes",
+      "initialBuyerSide": "no",
+      "protectedPrincipalSatoshis": 2000,
+      "feeSatoshis": 100,
+      "feeDeductedFromPrincipal": false,
+      "inputs": [
+        {
+          "inputIndex": 0,
+          "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+          "vout": 0,
+          "satoshis": 2000,
+          "role": "protected-principal"
+        },
+        {
+          "inputIndex": 1,
+          "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+          "vout": 1,
+          "satoshis": 900,
+          "role": "separate-counterparty-fee-input"
+        }
+      ],
+      "outputs": [
+        {
+          "outputIndex": 0,
+          "satoshis": 2000,
+          "role": "counterparty",
+          "purpose": "protected-principal-payout",
+          "lockingScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac",
+          "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+        },
+        {
+          "outputIndex": 1,
+          "satoshis": 800,
+          "role": "counterparty",
+          "purpose": "external-fee-change",
+          "lockingScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac",
+          "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+        }
+      ],
+      "walletImport": null,
+      "walletImportNote": "Counterparty won; absence of a buyer-wallet import is expected."
+    },
+    {
+      "label": "second-native-saved-refund",
+      "txid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+      "outcome": "void",
+      "initialBuyerSide": "no",
+      "protectedPrincipalSatoshis": 2000,
+      "feeSatoshis": 100,
+      "feeDeductedFromPrincipal": false,
+      "inputs": [
+        {
+          "inputIndex": 0,
+          "sourceTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vout": 0,
+          "satoshis": 2000,
+          "role": "protected-principal"
+        },
+        {
+          "inputIndex": 1,
+          "sourceTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vout": 1,
+          "satoshis": 900,
+          "role": "separate-counterparty-fee-input"
+        }
+      ],
+      "outputs": [
+        {
+          "outputIndex": 0,
+          "satoshis": 1000,
+          "role": "buyer",
+          "purpose": "stake-refund",
+          "lockingScript": "76a914540213b692e6b21f6ff4b7431642e350a9b4a27088ac",
+          "scriptSha256": "a4502de1dd205f1d28f0ea86f58f993e26b20b24c4b24173e53768c346c0f72c"
+        },
+        {
+          "outputIndex": 1,
+          "satoshis": 1000,
+          "role": "counterparty",
+          "purpose": "stake-refund",
+          "lockingScript": "76a914f26bea4fa449cf5cc08ec1e6a6231b43cdf0642288ac",
+          "scriptSha256": "7874bcd317575cf6c0b3fd56fb6ffe4518e0eec889c5c1122de8ab711c17a3ec"
+        },
+        {
+          "outputIndex": 2,
+          "satoshis": 800,
+          "role": "counterparty",
+          "purpose": "external-fee-change",
+          "lockingScript": "76a914f26bea4fa449cf5cc08ec1e6a6231b43cdf0642288ac",
+          "scriptSha256": "7874bcd317575cf6c0b3fd56fb6ffe4518e0eec889c5c1122de8ab711c17a3ec"
+        }
+      ],
+      "walletImport": null,
+      "walletImportNote": "Refund remains unexecuted; buyer-wallet receipt/import is not yet established."
+    }
+  ]
+}

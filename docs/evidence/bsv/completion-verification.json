@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-10-31T11:59:04.891089+00:00",
+  "status": "DELIVERED_WITH_AUTHORIZED_API3_FALLBACK",
+  "recommendedUrl": "http://localhost:3102/next",
+  "nativeUrl": "http://localhost:3102/bsv/fast",
+  "sourceBranch": "codex/bsv",
+  "tests": {
+    "application": {
+      "passed": 48,
+      "failed": 0
+    },
+    "contracts": {
+      "passed": 73,
+      "failed": 0
+    },
+    "nativeCompiledFixtureCases": 12,
+    "actualPolicyReadOnlyVmCases": 7,
+    "productionBuild": "PASS"
+  },
+  "browser": {
+    "native": {
+      "viewports": [
+        1440,
+        820,
+        390
+      ],
+      "horizontalOverflow": false,
+      "recordedResponseChoices": 5,
+      "realPositiveResponse": "ACCEPTED",
+      "editedSignedData": "REJECTED"
+    },
+    "api3V2": {
+      "viewports": [
+        1440,
+        390
+      ],
+      "horizontalOverflow": false,
+      "completedEthPayoutDisplayed": "2.00 FMCT"
+    },
+    "screenshots": "fast-screenshots/"
+  },
+  "native": {
+    "status": "refund_not_final",
+    "nativeReady": false,
+    "fundingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+    "outcomeTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+    "savedRefundTxid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+    "chainTime": {
+      "medianTime": 1793443953,
+      "blockHash": "0000000000330ef8309db525afca1f3586785b9b6e11f402dc7f449a7c1ab626",
+      "height": 1766143,
+      "checkedAt": "2026-10-31T11:58:37.126Z"
+    },
+    "reason": "Native outcome validated. Fixed refund is pending, and pre-window funding validation was not proven. Use the API3 presentation.",
+    "networkEvidence": "fast-node-utxo-validation-final.json",
+    "expiredAuthorityRecovery": "fast-expired-authority-recovery.json",
+    "newFundingAllowed": false,
+    "existingSignedRecoveryKeeperRunning": true
+  },
+  "preserved": [
+    "V1 /",
+    "API3 V2 /next",
+    "legacy /bsv and /bsv/native history"
+  ],
+  "submission": {
+    "outlineSeconds": 150,
+    "videoRecorded": false,
+    "competitionSubmitted": false
+  },
+  "limits": "No mainnet or real-value funds; exactly two new optimized test pools; native proof gaps remain explicit."
+}

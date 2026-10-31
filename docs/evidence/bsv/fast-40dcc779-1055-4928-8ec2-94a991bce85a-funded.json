@@ -1,0 +1,273 @@
+{
+  "id": "fast-40dcc779-1055-4928-8ec2-94a991bce85a",
+  "status": "waiting",
+  "network": "testnet",
+  "userSide": "no",
+  "thresholdUsd": "2238.81",
+  "buyerPub": "026d88f28749202677cd23dc20f49cc01870ad4f354149779409cdc2558a62a999",
+  "cpPub": "03e7053ab05ae16c60fecd0945b32c9df962b05b4c8446131e1ad362e3f08923d3",
+  "policy": {
+    "templateId": "nodary-fast-asm-v1",
+    "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "airnodePublicKey": "0x044e993579608baf1d542741675d347867f3d2c558d2e9bc3b74bac3583b569322eb85068fa43e4c5abd6db7dfa74999362bebf2322554918e1e13dec3cbc1a91a",
+    "expectedAirnodeAddress": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "validFrom": 1793444673,
+    "validTo": 1793444973,
+    "threshold18": "2238810000000000000000",
+    "collateralSatoshis": 2000,
+    "buyerStakeSatoshis": 1000,
+    "yesRecipientScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac",
+    "noRecipientScript": "76a9147b9749cd43dff86e967813f35e234e5954e719e188ac",
+    "refundAfter": 1793445093,
+    "refundBuyerScript": "76a9147b9749cd43dff86e967813f35e234e5954e719e188ac",
+    "refundCounterpartyScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac"
+  },
+  "policyHash": "c9c5303f79e3584539015ba62bfd3516e52262a62663068a659aae7d3f87a2bd",
+  "createdAt": 1793444073,
+  "initialObservation": {
+    "feedId": 0,
+    "feed": "ETH/USD",
+    "recipeHash": "0xb5c7078fd74dfe81d42c362088dee2f71bbffb6f406dd0693946e22c3d550840",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "price": 2244.425,
+    "priceDisplay": "$2244.43",
+    "sourceAt": 1793444057,
+    "signedAt": 1793444058,
+    "receivedAt": 1793444058,
+    "envelope": {
+      "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+      "timestamp": "1793444058",
+      "data": "{\"price\":2244.425,\"updatedAt\":1793444057839}",
+      "signature": "0xbe7ecde89c1263a051656dc0784d04e253c95cd0b30430cea18623b1eb2c65783910f863263c8e5700e9d54cd61abce84da4e21f148f4895ca214eae5eb05e321b"
+    },
+    "request": {
+      "operation": "latestFeeds",
+      "parameters": {
+        "name": "ETH/USD"
+      },
+      "responseProjection": {
+        "price": "/ETH~1USD/value",
+        "updatedAt": "/ETH~1USD/timestamp"
+      }
+    }
+  },
+  "llm": {
+    "model": "qwen3:4b",
+    "realCall": true,
+    "durationMs": 14847,
+    "suggestion": {
+      "templateId": "nodary-eth-window-v1",
+      "thresholdOffsetBps": -25,
+      "side": "no",
+      "explanation": "The real price is 2244.425, which is below the threshold of 2250 (2244.425 * 1.01 = 2266.87, but threshold is set at 2250 for -25 bps). Since the price is below the threshold, the side is 'no' (indicating no trade)."
+    }
+  },
+  "events": [
+    {
+      "at": "2026-10-31T10:55:31.574Z",
+      "kind": "prepared",
+      "message": "Both participant inputs signed. Exact fee sponsor signature is pending."
+    },
+    {
+      "at": "2026-10-31T10:56:44.260Z",
+      "kind": "funding",
+      "message": "Native prediction pool funded with two fixed1000sat shares",
+      "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "evidenceClassAtEvent": "Historical application log following transport/local state; not contemporaneous validation proof",
+      "laterValidationEvidenceFile": "fast-node-utxo-validation.json"
+    },
+    {
+      "at": "2026-10-31T10:59:03.896Z",
+      "kind": "funding-network",
+      "message": "Canonical native funding independently visible on BSV Testnet; block confirmation is separate",
+      "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9"
+    }
+  ],
+  "mandate": {
+    "id": "fast-40dcc779-1055-4928-8ec2-94a991bce85a",
+    "network": "testnet",
+    "buyerStakeSats": 1000,
+    "buyerPrepFeeCapSats": 500,
+    "cpStakeSats": 1000,
+    "deploymentFeeSponsorCapSats": 2000,
+    "claimFeeCapSats": 100,
+    "maxActions": 1,
+    "maxPayouts": 1,
+    "maxObservationCalls": 6,
+    "expiry": 1793445873
+  },
+  "observations": 0,
+  "plan": {
+    "partialRawSha256": "c220e5289c2d945787e90129dbf635ba8f0dee7b6566ad790973c918c07a423b",
+    "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+    "contractInfo": {
+      "scope": "experimental NEW optimized ASM native original-Airnode outcome guard; not deployed by this helper",
+      "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "lockingScriptBytes": 1017821,
+      "nonPushOpcodes": 281400,
+      "postSeparatorScriptBytes": 1131,
+      "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+      "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+      "timing": "fixed signed/source observation window; no current-block timestamp; mature refund and valid settlement race for same UTXO"
+    },
+    "buyerPreparationTx": "21dfe2260335b7234f50f23943e53c08fc7b7b0b4e62dbcf61961667e9cc40a4"
+  },
+  "funding": {
+    "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+    "vout": 0,
+    "satoshis": 2000,
+    "feeSats": 2000,
+    "proof": {
+      "status": "VALIDATED_BY_NODE_UTXO",
+      "network": "testnet",
+      "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "provider": "https://testnet.gorillanode.io/api/v1",
+      "http": 200,
+      "rawMatchesOriginal": true,
+      "rawBinding": "canonical-transaction-id",
+      "validatedInputs": true,
+      "validatedOutputs": true,
+      "inputCount": 3,
+      "outputCount": 3,
+      "totalOutputCount": 3,
+      "inputs": [
+        {
+          "inputIndex": 0,
+          "sourceTxid": "21dfe2260335b7234f50f23943e53c08fc7b7b0b4e62dbcf61961667e9cc40a4",
+          "vout": 0,
+          "status": 1,
+          "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+          "vin": 0
+        },
+        {
+          "inputIndex": 1,
+          "sourceTxid": "2ab3a28f350b241761a4167aca841370e4bd0fffa30d51b8ed2d8925ab95d7b4",
+          "vout": 0,
+          "status": 1,
+          "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+          "vin": 1
+        },
+        {
+          "inputIndex": 2,
+          "sourceTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+          "vout": 2,
+          "status": 1,
+          "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+          "vin": 2
+        }
+      ],
+      "outputs": [
+        {
+          "outputIndex": 0,
+          "status": 1,
+          "satoshis": 2000,
+          "scriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+          "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+          "vin": 0
+        },
+        {
+          "outputIndex": 1,
+          "status": 1,
+          "satoshis": 900,
+          "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce",
+          "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+          "vin": 1
+        },
+        {
+          "outputIndex": 2,
+          "status": 1,
+          "satoshis": 4000,
+          "scriptSha256": "bceb97cb4a05ee4e85828f7c781aeab54a533afef7731f6645a1a9be315b43b7",
+          "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+          "vin": 2
+        }
+      ],
+      "txMeta": {
+        "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "fee": 2000,
+        "sizeInBytes": 1018355,
+        "blockIDs": [
+          1766504
+        ],
+        "blockHashes": [
+          "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470"
+        ],
+        "blockHeights": [
+          1766139
+        ],
+        "mainChainIndex": 0
+      },
+      "miningStatus": "MINED",
+      "blockHash": "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470",
+      "blockHeight": 1766139,
+      "checkedAt": "2026-10-31T11:51:53.574Z",
+      "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+    },
+    "acceptedAt": "2026-10-31T11:29:50.244Z",
+    "scriptInfo": {
+      "scope": "experimental NEW optimized ASM native original-Airnode outcome guard; not deployed by this helper",
+      "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+      "lockingScriptBytes": 1017821,
+      "nonPushOpcodes": 281400,
+      "postSeparatorScriptBytes": 1131,
+      "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+      "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+      "timing": "fixed signed/source observation window; no current-block timestamp; mature refund and valid settlement race for same UTXO"
+    },
+    "explorer": "https://test.whatsonchain.com/tx/42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+    "legacyTransportProof": {
+      "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "status": "NETWORK_VISIBLE_UNCONFIRMED",
+      "provider": "https://api.whatsonchain.com/v1/bsv/test",
+      "confirmations": null,
+      "blockHash": null,
+      "size": 1018355,
+      "outputs": [
+        {
+          "vout": 0,
+          "satoshis": 2000
+        },
+        {
+          "vout": 1,
+          "satoshis": 900
+        },
+        {
+          "vout": 2,
+          "satoshis": 4000
+        }
+      ],
+      "at": "2026-10-31T10:59:03.166Z"
+    },
+    "legacyAcceptedAt": "2026-10-31T10:56:44.255Z",
+    "publishedAt": "2026-10-31T10:56:44.255Z",
+    "validatedAt": "2026-10-31T11:29:50.244Z",
+    "validationBeforeObservation": false,
+    "validationBeforeObservationStatus": "NOT_PROVEN",
+    "latestValidationAt": "2026-10-31T11:51:53.574Z"
+  },
+  "lateFunding": true,
+  "recordKind": "historical-runtime-snapshot-with-later-evidence-correction",
+  "evidenceCorrection": {
+    "correctedAt": "2026-10-31T11:52:24.055579Z",
+    "historicalClassification": "HTTP200, same-node raw retrieval and unconfirmed explorer visibility are transport/public-commitment observations, not proof of validated mempool membership or script execution at their recorded time.",
+    "validationEvidenceFile": "fast-node-utxo-validation.json",
+    "validationFirstInspectedAt": "2026-10-31T11:29:50.244Z",
+    "validationBeforeObservation": "NOT_PROVEN",
+    "chronology": "The referenced strong UTXO proof was first inspected after the source windows. It must not be backdated to an earlier transport/public-visibility timestamp. Actual earlier validation time is unknown.",
+    "currentNativeReady": false,
+    "recommendedPresentationUrl": "/next",
+    "noNewTransaction": true,
+    "originalTransportFieldsPreserved": true,
+    "latestValidationEvidenceFile": "fast-node-utxo-validation-final.json",
+    "latestObservedAt": "2026-10-31T11:51:53.574Z"
+  },
+  "legacyLateFundingFlag": false,
+  "lateFundingMeaning": "Strong validation was first inspected after the observation window started; the actual earlier validation time is unknown.",
+  "presentation": {
+    "nativeReady": false,
+    "recommendedUrl": "/next",
+    "reason": "Outcome execution has later node validation; separate refund remains pending and validated prefunding before the historical windows was not established."
+  }
+}

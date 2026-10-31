@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-31T10:27:39.783Z",
+  "status": "PASS",
+  "scope": "experimental NEW optimized ASM native original-Airnode outcome guard; not deployed by this helper",
+  "sdkVersion": "3.2.1",
+  "preimageEqual": true,
+  "sighash": 65,
+  "preimageBytes": 1290,
+  "unlockingBytes": 1500,
+  "protectedPayout": 2000,
+  "sponsorInput": 1000,
+  "sponsorChange": 900,
+  "localVm": {
+    "success": true,
+    "error": "",
+    "elapsedMs": 1090,
+    "scope": "local compiled VM only; node execution policy and network acceptance require separate evidence"
+  },
+  "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+  "lockingScriptBytes": 1017821,
+  "nonPushOpcodes": 281400,
+  "postSeparatorScriptBytes": 1131,
+  "lockingScriptSha256": "0ddcc5bd391c7543a4f59fc2e06826f013cbb527456a2f132dfff39c52b9cd44",
+  "artifactSha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+  "timing": "fixed signed/source observation window; no current-block timestamp; mature refund and valid settlement race for same UTXO"
+}

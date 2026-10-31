@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-31T11:17:48.450Z",
+  "scope": "Actual application recovery gates; no early transaction was broadcast",
+  "marketId": "fast-7aaa4f9e-e623-43e1-bc09-420e12de823e",
+  "scenario": "Observations intentionally withheld for controlled refund acceptance; no upstream outage claim",
+  "earlyRefund": {
+    "http": 400,
+    "reason": "Fixed refund has not matured",
+    "rejected": true
+  },
+  "manualResumeDoesNotCollectObservation": true,
+  "fundingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+  "refundTxid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+  "preSignedAt": "2026-10-31T11:15:29.837Z",
+  "mandateExpiry": 1793446630,
+  "refundLockTime": 1793445850,
+  "interpretationCorrection": "Original early timestamp is transport/public visibility, not proven validation. Strong node UTXO validation was observed later.",
+  "fundingPublicationBeforeObservation": true,
+  "validationBeforeObservationProven": false
+}

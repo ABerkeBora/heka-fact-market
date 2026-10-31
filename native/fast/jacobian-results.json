@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-31T10:15:39.701Z",
+  "scope": "compiled VM original EIP191 hashing plus Jacobian ECDSA, checked arithmetic witnesses; no wallet or broadcast",
+  "cases": [
+    {
+      "provider": "https://airnode-nodary.fly.dev/",
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 5929,
+      "lockingBytes": 3000255,
+      "error": ""
+    },
+    {
+      "provider": "https://airnode-polymarket.fly.dev/",
+      "status": "PASS",
+      "scriptInterpreterRun": true,
+      "elapsedMs": 6671,
+      "lockingBytes": 3000254,
+      "error": ""
+    },
+    {
+      "name": "tampered inverse witness",
+      "status": "PASS",
+      "expectedRejected": true,
+      "scriptInterpreterRun": true,
+      "elapsedMs": 4895
+    },
+    {
+      "name": "tampered joint slope",
+      "status": "PASS",
+      "expectedRejected": true,
+      "scriptInterpreterRun": true,
+      "elapsedMs": 4811
+    },
+    {
+      "name": "edited raw data",
+      "status": "PASS",
+      "expectedRejected": true,
+      "scriptInterpreterRun": true,
+      "elapsedMs": 5617
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,41 @@
+import "jacobian.scrypt";import "../keccak-bytes/keccak-asm.scrypt";import "nodary-parser.scrypt";
+
+contract NodaryFastAsm {
+  bytes requestHash;
+  Affine airnodePublicKey;
+  int validFrom;
+  int validTo;
+  int threshold18;
+  int collateralSatoshis;
+  bytes yesRecipientScript;
+  bytes noRecipientScript;
+  int refundAfter;
+  bytes refundBuyerScript;
+  bytes refundCounterpartyScript;
+  int buyerStakeSatoshis;
+  public function spend(bool refund, int timestamp, bytes data, ScalarSignature signature, int sInverse, int jointLambda, SigHashPreimage preimage, int changeAmount, Ripemd160 changeAddress) {
+    require(len(this.requestHash) == 32 && this.validFrom <= this.validTo && this.refundAfter > this.validTo && this.collateralSatoshis > 0 && this.threshold18 > 0 && this.buyerStakeSatoshis > 0 && this.buyerStakeSatoshis < this.collateralSatoshis);
+    bytes expectedOutputs = Utils.buildOutput(this.refundBuyerScript, this.buyerStakeSatoshis) + Utils.buildOutput(this.refundCounterpartyScript, this.collateralSatoshis - this.buyerStakeSatoshis);
+    if(!refund) {
+        require(timestamp >= this.validFrom && timestamp <= this.validTo);
+        bytes packed = this.requestHash + reverseBytes(Utils.toLEUnsigned(timestamp, 32), 32) + data;
+        bytes inner = KeccakAsm.digestOneBlock(packed);
+        bytes digest = KeccakAsm.digestOneBlock(b'19457468657265756d205369676e6564204d6573736167653a0a3332' + inner);
+        require(JacobianECDSA.verify(Utils.fromLEUnsigned(reverseBytes(digest, 32)), signature, this.airnodePublicKey, sInverse, jointLambda));
+        NodaryObservation observation = NodaryParser.read(data);
+        require(observation.sourceTimestamp >= this.validFrom && observation.sourceTimestamp <= this.validTo);
+        require(observation.sourceTimestamp <= timestamp + 5 && timestamp <= observation.sourceTimestamp + 120);
+        bytes winnerScript = observation.price18 > this.threshold18 ? this.yesRecipientScript : this.noRecipientScript;
+        expectedOutputs = Utils.buildOutput(winnerScript, this.collateralSatoshis);
+      }
+    ***
+    require(Tx.checkPreimageSigHashType(preimage, SigHash.ALL | SigHash.FORKID));
+    require(SigHash.value(preimage) == this.collateralSatoshis);
+    if(refund) {
+        require(SigHash.nSequence(preimage) < 0xffffffff && SigHash.nLocktime(preimage) >= this.refundAfter);
+      }
+    require(changeAmount >= 0);
+    bytes change = changeAmount > 0 ? Utils.buildOutput(Utils.buildPublicKeyHashScript(changeAddress), changeAmount) : b'';
+    require(SigHash.hashOutputs(preimage) == hash256(expectedOutputs + change));
+  }
+}

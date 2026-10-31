@@ -1,0 +1,210 @@
+{
+  "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+  "status": "NETWORK_VISIBLE_UNCONFIRMED",
+  "provider": "https://api.whatsonchain.com/v1/bsv/test",
+  "confirmations": null,
+  "blockHash": null,
+  "size": 1018355,
+  "outputs": [
+    {
+      "vout": 0,
+      "satoshis": 2000
+    },
+    {
+      "vout": 1,
+      "satoshis": 900
+    },
+    {
+      "vout": 2,
+      "satoshis": 4000
+    }
+  ],
+  "at": "2026-10-31T10:59:03.166Z",
+  "recordKind": "historical-transport-or-provider-visibility",
+  "evidenceCorrection": {
+    "correctedAt": "2026-10-31T11:52:24.055579Z",
+    "historicalClassification": "HTTP200, same-node raw retrieval and unconfirmed explorer visibility are transport/public-commitment observations, not proof of validated mempool membership or script execution at their recorded time.",
+    "validationEvidenceFile": "fast-node-utxo-validation.json",
+    "validationFirstInspectedAt": "2026-10-31T11:29:50.244Z",
+    "validationBeforeObservation": "NOT_PROVEN",
+    "chronology": "The referenced strong UTXO proof was first inspected after the source windows. It must not be backdated to an earlier transport/public-visibility timestamp. Actual earlier validation time is unknown.",
+    "currentNativeReady": false,
+    "recommendedPresentationUrl": "/next",
+    "noNewTransaction": true,
+    "originalTransportFieldsPreserved": true,
+    "latestValidationEvidenceFile": "fast-node-utxo-validation-final.json",
+    "latestObservedAt": "2026-10-31T11:51:53.574Z"
+  },
+  "laterNodeValidation": {
+    "status": "VALIDATED_BY_NODE_UTXO",
+    "network": "testnet",
+    "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+    "provider": "https://testnet.gorillanode.io/api/v1",
+    "http": 200,
+    "rawMatchesOriginal": true,
+    "rawBinding": "canonical-transaction-id",
+    "validatedInputs": true,
+    "validatedOutputs": true,
+    "inputCount": 3,
+    "outputCount": 3,
+    "totalOutputCount": 3,
+    "inputs": [
+      {
+        "inputIndex": 0,
+        "sourceTxid": "21dfe2260335b7234f50f23943e53c08fc7b7b0b4e62dbcf61961667e9cc40a4",
+        "vout": 0,
+        "status": 1,
+        "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vin": 0
+      },
+      {
+        "inputIndex": 1,
+        "sourceTxid": "2ab3a28f350b241761a4167aca841370e4bd0fffa30d51b8ed2d8925ab95d7b4",
+        "vout": 0,
+        "status": 1,
+        "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vin": 1
+      },
+      {
+        "inputIndex": 2,
+        "sourceTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+        "vout": 2,
+        "status": 1,
+        "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vin": 2
+      }
+    ],
+    "outputs": [
+      {
+        "outputIndex": 0,
+        "status": 1,
+        "satoshis": 2000,
+        "scriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 0
+      },
+      {
+        "outputIndex": 1,
+        "status": 1,
+        "satoshis": 900,
+        "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce",
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 1
+      },
+      {
+        "outputIndex": 2,
+        "status": 1,
+        "satoshis": 4000,
+        "scriptSha256": "bceb97cb4a05ee4e85828f7c781aeab54a533afef7731f6645a1a9be315b43b7",
+        "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+        "vin": 2
+      }
+    ],
+    "txMeta": {
+      "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "fee": 2000,
+      "sizeInBytes": 1018355,
+      "blockIDs": [
+        1766504
+      ],
+      "blockHashes": [
+        "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470"
+      ],
+      "blockHeights": [
+        1766139
+      ],
+      "mainChainIndex": 0
+    },
+    "miningStatus": "MINED",
+    "blockHash": "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470",
+    "blockHeight": 1766139,
+    "checkedAt": "2026-10-31T11:29:50.244Z",
+    "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+  },
+  "latestNodeValidation": {
+    "status": "VALIDATED_BY_NODE_UTXO",
+    "network": "testnet",
+    "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+    "provider": "https://testnet.gorillanode.io/api/v1",
+    "http": 200,
+    "rawMatchesOriginal": true,
+    "rawBinding": "canonical-transaction-id",
+    "validatedInputs": true,
+    "validatedOutputs": true,
+    "inputCount": 3,
+    "outputCount": 3,
+    "totalOutputCount": 3,
+    "inputs": [
+      {
+        "inputIndex": 0,
+        "sourceTxid": "21dfe2260335b7234f50f23943e53c08fc7b7b0b4e62dbcf61961667e9cc40a4",
+        "vout": 0,
+        "status": 1,
+        "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vin": 0
+      },
+      {
+        "inputIndex": 1,
+        "sourceTxid": "2ab3a28f350b241761a4167aca841370e4bd0fffa30d51b8ed2d8925ab95d7b4",
+        "vout": 0,
+        "status": 1,
+        "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vin": 1
+      },
+      {
+        "inputIndex": 2,
+        "sourceTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+        "vout": 2,
+        "status": 1,
+        "spendingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vin": 2
+      }
+    ],
+    "outputs": [
+      {
+        "outputIndex": 0,
+        "status": 1,
+        "satoshis": 2000,
+        "scriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 0
+      },
+      {
+        "outputIndex": 1,
+        "status": 1,
+        "satoshis": 900,
+        "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce",
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 1
+      },
+      {
+        "outputIndex": 2,
+        "status": 1,
+        "satoshis": 4000,
+        "scriptSha256": "bceb97cb4a05ee4e85828f7c781aeab54a533afef7731f6645a1a9be315b43b7",
+        "spendingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+        "vin": 2
+      }
+    ],
+    "txMeta": {
+      "txid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+      "fee": 2000,
+      "sizeInBytes": 1018355,
+      "blockIDs": [
+        1766504
+      ],
+      "blockHashes": [
+        "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470"
+      ],
+      "blockHeights": [
+        1766139
+      ],
+      "mainChainIndex": 0
+    },
+    "miningStatus": "MINED",
+    "blockHash": "00000000643a7228c36a9e87c520a8df0c536728a80925b68b165aa795762470",
+    "blockHeight": 1766139,
+    "checkedAt": "2026-10-31T11:51:53.574Z",
+    "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+  }
+}

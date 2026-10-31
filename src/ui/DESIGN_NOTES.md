@@ -23,7 +23,7 @@ At 1440px, the centered 1200px canvas has two columns totaling 1176px plus a 24p
 
 Empty, loading, model/API error, expired proposal, pending job, confirmation, rejected submission and recoverable job states are represented. A failed service poll preserves last displayed data; every state refresh is explicit and timestamped. No optimistic transaction success is shown.
 
-Source lint: `node /Users/wargly/.codex/skills/design-taste-frontend/scripts/lint.mjs --app src/ui` passed with 0 FAIL and 0 WARN. Browser QA is owned by the parent implementation agent using the authorized `cua_repl` route; the standalone inspector's direct browser route is replaced accordingly.
+Source lint: `node <taste-skill>/scripts/lint.mjs --app src/ui` passed with 0 FAIL and 0 WARN. Browser QA is owned by the parent implementation agent using the authorized `cua_repl` route; the standalone inspector's direct browser route is replaced accordingly.
 
 No sample dataset requires replacement. The default prompt is editable product input, not an invented result.
 

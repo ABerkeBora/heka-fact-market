@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-31T10:23:04.811Z",
+  "status": "PASS",
+  "scriptBytes": 27780,
+  "nonPushOps": 14634,
+  "cases": [
+    {
+      "inputBytes": 0,
+      "expected": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+      "status": "PASS",
+      "expectedRejected": false,
+      "elapsedMs": 123
+    },
+    {
+      "inputBytes": 3,
+      "expected": "0xbc6bb462e38af7da48e0ae7b5cbae860141c04e5af2cf92328cd6548df111fcb",
+      "status": "PASS",
+      "expectedRejected": false,
+      "elapsedMs": 124
+    },
+    {
+      "inputBytes": 60,
+      "expected": "0x370eabe032b79dbf6ed62b6bbb72f96b0f1d61ac63c0edc2f989c3f0137ba6f0",
+      "status": "PASS",
+      "expectedRejected": false,
+      "elapsedMs": 130
+    },
+    {
+      "inputBytes": 107,
+      "expected": "0x92ba7d83f549a1e85264d14cdb2b60997be3ec1a3c663ca469bda406bf60cc54",
+      "status": "PASS",
+      "expectedRejected": false,
+      "elapsedMs": 124
+    },
+    {
+      "inputBytes": 114,
+      "expected": "0x5932ac447fbda69483824f58612c5db4f51dd741e4d5f7ba148ee504cb0daa45",
+      "status": "PASS",
+      "expectedRejected": false,
+      "elapsedMs": 296
+    },
+    {
+      "inputBytes": 134,
+      "expected": "0x245295a330b4906deddd9de5bade91af5e9bae48cf0432614f7c67865139c281",
+      "status": "PASS",
+      "expectedRejected": false,
+      "elapsedMs": 77
+    },
+    {
+      "inputBytes": 135,
+      "expected": "0x16570bdb055e663ea1cb57ac6f09194f4bc7b7070847971fc0b86710366dc34f",
+      "status": "PASS",
+      "expectedRejected": false,
+      "elapsedMs": 88
+    },
+    {
+      "inputBytes": 136,
+      "expected": "0x50da8ef3747b7a7f01d08563aa11c72a2a668563fb928adc6e8d2a1ab4e36096",
+      "status": "PASS",
+      "expectedRejected": true,
+      "elapsedMs": 4
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "checkedAt": "2026-10-31T10:54:43.771Z",
+  "network": "testnet",
+  "scope": "One bounded transport of the already frozen original native refund, no new signatures/transactions/funding",
+  "preflight": {
+    "at": "2026-10-31T10:54:41.171Z",
+    "network": "testnet",
+    "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346",
+    "sourceTxid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+    "refundAfter": 1793441093,
+    "medianTime": 1793442591,
+    "chainHeight": 1766138,
+    "sourceExactRaw": true,
+    "originalClaimHttp": 404,
+    "refundHttp": 404,
+    "outpointSpentHttp": [
+      404,
+      404
+    ],
+    "inputs": [
+      {
+        "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+        "vout": 0,
+        "sequence": 4294967294
+      },
+      {
+        "txid": "248baaa5d5f30724b6dd4e057685208f3ebab0289e20c5399ae930ed29925f58",
+        "vout": 1,
+        "sequence": 4294967295
+      }
+    ],
+    "outputs": [
+      {
+        "satoshis": 1000,
+        "lockingScript": "76a9146569d4b4fc5a59a7ec39c22bc230da6aa7fad6f988ac"
+      },
+      {
+        "satoshis": 1000,
+        "lockingScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac"
+      },
+      {
+        "satoshis": 800,
+        "lockingScript": "76a914083d0c8f13d65b6c885ac1c8dc1b0e93646bd03988ac"
+      }
+    ],
+    "newSignatures": false,
+    "newFunding": false
+  },
+  "broadcast": {
+    "checkedAt": "2026-10-31T10:54:41.371Z",
+    "network": "BSV testnet",
+    "peer": {
+      "host": "bsva-ovh-seed-testnet-us-1.bsvb.tech",
+      "port": 18333,
+      "source": "https://arcade-v2-testnet-us-1.bsvblockchain.tech/health"
+    },
+    "magic": "f4e5f3f4",
+    "mode": "broadcast",
+    "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346",
+    "canonicalBytes": 2202,
+    "canonicalSha256": "8eba5aaacec32e81be4e12c8be343195e4b756a6d925d4538b2bbc3ca2e89bdc",
+    "status": "PEER_REJECTED",
+    "txSent": true,
+    "peerReturnedExactCanonical": false,
+    "peerAnnouncedCanonical": false,
+    "mined": false,
+    "events": [
+      {
+        "at": "2026-10-31T10:54:41.518Z",
+        "name": "connected"
+      },
+      {
+        "at": "2026-10-31T10:54:41.519Z",
+        "name": "sent",
+        "command": "version",
+        "bytes": 112
+      },
+      {
+        "at": "2026-10-31T10:54:41.677Z",
+        "name": "received",
+        "command": "version",
+        "bytes": 105
+      },
+      {
+        "at": "2026-10-31T10:54:41.678Z",
+        "name": "sent",
+        "command": "verack",
+        "bytes": 0
+      },
+      {
+        "at": "2026-10-31T10:54:41.678Z",
+        "name": "sent",
+        "command": "protoconf",
+        "bytes": 13
+      },
+      {
+        "at": "2026-10-31T10:54:41.678Z",
+        "name": "received",
+        "command": "verack",
+        "bytes": 0
+      },
+      {
+        "at": "2026-10-31T10:54:41.678Z",
+        "name": "received",
+        "command": "protoconf",
+        "bytes": 27
+      },
+      {
+        "at": "2026-10-31T10:54:41.679Z",
+        "name": "sent",
+        "command": "inv",
+        "bytes": 325
+      },
+      {
+        "at": "2026-10-31T10:54:41.796Z",
+        "name": "received",
+        "command": "authch",
+        "bytes": 40
+      },
+      {
+        "at": "2026-10-31T10:54:41.796Z",
+        "name": "received",
+        "command": "sendheaders",
+        "bytes": 0
+      },
+      {
+        "at": "2026-10-31T10:54:41.796Z",
+        "name": "received",
+        "command": "sendcmpct",
+        "bytes": 9
+      },
+      {
+        "at": "2026-10-31T10:54:41.796Z",
+        "name": "received",
+        "command": "ping",
+        "bytes": 8
+      },
+      {
+        "at": "2026-10-31T10:54:41.796Z",
+        "name": "sent",
+        "command": "pong",
+        "bytes": 8
+      },
+      {
+        "at": "2026-10-31T10:54:41.796Z",
+        "name": "received",
+        "command": "addr",
+        "bytes": 31
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "received",
+        "command": "getdata",
+        "bytes": 145
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "sent",
+        "command": "tx",
+        "bytes": 342
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "unchanged-tx-sent",
+        "txid": "8b3ab74ac585aff161c7da53dacccc28cdf71863912bcfc64822f87a1b6dbe27",
+        "canonical": false,
+        "bytes": 342
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "sent",
+        "command": "tx",
+        "bytes": 419
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "unchanged-tx-sent",
+        "txid": "5b1f659d149fed8da69af6706cbe0b23feea503b6783ec85c3d7da9fc5383511",
+        "canonical": false,
+        "bytes": 419
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "sent",
+        "command": "tx",
+        "bytes": 522
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "unchanged-tx-sent",
+        "txid": "7704d9c086787376a1701217692473719402b1e21f94d1f5c8f082d6df7c8d3e",
+        "canonical": false,
+        "bytes": 522
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "sent",
+        "command": "tx",
+        "bytes": 2202
+      },
+      {
+        "at": "2026-10-31T10:54:41.914Z",
+        "name": "unchanged-tx-sent",
+        "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346",
+        "canonical": true,
+        "bytes": 2202
+      },
+      {
+        "at": "2026-10-31T10:54:43.062Z",
+        "name": "received",
+        "command": "reject",
+        "bytes": 61
+      },
+      {
+        "at": "2026-10-31T10:54:43.063Z",
+        "name": "peer-reject",
+        "command": "tx",
+        "code": 64,
+        "reason": "too-long-validation-time",
+        "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346"
+      },
+      {
+        "at": "2026-10-31T10:54:43.063Z",
+        "name": "finished",
+        "status": "PEER_REJECTED",
+        "reason": "too-long-validation-time"
+      }
+    ],
+    "peerVersion": {
+      "protocol": 70016,
+      "userAgent": "/Bitcoin SV:1.2.3/",
+      "height": 1766138
+    },
+    "peerReceiveLimit": 1000000000,
+    "rejection": {
+      "command": "tx",
+      "code": 64,
+      "reason": "too-long-validation-time",
+      "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346"
+    },
+    "reason": "too-long-validation-time",
+    "finishedAt": "2026-10-31T10:54:43.063Z"
+  },
+  "query": {
+    "checkedAt": "2026-10-31T10:54:43.064Z",
+    "network": "BSV testnet",
+    "peer": {
+      "host": "bsva-ovh-seed-testnet-us-1.bsvb.tech",
+      "port": 18333,
+      "source": "https://arcade-v2-testnet-us-1.bsvblockchain.tech/health"
+    },
+    "magic": "f4e5f3f4",
+    "mode": "query",
+    "txid": "fcdaf31939f2c424c971e89650bfb8b572ba20c6d165d87d5e059f9eae57e346",
+    "canonicalBytes": 2202,
+    "canonicalSha256": "8eba5aaacec32e81be4e12c8be343195e4b756a6d925d4538b2bbc3ca2e89bdc",
+    "status": "PEER_NOT_FOUND",
+    "txSent": false,
+    "peerReturnedExactCanonical": false,
+    "peerAnnouncedCanonical": false,
+    "mined": false,
+    "events": [
+      {
+        "at": "2026-10-31T10:54:43.248Z",
+        "name": "connected"
+      },
+      {
+        "at": "2026-10-31T10:54:43.248Z",
+        "name": "sent",
+        "command": "version",
+        "bytes": 112
+      },
+      {
+        "at": "2026-10-31T10:54:43.365Z",
+        "name": "received",
+        "command": "version",
+        "bytes": 105
+      },
+      {
+        "at": "2026-10-31T10:54:43.365Z",
+        "name": "sent",
+        "command": "verack",
+        "bytes": 0
+      },
+      {
+        "at": "2026-10-31T10:54:43.365Z",
+        "name": "sent",
+        "command": "protoconf",
+        "bytes": 13
+      },
+      {
+        "at": "2026-10-31T10:54:43.365Z",
+        "name": "received",
+        "command": "verack",
+        "bytes": 0
+      },
+      {
+        "at": "2026-10-31T10:54:43.367Z",
+        "name": "received",
+        "command": "protoconf",
+        "bytes": 27
+      },
+      {
+        "at": "2026-10-31T10:54:43.367Z",
+        "name": "sent",
+        "command": "getdata",
+        "bytes": 37
+      },
+      {
+        "at": "2026-10-31T10:54:43.486Z",
+        "name": "received",
+        "command": "authch",
+        "bytes": 40
+      },
+      {
+        "at": "2026-10-31T10:54:43.486Z",
+        "name": "received",
+        "command": "sendheaders",
+        "bytes": 0
+      },
+      {
+        "at": "2026-10-31T10:54:43.486Z",
+        "name": "received",
+        "command": "sendcmpct",
+        "bytes": 9
+      },
+      {
+        "at": "2026-10-31T10:54:43.486Z",
+        "name": "received",
+        "command": "ping",
+        "bytes": 8
+      },
+      {
+        "at": "2026-10-31T10:54:43.486Z",
+        "name": "sent",
+        "command": "pong",
+        "bytes": 8
+      },
+      {
+        "at": "2026-10-31T10:54:43.486Z",
+        "name": "received",
+        "command": "addr",
+        "bytes": 31
+      },
+      {
+        "at": "2026-10-31T10:54:43.603Z",
+        "name": "received",
+        "command": "notfound",
+        "bytes": 37
+      },
+      {
+        "at": "2026-10-31T10:54:43.603Z",
+        "name": "finished",
+        "status": "PEER_NOT_FOUND",
+        "reason": "Fresh GETDATA did not find the canonical transaction"
+      }
+    ],
+    "peerVersion": {
+      "protocol": 70016,
+      "userAgent": "/Bitcoin SV:1.2.3/",
+      "height": 1766138
+    },
+    "peerReceiveLimit": 1000000000,
+    "reason": "Fresh GETDATA did not find the canonical transaction",
+    "finishedAt": "2026-10-31T10:54:43.603Z"
+  },
+  "explorer": {
+    "http": 404
+  },
+  "accepted": false,
+  "mined": false
+}

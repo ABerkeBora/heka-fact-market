@@ -1,0 +1,16 @@
+{
+  "id": "fast-7aaa4f9e-e623-43e1-bc09-420e12de823e",
+  "network": "testnet",
+  "txid": "69f342859fc90effe713763f5e9217955d26022a8ef7e7e92cfd7bf1396c1eb0",
+  "vout": 0,
+  "satoshis": 1900,
+  "stakeShare": 1000,
+  "externalFeeChange": 900,
+  "feeSats": 23,
+  "proof": {
+    "txid": "69f342859fc90effe713763f5e9217955d26022a8ef7e7e92cfd7bf1396c1eb0",
+    "status": "MINED"
+  },
+  "at": "2026-10-31T11:12:04.451Z",
+  "scope": "Self-owned setup UTXO, not yet a pool deposit"
+}

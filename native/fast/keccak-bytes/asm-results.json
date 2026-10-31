@@ -1,0 +1,151 @@
+{
+  "checkedAt": "2026-10-31T10:22:42.505Z",
+  "status": "PASS",
+  "scope": "Actual compiled Bitcoin Script VM; independent viem Ethereum Keccak vectors, no wallet/chain action",
+  "compiler": "official scryptc1.22.0",
+  "scriptBytes": 55602,
+  "nonPushOps": 29305,
+  "byteShiftIndependentVectors": 7,
+  "results": [
+    {
+      "label": "vector",
+      "inputBytes": 0,
+      "expected": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 79
+    },
+    {
+      "label": "vector",
+      "inputBytes": 3,
+      "expected": "0xbc6bb462e38af7da48e0ae7b5cbae860141c04e5af2cf92328cd6548df111fcb",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 73
+    },
+    {
+      "label": "vector",
+      "inputBytes": 60,
+      "expected": "0x370eabe032b79dbf6ed62b6bbb72f96b0f1d61ac63c0edc2f989c3f0137ba6f0",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 82
+    },
+    {
+      "label": "vector",
+      "inputBytes": 114,
+      "expected": "0x5932ac447fbda69483824f58612c5db4f51dd741e4d5f7ba148ee504cb0daa45",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 91
+    },
+    {
+      "label": "vector",
+      "inputBytes": 134,
+      "expected": "0x245295a330b4906deddd9de5bade91af5e9bae48cf0432614f7c67865139c281",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 84
+    },
+    {
+      "label": "vector",
+      "inputBytes": 135,
+      "expected": "0x16570bdb055e663ea1cb57ac6f09194f4bc7b7070847971fc0b86710366dc34f",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 86
+    },
+    {
+      "label": "vector",
+      "inputBytes": 136,
+      "expected": "0x50da8ef3747b7a7f01d08563aa11c72a2a668563fb928adc6e8d2a1ab4e36096",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 184
+    },
+    {
+      "label": "vector",
+      "inputBytes": 137,
+      "expected": "0x01e0852c139fa337a5d3f746ab3b2d3400442195225e2f10c34702f8f37ae8d3",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 170
+    },
+    {
+      "label": "vector",
+      "inputBytes": 192,
+      "expected": "0xef927b5a4ce0a180c479ebe441d185efbf99819843f325c05bd06affa453e8f9",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 146
+    },
+    {
+      "label": "vector",
+      "inputBytes": 256,
+      "expected": "0xe1ad069b6f85e2c234e986457b6cfe1a0ba288d8d415668970a5d95e65915c49",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 160
+    },
+    {
+      "label": "vector",
+      "inputBytes": 270,
+      "expected": "0x110036340e2b02dbe2485e9dcbf90d1b165845f04dc1b9156f18df45e53e5d6c",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 201
+    },
+    {
+      "label": "vector",
+      "inputBytes": 271,
+      "expected": "0xe1a7e54686b1e56716c253c5ca60f99d092dcc617eb3fe99978ca4f551f89423",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 188
+    },
+    {
+      "label": "vector",
+      "inputBytes": 272,
+      "expected": "0x96bc2208643ac0c338f0aee0c5fce6b05e3deab879d939a413e8094ab5895377",
+      "expectedRejected": true,
+      "status": "PASS",
+      "elapsedMs": 5
+    },
+    {
+      "label": "genuine original Airnode packed request/timestamp/data",
+      "inputBytes": 256,
+      "expected": "0x80457574a206a5c589fb46b7a897ea97d091d3e592e2d95bd9302823087a7a35",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 178
+    },
+    {
+      "label": "EIP191 original signed payload",
+      "inputBytes": 60,
+      "expected": "0xcb1c42cd42edf6a6777a57af6ac673c6578e9832a5eb6a1139c77b6ae388f213",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 91
+    },
+    {
+      "label": "genuine original Airnode packed request/timestamp/data",
+      "inputBytes": 256,
+      "expected": "0xa43d4f358ef127fd88cd4559c8512226c5707f376e9854c2c82680fd09b763f8",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 165
+    },
+    {
+      "label": "EIP191 original signed payload",
+      "inputBytes": 60,
+      "expected": "0xd2db9325c5116b545bcf82ee4c5526dd84ec76d7ec248ac9769cf4aed171c44b",
+      "expectedRejected": false,
+      "status": "PASS",
+      "elapsedMs": 86
+    },
+    {
+      "label": "Wrong expected hash rejected",
+      "status": "PASS"
+    }
+  ]
+}

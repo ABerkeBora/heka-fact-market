@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-31T11:57:41.676932+00:00",
+  "scope": "Actual repeated recovery requests after mandate expiry, using existing saved bytes; chain-time waiting is not a successful refund",
+  "before": {
+    "marketId": "fast-7aaa4f9e-e623-43e1-bc09-420e12de823e",
+    "fundingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+    "refundTxid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+    "refundRawSha256": "1d186366dfef4895d665f4ad54fb4f6eb0df2cdbb7c73e28c89e0639a09d71ab",
+    "refundSavedAt": "2026-10-31T11:15:29.837Z",
+    "mandateExpiry": 1793446630,
+    "status": "refund_not_final"
+  },
+  "calls": [
+    {
+      "http": 200,
+      "status": "refund_not_final",
+      "lastError": "Saved refund is waiting for chain median time; no new signature required",
+      "payoutTxid": null
+    },
+    {
+      "http": 200,
+      "status": "refund_not_final",
+      "lastError": "Saved refund is waiting for chain median time; no new signature required",
+      "payoutTxid": null
+    }
+  ],
+  "after": {
+    "marketId": "fast-7aaa4f9e-e623-43e1-bc09-420e12de823e",
+    "fundingTxid": "00e13304fc82ed7f22f1db062afc89eb9aaf2fe22c9f39d979153a2256aa3099",
+    "refundTxid": "114518d7f422662132ed9014512035b985d2320cfa378cf55701786e07e7e3ab",
+    "refundRawSha256": "1d186366dfef4895d665f4ad54fb4f6eb0df2cdbb7c73e28c89e0639a09d71ab",
+    "refundSavedAt": "2026-10-31T11:15:29.837Z",
+    "mandateExpiry": 1793446630,
+    "status": "refund_not_final"
+  },
+  "sameCanonicalTransactions": true,
+  "sameSignedRefundBytes": true,
+  "mandateExpiredAtCheck": true,
+  "chainTime": {
+    "medianTime": 1793443953,
+    "blockHash": "0000000000330ef8309db525afca1f3586785b9b6e11f402dc7f449a7c1ab626",
+    "height": 1766143,
+    "checkedAt": "2026-10-31T11:57:40.775Z"
+  }
+}

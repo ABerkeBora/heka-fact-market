@@ -1,0 +1,11 @@
+{
+  "name": "heka-nodary-fast-native-spike",
+  "version": "0.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "@bsv/sdk": "3.2.1",
+    "scryptlib": "2.2.6",
+    "viem": "2.38.5"
+  }
+}

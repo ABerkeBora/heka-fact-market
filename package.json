@@ -19,7 +19,9 @@
     "bsv:bootstrap": "tsx scripts/bsv-native-bootstrap.ts",
     "bsv:sponsor": "tsx scripts/bsv-native-sponsor.ts",
     "bsv:publish-saved": "tsx scripts/bsv-publish-saved.ts",
-    "bsv:rejections": "tsx scripts/bsv-native-rejections.ts"
+    "bsv:rejections": "tsx scripts/bsv-native-rejections.ts",
+    "bsv:fast:sponsor": "tsx scripts/bsv-fast-sponsor.ts",
+    "bsv:fast:check": "tsx scripts/bsv-fast-check.ts"
   },
   "dependencies": {
     "@bsv/sdk": "3.2.1",

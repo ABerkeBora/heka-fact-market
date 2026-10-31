@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-31T10:16:52.800Z",
+  "name": "Jacobian checked sInverse/jointSlope witness plus OLD numeric Keccak",
+  "lockingBytes": 3000255,
+  "chunks": 2117645,
+  "nonPushOpcodes": 1384040,
+  "estimatedOldTwoKeccakNonPush": 1042142,
+  "estimatedECCOverheadNonPush": 341898
+}

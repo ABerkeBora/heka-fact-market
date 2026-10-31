@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-31T09:23:25.331Z",
+  "source": "https://airnode-nodary.fly.dev/",
+  "request": {
+    "operation": "latestFeeds",
+    "parameters": {
+      "name": "ETH/USD"
+    },
+    "responseProjection": {
+      "price": "/ETH~1USD/value",
+      "updatedAt": "/ETH~1USD/timestamp"
+    }
+  },
+  "envelope": {
+    "airnode": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+    "requestHash": "0x180eae9387bb66a72380e61ebe0a00d19f8414a716a37ebe1df124b66acfff66",
+    "timestamp": "1793438605",
+    "data": "{\"price\":2244.08,\"updatedAt\":1793438605061}",
+    "signature": "0x51b97a4bff7ead344a9a52a07048a450760a63e661c3213910276d5c30bcc0a3506d26b0fa117bc858a07bc7cbe78186bb539483addf914b83bae7ea0d0a53091b"
+  },
+  "inner": "0x53e766e7e44b930990ef0d9d4b395a4b1bcce49deeeabc7fb8521d6bd3a63397",
+  "digest": "0x8d9a39167745dfca628ae967c815b041095d15bfb72e2441debb010a2ba4ba03",
+  "publicKey": "0x044e993579608baf1d542741675d347867f3d2c558d2e9bc3b74bac3583b569322eb85068fa43e4c5abd6db7dfa74999362bebf2322554918e1e13dec3cbc1a91a",
+  "address": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+  "packedLength": 107,
+  "independentViemVerified": true
+}

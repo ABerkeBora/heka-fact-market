@@ -1,0 +1,12 @@
+// Package direct manual sCrypt composition using official compiler output; no TS-transform success is fabricated.
+const fs=require('fs'),path=require('path'),crypto=require('crypto')
+const {handleCompilerOutput}=require('scryptlib/dist/compilerWrapper')
+const name=process.argv[2],build=process.argv[3],source=path.resolve('artifacts/'+name+'.scrypt')
+const hash=crypto.createHash('ripemd160').update(crypto.createHash('sha256').update(source).digest()).digest('hex').slice(0,10)
+const folder=path.join(path.resolve(build),path.basename(source)+'-'+hash)
+fs.mkdirSync(folder,{recursive:true})
+fs.writeFileSync(path.join(folder,'stdin_ast.json'),fs.readFileSync(build+'/'+name+'_ast.json','utf8').replace(/"artifacts\//g,'"'))
+fs.writeFileSync(path.join(folder,'stdin_hex.txt'),fs.readFileSync(build+'/'+name+'_hex.txt','utf8').trim())
+const r=handleCompilerOutput(source,{cmdPrefix:path.resolve('../compiler/scryptc/mac/scryptc'),outputDir:path.resolve(build),hex:true,ast:true,artifact:true,outputToFiles:true,optimize:false},'')
+if(r.errors.length)throw Error(JSON.stringify(r.errors))
+fs.copyFileSync(build+'/'+name+'.json','artifacts/'+name+'.json');console.log({contract:r.contract,artifact:'artifacts/'+name+'.json',templateHexChars:r.hex.length})

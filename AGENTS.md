@@ -95,3 +95,7 @@ Prioritize the risky integration, then the smallest useful payment→state-chang
 - Distinguish fixture/unit tests from actual testnet transactions. Four required oracle failures must be tied to authentic envelopes, the intended rejection reasons and protected-state evidence.
 - Preserve chain history when creating fresh sample markets. Record commands, contract/network/explorer links and trust limits.
 - Deliver README, environment example, lockfile, public source, `TRACK_REQUIREMENTS.md`, concise `MORNING_HANDOFF.md` and `SUBMISSION.md` with a 150-second presentation outline. Do not call a draft outline a recorded/submitted video or claim full eligibility with mandatory items unresolved.
+
+## Authorized completion run — 31 October 2026
+
+The user approved completing only Fact Market, without new features or Second Order work. Preserve V1/V2 and all old funded templates/history. The isolated optimized `/bsv/fast` artifact has local VM evidence; up to two small valueless TESTNET pools are authorized for live qualification, with the second conditional on actual first-pool execution. This bounded pilot is distinct from enabling general user funding. No new native funding after the45-minute run budget; recovery of existing canonical transactions continues. Pre-sign exact paired refunds before funding publication. If native payment/refund is not proven, retain `/next` as the API3 presentation; never claim local tests or trusted-relay custody as complete native qualification.

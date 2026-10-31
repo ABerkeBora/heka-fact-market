@@ -1,0 +1,160 @@
+{
+  "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+  "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+  "networkAccepted": false,
+  "provider": "https://api.whatsonchain.com/v1/bsv/test",
+  "http": 200,
+  "status": "NETWORK_VISIBLE_UNCONFIRMED",
+  "blockHash": null,
+  "confirmations": null,
+  "outcome": "yes",
+  "payoutSatoshis": 2000,
+  "outputs": [
+    {
+      "satoshis": 2000,
+      "lockingScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac"
+    },
+    {
+      "satoshis": 800,
+      "lockingScript": "76a91421a96003efb695b6ce4168b00e275e7e2e25cb2988ac"
+    }
+  ],
+  "checkedAt": "2026-10-31T11:05:14.214Z",
+  "nodeValidated": false,
+  "validationProofFile": "fast-node-utxo-validation.json",
+  "scope": "The original checkedAt timestamp proves unconfirmed explorer visibility only. Current node validation is attached separately with its actual later observation time; no pre-window validation or mining/finality is claimed.",
+  "recordKind": "historical-unconfirmed-explorer-visibility-with-later-validation",
+  "evidenceCorrection": {
+    "correctedAt": "2026-10-31T11:52:24.055579Z",
+    "historicalClassification": "HTTP200, same-node raw retrieval and unconfirmed explorer visibility are transport/public-commitment observations, not proof of validated mempool membership or script execution at their recorded time.",
+    "validationEvidenceFile": "fast-node-utxo-validation.json",
+    "validationFirstInspectedAt": "2026-10-31T11:29:51.277Z",
+    "validationBeforeObservation": "NOT_PROVEN",
+    "chronology": "The referenced strong UTXO proof was first inspected after the source windows. It must not be backdated to an earlier transport/public-visibility timestamp. Actual earlier validation time is unknown.",
+    "currentNativeReady": false,
+    "recommendedPresentationUrl": "/next",
+    "noNewTransaction": true,
+    "originalTransportFieldsPreserved": true,
+    "latestValidationEvidenceFile": "fast-node-utxo-validation-final.json",
+    "latestObservedAt": "2026-10-31T11:51:54.070Z"
+  },
+  "legacyNetworkAccepted": true,
+  "legacyNodeValidated": true,
+  "legacyScope": "Independent explorer visibility and separately proven node UTXO execution; mining/finality is separate.",
+  "laterNodeValidation": {
+    "status": "VALIDATED_BY_NODE_UTXO",
+    "network": "testnet",
+    "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+    "provider": "https://testnet.gorillanode.io/api/v1",
+    "http": 200,
+    "rawMatchesOriginal": true,
+    "rawBinding": "canonical-transaction-id",
+    "validatedInputs": true,
+    "validatedOutputs": true,
+    "inputCount": 2,
+    "outputCount": 2,
+    "totalOutputCount": 2,
+    "inputs": [
+      {
+        "inputIndex": 0,
+        "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vout": 0,
+        "status": 1,
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 0
+      },
+      {
+        "inputIndex": 1,
+        "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vout": 1,
+        "status": 1,
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 1
+      }
+    ],
+    "outputs": [
+      {
+        "outputIndex": 0,
+        "status": 0,
+        "satoshis": 2000,
+        "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+      },
+      {
+        "outputIndex": 1,
+        "status": 0,
+        "satoshis": 800,
+        "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+      }
+    ],
+    "txMeta": {
+      "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+      "fee": 100,
+      "sizeInBytes": 1770,
+      "blockIDs": [],
+      "blockHashes": [],
+      "blockHeights": [],
+      "mainChainIndex": -1
+    },
+    "miningStatus": "UNCONFIRMED",
+    "checkedAt": "2026-10-31T11:29:51.277Z",
+    "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+  },
+  "latestNodeValidation": {
+    "status": "VALIDATED_BY_NODE_UTXO",
+    "network": "testnet",
+    "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+    "provider": "https://testnet.gorillanode.io/api/v1",
+    "http": 200,
+    "rawMatchesOriginal": true,
+    "rawBinding": "canonical-transaction-id",
+    "validatedInputs": true,
+    "validatedOutputs": true,
+    "inputCount": 2,
+    "outputCount": 2,
+    "totalOutputCount": 2,
+    "inputs": [
+      {
+        "inputIndex": 0,
+        "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vout": 0,
+        "status": 1,
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 0
+      },
+      {
+        "inputIndex": 1,
+        "sourceTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+        "vout": 1,
+        "status": 1,
+        "spendingTxid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+        "vin": 1
+      }
+    ],
+    "outputs": [
+      {
+        "outputIndex": 0,
+        "status": 0,
+        "satoshis": 2000,
+        "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+      },
+      {
+        "outputIndex": 1,
+        "status": 0,
+        "satoshis": 800,
+        "scriptSha256": "fbede82d37579b09e209845a4718667110515da7beec8f0e6925cff54cd1c8ce"
+      }
+    ],
+    "txMeta": {
+      "txid": "486b0e718f95538e8e2881ee36ea310e8c61b3aa9fb65feb567580ee25f8603e",
+      "fee": 100,
+      "sizeInBytes": 1770,
+      "blockIDs": [],
+      "blockHashes": [],
+      "blockHeights": [],
+      "mainChainIndex": -1
+    },
+    "miningStatus": "UNCONFIRMED",
+    "checkedAt": "2026-10-31T11:51:54.070Z",
+    "scope": "Canonical node UTXO spend/create state after validation; this observation is not retroactive prefunding evidence or a block/finality guarantee"
+  }
+}

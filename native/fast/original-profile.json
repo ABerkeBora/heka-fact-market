@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-31T10:15:27.037Z",
+  "scope": "Local compiled VM operation profile of frozen actual claim; no broadcast, node policy not emulated",
+  "success": true,
+  "error": "",
+  "elapsedMs": 13939,
+  "locking": {
+    "chunks": 4282305,
+    "nonPushOpcodes": 3481546,
+    "bytes": 5011707
+  },
+  "unlocking": {
+    "chunks": 8,
+    "nonPushOpcodes": 0,
+    "bytes": 2011
+  },
+  "steps": 4282313,
+  "executed": 2990058,
+  "executedNonPush": 2386815
+}

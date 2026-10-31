@@ -1,0 +1,107 @@
+{
+  "checkedAt": "2026-10-31T10:25:01.036Z",
+  "scope": "Local compiled ECDSA arithmetic edge vectors cross-checked with independent noble secp256k1; no wallet, keys or network",
+  "cases": [
+    {
+      "name": "valid Q=G degenerate joint-slope path",
+      "status": "PASS",
+      "expectedAccepted": true,
+      "accepted": true,
+      "independentNobleVerified": true,
+      "compiledScript": true,
+      "elapsedMs": 958,
+      "error": ""
+    },
+    {
+      "name": "valid Q=-G with joint point infinity",
+      "status": "PASS",
+      "expectedAccepted": true,
+      "accepted": true,
+      "independentNobleVerified": true,
+      "compiledScript": true,
+      "elapsedMs": 293,
+      "error": ""
+    },
+    {
+      "name": "valid rare x=r+n projective final comparison",
+      "status": "PASS",
+      "expectedAccepted": true,
+      "accepted": true,
+      "independentNobleVerified": true,
+      "compiledScript": true,
+      "elapsedMs": 257,
+      "error": ""
+    },
+    {
+      "name": "infinite final point cannot satisfy signature",
+      "status": "PASS",
+      "expectedAccepted": false,
+      "accepted": false,
+      "independentNobleVerified": false,
+      "compiledScript": true,
+      "elapsedMs": 232,
+      "error": "VerifyError: SCRIPT_ERR_EVAL_FALSE_IN_STACK, fails at OP_NIP\n\t[Launch Debugger](scryptlaunch://<workspace>/.local/bsv-native-spike/.tmp/sCrypt.pNu2z1/Debug%20JacobianCheck-launch.json)\n"
+    },
+    {
+      "name": "zero r rejects",
+      "status": "PASS",
+      "expectedAccepted": false,
+      "accepted": false,
+      "independentNobleVerified": false,
+      "compiledScript": true,
+      "elapsedMs": 31,
+      "error": "VerifyError: SCRIPT_ERR_VERIFY, fails at OP_VERIFY\n\t[Launch Debugger](scryptlaunch://<workspace>/.local/bsv-native-spike/.tmp/sCrypt.jmlQKd/Debug%20JacobianCheck-launch.json)\n"
+    },
+    {
+      "name": "zero s rejects",
+      "status": "PASS",
+      "expectedAccepted": false,
+      "accepted": false,
+      "independentNobleVerified": false,
+      "compiledScript": true,
+      "elapsedMs": 19,
+      "error": "VerifyError: SCRIPT_ERR_VERIFY, fails at OP_VERIFY\n\t[Launch Debugger](scryptlaunch://<workspace>/.local/bsv-native-spike/.tmp/sCrypt.SDiTwT/Debug%20JacobianCheck-launch.json)\n"
+    },
+    {
+      "name": "order r rejects",
+      "status": "PASS",
+      "expectedAccepted": false,
+      "accepted": false,
+      "independentNobleVerified": false,
+      "compiledScript": true,
+      "elapsedMs": 21,
+      "error": "VerifyError: SCRIPT_ERR_VERIFY, fails at OP_VERIFY\n\t[Launch Debugger](scryptlaunch://<workspace>/.local/bsv-native-spike/.tmp/sCrypt.DuSLhI/Debug%20JacobianCheck-launch.json)\n"
+    },
+    {
+      "name": "order s rejects",
+      "status": "PASS",
+      "expectedAccepted": false,
+      "accepted": false,
+      "independentNobleVerified": false,
+      "compiledScript": true,
+      "elapsedMs": 23,
+      "error": "VerifyError: SCRIPT_ERR_VERIFY, fails at OP_VERIFY\n\t[Launch Debugger](scryptlaunch://<workspace>/.local/bsv-native-spike/.tmp/sCrypt.A9xH3k/Debug%20JacobianCheck-launch.json)\n"
+    },
+    {
+      "name": "off-curve pinned public point rejects",
+      "status": "PASS",
+      "expectedAccepted": false,
+      "accepted": false,
+      "independentNobleVerified": false,
+      "compiledScript": true,
+      "elapsedMs": 19,
+      "error": "VerifyError: SCRIPT_ERR_VERIFY, fails at OP_VERIFY\n\t[Launch Debugger](scryptlaunch://<workspace>/.local/bsv-native-spike/.tmp/sCrypt.v6wik1/Debug%20JacobianCheck-launch.json)\n"
+    },
+    {
+      "name": "out-of-field public x rejects",
+      "status": "PASS",
+      "expectedAccepted": false,
+      "accepted": false,
+      "independentNobleVerified": false,
+      "compiledScript": true,
+      "elapsedMs": 25,
+      "error": "VerifyError: SCRIPT_ERR_VERIFY, fails at OP_VERIFY\n\t[Launch Debugger](scryptlaunch://<workspace>/.local/bsv-native-spike/.tmp/sCrypt.DsHoKK/Debug%20JacobianCheck-launch.json)\n"
+    }
+  ],
+  "status": "PASS"
+}

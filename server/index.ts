@@ -2,6 +2,7 @@ import {nextRouter} from './next/api.js';
 import {bsvRouter} from './bsv/api.js';
 import {tick as bsvTick} from './bsv/engine.js';
 import {nativeTick} from './bsv/native.js';
+import {fastTick} from './bsv/fast.js';
 import {nextEngine} from './next/engine.js';
 import {proposalGate} from './model-queue.js';
 import {acquireProcessLock} from './lock.js';
@@ -32,4 +33,4 @@ app.post('/api/markets/:id/observe',async(req,res)=>{try{const j=state.jobs.find
 app.post('/api/markets/:id/submit',async(req,res)=>{try{const j=state.jobs.find(j=>j.marketId===req.params.id);if(!j)throw Error('Market not found');const e=req.body.envelope; if(!e||typeof e.data!=='string'||!/^0x[\da-fA-F]{130}$/.test(e.signature)||!/^\d+$/.test(String(e.timestamp)))throw Error('Envelope requires timestamp, exact signed data string and signature');const d=deployment();const label='judge-submit:'+randomBytes(5).toString('hex');const receipt=await transact(j,label,'deployer',d.market,artifact('FactMarket').abi,'settle',[BigInt(req.params.id),BigInt(e.timestamp),toHex(e.data),e.signature]);res.json({receipt});}catch(e:any){state.evidence.push({kind:'judge-submission',decision:'rejected',at:Date.now(),reason:(e.shortMessage||e.message).slice(0,1500)});save();res.status(400).json({error:e.shortMessage||e.message});}});
 if(process.env.NODE_ENV==='production'){app.use(express.static('dist'));app.get('/{*path}',(_req,res)=>res.sendFile(process.cwd()+'/dist/index.html'));}else{const vite=await createViteServer({server:{middlewareMode:true},appType:'spa'});app.use(vite.middlewares);}
 app.listen(port,'127.0.0.1',()=>console.log(`Fact Market http://localhost:${port}`));
-setInterval(()=>{void tick();void nextEngine.tick();void bsvTick();void nativeTick();},10000);void tick();void nextEngine.tick();void bsvTick();void nativeTick();
+setInterval(()=>{void tick();void nextEngine.tick();void bsvTick();void nativeTick();void fastTick();},10000);void tick();void nextEngine.tick();void bsvTick();void nativeTick();void fastTick();

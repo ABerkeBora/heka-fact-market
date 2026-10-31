@@ -1,0 +1,11 @@
+{
+  "accepted": false,
+  "outcome": null,
+  "reason": "Script evaluation error: OP_VERIFY requires the top stack value to be truthy.\nTXID: 42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9, OutputIdx: 0\nContext: LockingScript, PC: 439006\nStack: [, 41cbe56a, 7b227072696365223a323234352e32342c22757064617465644174223a313739333434343637333631",
+  "durationMs": 673,
+  "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+  "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+  "network": "testnet",
+  "scope": "Read-only native Script VM; no transaction signed or broadcast and no collateral state changed",
+  "checkedAt": "2026-10-31T11:56:26.051Z"
+}

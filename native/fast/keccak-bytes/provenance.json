@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-31T10:23:44.496Z",
+  "compiler": "official scryptc 1.22.0+commit47800da",
+  "optimized": false,
+  "scope": "local pure mathematical hash implementation + compiled VM; no wallet/network action",
+  "files": {
+    "keccak-asm.scrypt": "da15e0cc807f97d8da47c05ac3c38133c7f0537c88b1cd633edaf557e692b623",
+    "one-asm.scrypt": "8710a34b782b29a8d0c0dfccfcc1146792e97e27b5738fdbde6c8e9d857873fb",
+    "generate-asm.py": "04a4157c8dbff4af8a2a40b92d16622359a3063c44994bd2620f05a37e0e5c6e",
+    "keccak-asm.json": "2fb35fddf57875565af22e82f4a6a81f8ca1b8d7908db5f3a34adea986dba8aa",
+    "one-asm.json": "869465ccc47dc9fd158daab1ab40ec99c2c300107ec0c5801d37644b333f9e18",
+    "asm-results.json": "fa5fd6ec01b5e974c72dff881b5ff36ae20982767006c15d1006c3ae2afb5249",
+    "one-asm-results.json": "0a57238a37c190b16e9134e52d0599de2ebe4cd0ba9be5e1a951f1fb73927b65"
+  }
+}

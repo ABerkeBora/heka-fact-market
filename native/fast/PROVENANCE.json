@@ -1,0 +1,138 @@
+{
+  "checkedAt": "2026-10-31T10:25:38.708Z",
+  "scope": "NEW immutable native NodaryFastAsm template, local compiled VM+SDK tests only; no funding/broadcast by this spike",
+  "originalSigner": "0xE70f1e8b22a21e4Bb5188918a3033341b281E4c0",
+  "originalFullPublicKey": "0x044e993579608baf1d542741675d347867f3d2c558d2e9bc3b74bac3583b569322eb85068fa43e4c5abd6db7dfa74999362bebf2322554918e1e13dec3cbc1a91a",
+  "compiler": "1.22.0+commit.47800da",
+  "compilerSha256": "77ce27c6e0b25895f75980ed9e4ec75f64ba064f2294ce9e3c928c65211ecf9e",
+  "runtime": {
+    "@bsv/sdk": "3.2.1",
+    "scryptlib": "2.2.6",
+    "viem": "2.38.5"
+  },
+  "artifact": {
+    "file": "artifacts/nodary-fast-asm.json",
+    "bytes": 2040508,
+    "sha256": "bd453a9cd9e9fff72ad98422d23af94407506ae8be584e95640339b1b0e85591",
+    "gzipSha256": "9c16c7e188cbaf4bee52ee550d4a9c47229613bc46b07b34b483e55e538a2b7e"
+  },
+  "compiledCases": 12,
+  "compiledStatus": "PASS",
+  "sdkStatus": "PASS",
+  "files": [
+    {
+      "file": "consumer-fast-asm.cjs",
+      "bytes": 5583,
+      "sha256": "290d6dd0c9a21660e534985cf3d3e3d95a93abe2328d41707b4520a301609e00"
+    },
+    {
+      "file": "bundle-manual.cjs",
+      "bytes": 1255,
+      "sha256": "65800e8e510b4a5b56a91895bae5f2147c6a29efb8e9b3f7eb18f512c1a70647"
+    },
+    {
+      "file": "artifacts/nodary-fast-asm.scrypt",
+      "bytes": 2598,
+      "sha256": "164e3ffd34274ef5b3b46a9d3382f7edbb8786efdaeb745d52738c8e3fb1b935"
+    },
+    {
+      "file": "artifacts/jacobian.scrypt",
+      "bytes": 6483,
+      "sha256": "291b53b1aaa96ca209e89671ce23d1042a2bd8e90af85a87ac6593633b27ff8a"
+    },
+    {
+      "file": "artifacts/keccak.scrypt",
+      "bytes": 2400,
+      "sha256": "16f501f1e4a090d905a9dc2239ffc8d5c886b136ffd5da83b5d8e40c4fe53664"
+    },
+    {
+      "file": "artifacts/nodary-parser.scrypt",
+      "bytes": 1750,
+      "sha256": "c3feb1b532dedd4bbea01c21d4203baaba08d179b1e83d8318657aa522d95116"
+    },
+    {
+      "file": "src/contracts/jacobian.ts",
+      "bytes": 5334,
+      "sha256": "78793f7f3977aaf8d15227ecb69086bb0423dac44182a6c29979f13a8c42deed"
+    },
+    {
+      "file": "src/contracts/keccak.ts",
+      "bytes": 2730,
+      "sha256": "71d30b11b79437e2ffa26233c6b1a53a365e363d96e7b0099894fb01f891522b"
+    },
+    {
+      "file": "keccak-bytes/keccak-asm.scrypt",
+      "bytes": 138561,
+      "sha256": "da15e0cc807f97d8da47c05ac3c38133c7f0537c88b1cd633edaf557e692b623"
+    },
+    {
+      "file": "keccak-bytes/provenance.json",
+      "bytes": 878,
+      "sha256": "4ae55dfab53919a44bafa9e4b022f92f6cf6fb209b1b6bf0dfa194ca943505c8"
+    },
+    {
+      "file": "keccak-bytes/asm-results.json",
+      "bytes": 4458,
+      "sha256": "fa5fd6ec01b5e974c72dff881b5ff36ae20982767006c15d1006c3ae2afb5249"
+    },
+    {
+      "file": "fast-asm-results.json",
+      "bytes": 6482,
+      "sha256": "be81750577a5f718e65085dfdab6a9fc9ab16494ffb04d59970551f7d12ec6cb"
+    },
+    {
+      "file": "fast-asm-sdk-results.json",
+      "bytes": 1043,
+      "sha256": "65a38001af6e3ab258adf6bd4785a4c49a8d9944085a0566eca363e0377b2e80"
+    },
+    {
+      "file": "jacobian-results.json",
+      "bytes": 1111,
+      "sha256": "2d6fb8163c835e0981ae31279e3648fab87d0ce108769e7f200e537b53f543b1"
+    },
+    {
+      "file": "jacobian-static-profile.json",
+      "bytes": 289,
+      "sha256": "f7a5d4c949040dd2ee8de33bf657a08e54ecdec9b6ef4bd3eddba9440e682b56"
+    },
+    {
+      "file": "original-profile.json",
+      "bytes": 465,
+      "sha256": "3faf6e93be69f7b5cea22d574c685ef0cb7cf0ad437b77092e9cbbbf524a1c5a"
+    },
+    {
+      "file": "curve-edge-results.json",
+      "bytes": 4004,
+      "sha256": "91f64df758db8dc51527b50effd87cef69f35c18bbb295416fa3733980ac1792"
+    },
+    {
+      "file": "README.md",
+      "bytes": 6669,
+      "sha256": "797a70120c5de3af074005687c40262aa7eae67c5334595c4b6b8dfb32d9349d"
+    }
+  ],
+  "limits": [
+    "Experimental cryptographic composition, not audited.",
+    "Fixed observation interval differs from EVM current-block age/expiry.",
+    "Old funding guard cannot be changed; new explicitly versioned pool required.",
+    "Genuine local fixture was already observed; no live future-funded prediction in this spike.",
+    "Actual public-node admission/payout remains PENDING despite lower operation count.",
+    "Never broadcast dummy11/22/33 recipient hashes in tests."
+  ],
+  "curveEdgeStatus": "PASS",
+  "curveEdgeCases": 10,
+  "gzipLoaderSdkCompiledVm": "PASS",
+  "publicationSanitization": {
+    "checkedAt": "2026-10-31T11:00:59.031228+00:00",
+    "errorStrings": "Absolute local paths redacted; acceptance results and frozen cryptographic artifact unchanged.",
+    "supportedReplayTests": [
+      "test-fast-asm.cjs",
+      "test-fast-sdk-asm.cjs"
+    ],
+    "researchOnly": [
+      "src/contracts/*.ts",
+      "bundle-manual.cjs"
+    ],
+    "omittedResearchRunner": "test-curve.cjs required a separate unbundled curve-check artifact; archived curve-edge results retained."
+  }
+}

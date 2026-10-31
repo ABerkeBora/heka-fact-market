@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-31T11:01:59.721Z",
+  "scope": "Actual isolated native runtime replay/restart check; no new payment",
+  "marketId": "fast-40dcc779-1055-4928-8ec2-94a991bce85a",
+  "fundingTxid": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+  "firstAcceptedAt": "2026-10-31T10:56:44.255Z",
+  "lateFunding": false,
+  "duplicateFunding": {
+    "http": 400,
+    "error": "Prepare the native funding plan first",
+    "rejected": true
+  },
+  "unchanged": true,
+  "canonicalRefundPreparedBeforeFunding": true,
+  "interpretationCorrection": "Original early timestamp is transport/public visibility, not proven validation. Strong node UTXO validation was observed later.",
+  "fundingPublicationBeforeObservation": true,
+  "validationBeforeObservationProven": false
+}

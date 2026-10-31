@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "outcome": "yes",
+  "reason": "Original signature, window, predicate and fixed output passed the native Script",
+  "durationMs": 930,
+  "lockingScriptSha256": "3595d32fc618f9391d87b14b3a0894e3fa5e53ee54d7149864454788487a79b5",
+  "sourceTXID": "42926a8684b7bd7d1e1643ac273266a043859cb19c0af1b36bf5653806ac8de9",
+  "network": "testnet",
+  "scope": "Read-only native Script VM; no transaction signed or broadcast and no collateral state changed",
+  "checkedAt": "2026-10-31T11:51:54.550Z"
+}

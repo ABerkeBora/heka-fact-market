@@ -1,0 +1,58 @@
+
+struct NodaryObservation {
+  int price18;
+  int sourceTimestamp;
+}
+
+library NodaryParser {
+  static function read(bytes data) : NodaryObservation {
+    bytes head = b'7b227072696365223a';
+    bytes tail = b'2c22757064617465644174223a';
+    require(data[0 : len(head)] == head);
+    int digits = 0;
+    int scale = 1;
+    bool decimal = false;
+    bool done = false;
+    int priceEnd = 0;
+    int count = 0;
+    loop (32) : i {
+        int pos = len(head) + (i);
+        if(!done && pos < len(data)) {
+          int c = Utils.fromLEUnsigned(data[pos : pos + 1]);
+          if(c == 44) {
+            done = true;
+            priceEnd = pos;
+          } else if(c == 46) {
+            require(!decimal && count > 0);
+            decimal = true;
+          } else {
+            require(c >= 48 && c <= 57);
+            digits = digits * 10 + c - 48;
+            count++;
+            if(decimal) scale *= 10;
+          }
+        }
+      }
+    require(done && count > 0 && digits > 0 && scale <= 1000000000000000000);
+    require(data[priceEnd : priceEnd + len(tail)] == tail);
+    int start = priceEnd + len(tail);
+    require(len(data) == start + 14);
+    int millis = 0;
+    loop (13) : i {
+        int c = Utils.fromLEUnsigned(data[start + (i) : start + (i + 1)]);
+        require(c >= 48 && c <= 57);
+        millis = millis * 10 + c - 48;
+      }
+    require(data[start + 13 : len(data)] == b'7d');
+    return {digits * 1000000000000000000 / scale, millis / 1000};
+  }
+}
+
+contract NodaryParserTest {
+  int expectedPrice18;
+  int expectedSourceTimestamp;
+  public function unlock(bytes data) {
+    NodaryObservation o = NodaryParser.read(data);
+    require(o.price18 == this.expectedPrice18 && o.sourceTimestamp == this.expectedSourceTimestamp);
+  }
+}

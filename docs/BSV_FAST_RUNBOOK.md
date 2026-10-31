@@ -25,11 +25,10 @@ The native compiled artifact is vendored in `native/fast/`; no compiler binary o
 
 ```sh
 npm --prefix native/fast ci --ignore-scripts
-node native/fast/test-fast-asm.cjs
-node native/fast/test-fast-sdk-asm.cjs
+(cd native/fast && node test-fast-asm.cjs && node test-fast-sdk-asm.cjs)
 ```
 
-These tests use fixture UTXOs and do not broadcast them. Source/artifact provenance is in `native/fast/PROVENANCE.json`. Never copy another installation's `.local` directory, private keys, wallets or signed source journals into a fresh clone.
+These tests use fixture UTXOs and do not broadcast them. Run them from `native/fast` as shown: they read the fixture relative to the working directory and rewrite local fixture result JSON, so use a scratch checkout when preserving the existing reports. Source/artifact provenance is in `native/fast/PROVENANCE.json`. Never copy another installation's `.local` directory, private keys, wallets or signed source journals into a fresh clone.
 
 ## Fresh test profile: developer setup, not another pool in this run
 

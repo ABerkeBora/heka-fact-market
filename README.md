@@ -1,5 +1,7 @@
 # Fact Market
 
+For an independent engineering review, start with [the standalone Claude handoff](CLAUDE_HANDOFF.md).
+
 An agent turns a bounded question about ETH/USD into a fully collateralized test market. A pinned AirnodeHub response determines the winning side on Base Sepolia; the agent funds its position, submits the observation and collects the contract-enforced payout under one initial authorization.
 
 The V1 template is **Nodary ETH/USD, first accepted observation in a fixed window**; V2 adds goal-selected BTC/USD with an immutable recipe per market. This is an observation market, not a historical exact-time price or proof that a price stayed above a threshold throughout a period. PandaScore paid discovery is separately verified; a complete PandaScore prediction lifecycle is not implemented. V1/V2 make no BSV qualification claim. The separate BSV-native branch is described below with its own evidence and pending gates.
